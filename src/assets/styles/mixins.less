@@ -1,0 +1,135 @@
+// padding 系列
+.padding0-40 () {
+  padding: 0 0.4rem;
+}
+.padding0-30 () {
+  padding: 0 0.3rem;
+}
+.padding0-20 () {
+  padding: 0 0.2rem;
+}
+.padding40-0 () {
+  padding: 0.4rem 0;
+}
+.padding30-0 () {
+  padding: 0.3rem 0;
+}
+.padding20-0 () {
+  padding: 0.2rem 0;
+}
+
+.padding40 () {
+  padding: 0.4rem;
+}
+.padding30 () {
+  padding: 0.3rem;
+}
+.padding20 () {
+  padding: 0.2rem;
+}
+
+// margin 系列
+.marginBtm40 () {
+  margin-bottom: 0.4rem;
+}
+.marginBtm30 () {
+  margin-bottom: 0.3rem;
+}
+
+.marginBtm20 () {
+  margin-bottom: 0.2rem;
+}
+.marginBtm10 () {
+  margin-bottom: 0.1rem;
+}
+
+
+// 一像素边框
+// -----------------------------------------------------------------------------
+.border(@color: #e5e5e5, @zindex: 0){
+  content: '';
+  position: absolute;
+  z-index: @zindex;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border: 1px solid @color;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.top-line(@color: #e5e5e5, @zindex: 1) {
+  content: '';
+  position: absolute;
+  z-index: @zindex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid @color;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.bottom-line(@color: #e5e5e5, @zindex: 1) {
+  content: '';
+  position: absolute;
+  z-index: @zindex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid @color;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.left-line(@color: #e5e5e5, @zindex: 1) {
+  content: '';
+  position: absolute;
+  z-index: @zindex;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-left: 1px solid @color;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.right-line(@color: #e5e5e5, @zindex: 1) {
+  content: '';
+  position: absolute;
+  z-index: @zindex;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-right: 1px solid @color;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+// 各种单边阴影
+// -----------------------------------------------------------------------------
+.drop-shadow-top() {
+  box-shadow: 0 -6px 4px -4px rgba(0,0,0,0.05);
+}
+
+.drop-shadow-right() {
+  box-shadow: 4px 0 2px -2px rgba(0,0,0,0.05);
+}
+
+.drop-shadow-bottom() {
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,0.05);
+}
+
+.drop-shadow-left() {
+  box-shadow: -4px 0 2px -2px rgba(0,0,0,0.05);
+}

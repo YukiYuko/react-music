@@ -2,6 +2,7 @@ import React from 'react'
 import Swiper from 'react-id-swiper';
 import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
+import {observable, autorun} from 'mobx';
 class Home extends React.Component {
 
   state = {
@@ -28,7 +29,16 @@ class Home extends React.Component {
       <div className="home">
         <div className="red-bg"></div>
         <div className="scroll-warp">
+          <div className="tab-nav flex justify-between">
+            <div className="box1">
+              <a className="active" href="">个性推荐</a>
+            </div>
+            <div className="box1">
+              <a href="">主播电台</a>
+            </div>
+          </div>
           <div className="tab-warp">
+            {/*banner*/}
             <Swiper {...params}>
               <div className="slider-item">
                 <div className="slider-item-inner">1</div> 
@@ -46,6 +56,52 @@ class Home extends React.Component {
                 <div className="slider-item-inner">5</div> 
               </div>
             </Swiper>
+            {/*几个分类*/}
+            <div className="icon-menu flex justify-between">
+              <div className="icon-item box1">
+                <div className="icon-item-icon">
+                  <i className="iconfont icon-fm"></i>
+                </div>
+                <div className="icon-item-text">
+                  私人FM
+                </div>
+              </div>
+              <div className="icon-item box1">
+                <div className="icon-item-icon">
+                  <i className="iconfont icon-tuijian"></i>
+                </div>
+                <div className="icon-item-text">
+                  每日推荐
+                </div>
+              </div>
+              <div className="icon-item box1">
+                <div className="icon-item-icon">
+                  <i className="iconfont icon-gedan"></i>
+                </div>
+                <div className="icon-item-text">
+                  歌单
+                </div>
+              </div>
+              <div className="icon-item box1">
+                <div className="icon-item-icon">
+                  <i className="iconfont icon-top"></i>
+                </div>
+                <div className="icon-item-text">
+                  排行榜
+                </div>
+              </div>
+            </div>
+            {/*推荐歌单*/}
+            <div className="recommend">
+              <div className="recommend-item">
+                <div className="recommend-item-img">
+                  <img src="../../assets/images/touxiang.jpeg" alt="touxiang"/>
+                </div>
+                <div className="recommend-item-text">
+
+                </div>
+              </div>
+            </div>
           </div>
         </div> 
       </div>

@@ -1,5 +1,6 @@
+@import "../../assets/styles/mixins";
 .home{
-    height: 100vh; position: relative;
+    height: 100vh; position: relative; background-color: #ffffff;
     .red-bg{
         background-color: #d94036; height: 30vh;
         position: absolute; left: 0; right: 0; top: 0;
@@ -8,12 +9,50 @@
         position: absolute; left: 0; top: 0; right: 0; bottom: 0;
     }
 }
+.tab-nav{
+    padding: 0.3rem;
+    div{
+        text-align: center;
+    }
+    a{
+        color: #fff; font-size: 0.32rem;
+        padding: 4px 0; position: relative;
+        &.active:before{
+            content: ''; position: absolute;
+            width: 60%; height: 4px; background-color: #ffffff;
+            bottom: -2px; border-radius: 4px;
+            left: 50%; margin-left: -30%;
+        }
+    }
+}
 .tab-warp{
     .slider-item{
-        height: 18vh; background-color: #fff; padding: 0 15px;
+        height: 18vh; padding: 0 15px;
         box-sizing: border-box;
     }
     .slider-item-inner{
         background-color: aqua; height: 100%;
+    }
+    .icon-menu{
+        background-color: #ffffff; padding: 0.4rem 0;
+        position: relative;
+        &:before{
+            .bottom-line();
+        }
+        .icon-item{
+            width: 1rem; text-align: center;
+            .icon-item-icon{
+                width: 1rem; height: 1rem; border-radius: 50%;
+                background-color: #d94036; color: #ffffff;
+                margin:0 auto 0.2rem; line-height: 1rem;
+                box-shadow: 0 0 4px #d94036;
+                i{
+                    font-size: 0.5rem;
+                }
+            }
+            .icon-item-text{
+                font-size: 0.28rem; color: #444444;
+            }
+        }
     }
 }
