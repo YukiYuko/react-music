@@ -3,6 +3,7 @@ import Swiper from 'react-id-swiper';
 import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
 import {observable, autorun} from 'mobx';
+import touxiang from '../../assets/images/touxiang.png';
 class Home extends React.Component {
 
   state = {
@@ -92,14 +93,25 @@ class Home extends React.Component {
               </div>
             </div>
             {/*推荐歌单*/}
-            <div className="recommend">
-              <div className="recommend-item">
-                <div className="recommend-item-img">
-                  <img src="../../assets/images/touxiang.jpeg" alt="touxiang"/>
-                </div>
-                <div className="recommend-item-text">
-
-                </div>
+            <div className="inner-warp">
+              <div className="public-title">
+                推荐歌单 >
+              </div>
+              <div className="recommend flex justify-between wrap-wrap">
+                {
+                  [1,2,3,4,5,6].map((item) => {
+                    return (
+                      <div className="recommend-item" key={item}>
+                        <div className="recommend-item-img">
+                          <img src={touxiang} alt="touxiang"/>
+                        </div>
+                        <div className="recommend-item-text">
+                          ︿(￣︶￣)︿ 愿你一生温柔相许
+                        </div>
+                      </div>
+                    )
+                  })
+                }
               </div>
             </div>
           </div>
