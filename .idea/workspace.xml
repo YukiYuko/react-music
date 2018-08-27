@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/mixins.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Home/Home.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home/Home.less" afterDir="false" />
     </list>
@@ -32,8 +30,8 @@
           <entry key="css" value="5" />
           <entry key="html" value="1" />
           <entry key="jpeg" value="2" />
-          <entry key="js" value="5" />
-          <entry key="less" value="4" />
+          <entry key="js" value="8" />
+          <entry key="less" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -41,30 +39,30 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JavaScript" value="5" />
-          <entry key="Less" value="4" />
+          <entry key="JavaScript" value="8" />
+          <entry key="Less" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="1" />
           <entry key="html" value="28" />
-          <entry key="js" value="679" />
-          <entry key="less" value="520" />
+          <entry key="js" value="1059" />
+          <entry key="less" value="695" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="28" />
-          <entry key="JavaScript" value="679" />
-          <entry key="Less" value="520" />
+          <entry key="JavaScript" value="1059" />
+          <entry key="Less" value="695" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49280575">
+    <splitter split-orientation="horizontal" split-proportion="0.58457184">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -79,13 +77,37 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Home/Home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="99" column="70" selection-start-line="99" selection-start-column="70" selection-end-line="99" selection-end-column="70" />
+                <state relative-caret-position="386">
+                  <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                     <element signature="e#943#1610#0" />
                     <element signature="e#1646#2879#0" />
+                    <element signature="e#1709#1984#0" />
+                    <element signature="e#1999#2279#0" />
+                    <element signature="e#2294#2570#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/common/Recommend/Recommend.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#0#34#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/common/Recommend/styles.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
@@ -94,11 +116,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/views/Home/Home.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+                <state relative-caret-position="46">
+                  <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
                   <folding>
                     <element signature="e#928#1586#0" />
                   </folding>
@@ -115,11 +137,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/assets/styles/mixins.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1794">
-                  <caret line="78" column="21" lean-forward="true" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+                <state relative-caret-position="345">
+                  <caret line="132" column="21" lean-forward="true" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -141,6 +163,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Less File" />
       </list>
     </option>
   </component>
@@ -148,6 +171,7 @@
     <findStrings>
       <find>less</find>
       <find>tex</find>
+      <find>删掉恐慌</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,8 +189,12 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/reset.css" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/views/Home/Home.js" />
+        <option value="$PROJECT_DIR$/src/demo.js" />
         <option value="$PROJECT_DIR$/src/views/Home/Home.less" />
+        <option value="$PROJECT_DIR$/src/assets/styles/mixins.less" />
+        <option value="$PROJECT_DIR$/src/components/common/Recommend/styles.less" />
+        <option value="$PROJECT_DIR$/src/components/common/Recommend/Recommend.js" />
+        <option value="$PROJECT_DIR$/src/views/Home/Home.js" />
       </list>
     </option>
   </component>
@@ -221,7 +249,28 @@
               <item name="react-music" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="Recommend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -231,6 +280,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -304,30 +354,30 @@
       <workItem from="1533609232506" duration="2988000" />
       <workItem from="1534995741648" duration="7237000" />
       <workItem from="1535337478679" duration="599000" />
-      <workItem from="1535357365293" duration="2295000" />
+      <workItem from="1535357365293" duration="9788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16770000" />
+    <option name="totallyTimeSpent" value="24263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1680" height="948" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.72565156" visible="true" weight="0.16214587" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.72487646" visible="true" weight="0.1482821" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.2743484" side_tool="true" visible="true" weight="0.16214587" />
+      <window_info id="npm" order="2" sideWeight="0.27512357" side_tool="true" visible="true" weight="0.1482821" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13214286" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2702381" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.24285714" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27738094" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297619" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -402,13 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/styles/mixins.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1794">
-          <caret line="78" column="21" lean-forward="true" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -459,25 +502,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Home/Home.js">
+    <entry file="file://$PROJECT_DIR$/src/views/Friend/Friend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="99" column="70" selection-start-line="99" selection-start-column="70" selection-end-line="99" selection-end-column="70" />
+        <state relative-caret-position="207">
+          <caret line="9" column="19" lean-forward="true" selection-end-line="14" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#943#1610#0" />
-            <element signature="e#1646#2879#0" />
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="14" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Home/Home.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+        <state relative-caret-position="46">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
             <element signature="e#928#1586#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/common/Recommend/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/common/Recommend/Recommend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#943#1610#0" />
+            <element signature="e#1646#2879#0" />
+            <element signature="e#1709#1984#0" />
+            <element signature="e#1999#2279#0" />
+            <element signature="e#2294#2570#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/styles/mixins.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="132" column="21" lean-forward="true" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
         </state>
       </provider>
     </entry>

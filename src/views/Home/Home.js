@@ -4,11 +4,35 @@ import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
 import {observable, autorun} from 'mobx';
 import touxiang from '../../assets/images/touxiang.png';
+import Recommend from '../../components/common/Recommend/Recommend'
 class Home extends React.Component {
 
   state = {
-    
-  }
+    list_recommend: [
+      { title: '遇见你，竟花光了所有运气。' },
+      { title: '遇见你，竟花光了所有运气。' },
+      { title: '遇见你，竟花光了所有运气。' },
+      { title: '遇见你，竟花光了所有运气。' },
+      { title: '遇见你，竟花光了所有运气。' },
+      { title: '遇见你，竟花光了所有运气。' },
+    ],
+    list_new: [
+      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
+      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
+      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
+      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
+      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
+      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
+    ],
+    list_anchor: [
+      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
+      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
+      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
+      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
+      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
+      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
+    ]
+  };
 
   componentDidMount() {
     
@@ -92,28 +116,31 @@ class Home extends React.Component {
                 </div>
               </div>
             </div>
-            {/*推荐歌单*/}
+            {/*主体内容*/}
             <div className="inner-warp">
-              <div className="public-title">
-                推荐歌单 >
+              {/*推荐歌单*/}
+              <div className="section-recommend">
+                <div className="public-title">
+                  推荐歌单 >
+                </div>
+                <Recommend list={this.state.list_recommend}></Recommend>
               </div>
-              <div className="recommend flex justify-between wrap-wrap">
-                {
-                  [1,2,3,4,5,6].map((item) => {
-                    return (
-                      <div className="recommend-item" key={item}>
-                        <div className="recommend-item-img">
-                          <img src={touxiang} alt="touxiang"/>
-                        </div>
-                        <div className="recommend-item-text">
-                          ︿(￣︶￣)︿ 愿你一生温柔相许
-                        </div>
-                      </div>
-                    )
-                  })
-                }
+              {/*最新音乐*/}
+              <div className="section-new">
+                <div className="public-title">
+                  最新音乐 >
+                </div>
+                <Recommend list={this.state.list_new}></Recommend>
+              </div>
+              {/*最新电台*/}
+              <div className="section-new">
+                <div className="public-title">
+                  最新电台 >
+                </div>
+                <Recommend list={this.state.list_anchor}></Recommend>
               </div>
             </div>
+
           </div>
         </div> 
       </div>
