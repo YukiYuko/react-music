@@ -3,8 +3,10 @@ import Swiper from 'react-id-swiper';
 import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
 import {observable, autorun} from 'mobx';
-import touxiang from '../../assets/images/touxiang.png';
-import Recommend from '../../components/common/Recommend/Recommend'
+import Recommend from '../../components/common/Recommend/Recommend';
+import {getBanner} from '../../request/api';
+import { Toast } from 'antd-mobile';
+
 class Home extends React.Component {
 
   state = {
@@ -31,11 +33,25 @@ class Home extends React.Component {
       { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
       { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
       { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
-    ]
+    ],
+    banners: []
   };
 
   componentDidMount() {
-    
+    Toast.loading('Loading...');
+    getBanner().then((res) => {
+      if (res.code === 200) {
+        this.setState({
+          banners: res.banners
+        });
+        setTimeout(() => {
+          Toast.hide();
+        }, 1000);
+        console.log(res);
+      }else {
+        Toast.fail('Load failed !!!', 2);
+      }
+    })
   }
 
   render() {
@@ -47,8 +63,9 @@ class Home extends React.Component {
         clickable: true,
         dynamicBullets: true
       },
-      spaceBetween: 30
-    }
+      spaceBetween: 30,
+      rebuildOnUpdate: true
+    };
 
     return (
       <div className="home">
@@ -64,23 +81,19 @@ class Home extends React.Component {
           </div>
           <div className="tab-warp">
             {/*banner*/}
-            <Swiper {...params}>
-              <div className="slider-item">
-                <div className="slider-item-inner">1</div> 
-              </div>
-              <div className="slider-item">
-                <div className="slider-item-inner">2</div> 
-              </div>
-              <div className="slider-item">
-                <div className="slider-item-inner">3</div> 
-              </div>
-              <div className="slider-item">
-                <div className="slider-item-inner">4</div> 
-              </div>
-              <div className="slider-item">
-                <div className="slider-item-inner">5</div> 
-              </div>
-            </Swiper>
+            <div className="banner">
+              <Swiper {...params}>
+                {
+                  this.state.banners.map((item, index) => (
+                    <div className="slider-item" key={index}>
+                      <div className="slider-item-inner">
+                        <img src={item.picUrl} alt=""/>
+                      </div>
+                    </div>
+                  ))
+                }
+              </Swiper>
+            </div>
             {/*几个分类*/}
             <div className="icon-menu flex justify-between">
               <div className="icon-item box1">
