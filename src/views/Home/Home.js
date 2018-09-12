@@ -4,20 +4,13 @@ import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
 import {observable, autorun} from 'mobx';
 import Recommend from '../../components/common/Recommend/Recommend';
-import {getBanner} from '../../request/api';
+import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
 
 class Home extends React.Component {
 
   state = {
-    list_recommend: [
-      { title: '遇见你，竟花光了所有运气。' },
-      { title: '遇见你，竟花光了所有运气。' },
-      { title: '遇见你，竟花光了所有运气。' },
-      { title: '遇见你，竟花光了所有运气。' },
-      { title: '遇见你，竟花光了所有运气。' },
-      { title: '遇见你，竟花光了所有运气。' },
-    ],
+    list_recommend: [],
     list_new: [
       { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
       { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
@@ -36,9 +29,9 @@ class Home extends React.Component {
     ],
     banners: []
   };
+  // 获取banner数据
 
-  componentDidMount() {
-    Toast.loading('Loading...');
+  get_banner () {
     getBanner().then((res) => {
       if (res.code === 200) {
         this.setState({
@@ -52,6 +45,28 @@ class Home extends React.Component {
         Toast.fail('Load failed !!!', 2);
       }
     })
+  }
+  // 获取推荐歌单数据
+  get_personalized () {
+    personalized().then((res) => {
+      if (res.code === 200) {
+        this.setState({
+          list_recommend: res.result
+        });
+        setTimeout(() => {
+          Toast.hide();
+        }, 1000);
+        console.log(res);
+      }else {
+        Toast.fail('Load failed !!!', 2);
+      }
+    })
+  }
+
+  componentDidMount() {
+    Toast.loading('Loading...');
+    this.get_banner();
+    this.get_personalized();
   }
 
   render() {
