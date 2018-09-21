@@ -51,7 +51,7 @@ class Home extends React.Component {
     personalized().then((res) => {
       if (res.code === 200) {
         this.setState({
-          list_recommend: res.result
+          list_recommend: res.result.slice(0,6)
         });
         setTimeout(() => {
           Toast.hide();
@@ -151,7 +151,7 @@ class Home extends React.Component {
                 <div className="public-title">
                   推荐歌单 >
                 </div>
-                <Recommend list={this.state.list_recommend}></Recommend>
+                <Recommend list={this.state.list_recommend}/>
               </div>
               {/*最新音乐*/}
               <div className="section-new">

@@ -14,7 +14,7 @@ class Recommend extends React.Component {
             return (
               <div className="recommend-item" key={index}>
                 <div className="recommend-item-img">
-                  <img src={touxiang} alt="touxiang"/>
+                  <img src={item.picUrl} alt="touxiang"/>
                   {
                     !item.image_text ? '' : (
                       <p>{item.image_text}</p>
