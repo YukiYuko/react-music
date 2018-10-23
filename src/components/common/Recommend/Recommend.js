@@ -1,7 +1,6 @@
 import './styles.less'
 import React from 'react'
-import reactDom from 'react-dom'
-import touxiang from "../../../assets/images/touxiang.png";
+import {numberFilter} from '../../../filters/index'
 
 class Recommend extends React.Component {
   componentDidMount() {}
@@ -11,28 +10,37 @@ class Recommend extends React.Component {
       <div className="recommend flex justify-between wrap-wrap">
         {
           list.map((item, index) => {
+            const _item = item.song ? item.song.album : item;
             return (
               <div className="recommend-item" key={index}>
                 <div className="recommend-item-img">
-                  <img src={item.picUrl} alt="touxiang"/>
+                  <img src={_item.picUrl} alt="touxiang"/>
                   {
-                    !item.image_text ? '' : (
-                      <p>{item.image_text}</p>
+                    !_item.name ? '' : (
+                      <h3>{_item.name}</h3>
                     )
                   }
                   {
-                    item.is_free ? '' : (
-                      <p>付费精品</p>
+                    !_item.playCount ? '' : (
+                        <div className="num">
+                            <i className="iconfont icon-erji"></i>
+                            <span>{numberFilter(_item.playCount)}</span>
+                        </div>
                     )
                   }
+                  {/*{*/}
+                    {/*item.is_free ? '' : (*/}
+                      {/*<p>付费精品</p>*/}
+                    {/*)*/}
+                  {/*}*/}
                 </div>
                 <div className="recommend-item-text">
-                  {item.title}
+                  {_item.title}
                 </div>
                 {
-                  !item.sub ? '' : (
+                  !_item.sub ? '' : (
                     <div className="recommend-item-sub">
-                      {item.sub}
+                      {_item.sub}
                     </div>
                   )
                 }

@@ -11,14 +11,7 @@ class Home extends React.Component {
 
   state = {
     list_recommend: [],
-    list_new: [
-      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
-      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
-      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
-      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
-      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
-      { title: '遇见你，竟花光了所有运气。' , sub: '很想，删掉时光'},
-    ],
+    newsong: [],
     list_anchor: [
       { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
       { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
@@ -47,16 +40,16 @@ class Home extends React.Component {
     })
   }
   // 获取推荐歌单数据
-  get_personalized () {
-    personalized().then((res) => {
+  get_personalized (type) {
+    personalized(type).then((res) => {
       if (res.code === 200) {
-        this.setState({
-          list_recommend: res.result.slice(0,6)
-        });
+        let json = {};
+        let data = res.result.slice(0,6);
+        type ? json[type] = data : json['list_recommend'] = data;
+        this.setState(json);
         setTimeout(() => {
           Toast.hide();
         }, 1000);
-        console.log(res);
       }else {
         Toast.fail('Load failed !!!', 2);
       }
@@ -67,6 +60,7 @@ class Home extends React.Component {
     Toast.loading('Loading...');
     this.get_banner();
     this.get_personalized();
+    this.get_personalized('newsong');
   }
 
   render() {
@@ -102,7 +96,7 @@ class Home extends React.Component {
                   this.state.banners.map((item, index) => (
                     <div className="slider-item" key={index}>
                       <div className="slider-item-inner">
-                        <img src={item.picUrl} alt=""/>
+                        <img src={item.imageUrl} alt=""/>
                       </div>
                     </div>
                   ))
@@ -158,7 +152,7 @@ class Home extends React.Component {
                 <div className="public-title">
                   最新音乐 >
                 </div>
-                <Recommend list={this.state.list_new}></Recommend>
+                <Recommend list={this.state.newsong}></Recommend>
               </div>
               {/*最新电台*/}
               <div className="section-new">
