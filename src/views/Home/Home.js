@@ -12,14 +12,7 @@ class Home extends React.Component {
   state = {
     list_recommend: [],
     newsong: [],
-    list_anchor: [
-      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
-      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
-      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
-      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
-      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: false},
-      { title: '我有故事，你又酒吗' , image_text: '删掉时光', is_free: true},
-    ],
+    djprogram: [],
     banners: []
   };
   // 获取banner数据
@@ -61,6 +54,7 @@ class Home extends React.Component {
     this.get_banner();
     this.get_personalized();
     this.get_personalized('newsong');
+    this.get_personalized('djprogram');
   }
 
   render() {
@@ -159,7 +153,7 @@ class Home extends React.Component {
                 <div className="public-title">
                   最新电台 >
                 </div>
-                <Recommend list={this.state.list_anchor}></Recommend>
+                <Recommend list={this.state.djprogram}></Recommend>
               </div>
             </div>
 
