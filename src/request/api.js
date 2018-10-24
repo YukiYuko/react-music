@@ -21,3 +21,9 @@ export const personalized = (type) => {
         return api.get(`${BASE_URL}/personalized`)
     }
 };
+/*
+* 获取歌单详情
+* @params 必选参数 : id : 歌单 id
+* @params 可选参数 : s : 歌单最近的 s 个收藏者
+* */
+export const playlistDetail = (params) => api.get(`${BASE_URL}/playlist/detail`, params);
