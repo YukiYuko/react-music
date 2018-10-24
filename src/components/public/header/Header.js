@@ -1,24 +1,26 @@
 import React from 'react';
 import './header.less';
+
 class PublicHeader extends React.Component {
-    componentDidMount() {
-    }
+  componentDidMount() {
+  }
 
-    render() {
-        return (
-            <div className="public-header flex items-center">
-                <div className="left">
-                    <i className="iconfont icon-fanhui"></i>
-                </div>
-                <div className="center box1">
+  render() {
+    const {title} = this.props;
+    return (
+        <div className="public-header flex items-center">
+          <div className="left">
+            <i className="iconfont icon-fanhui"></i>
+          </div>
+          <div className="center box1">
+            {title}
+          </div>
+          <div className="right">
 
-                </div>
-                <div className="right">
-
-                </div>
-            </div>
-        )
-    }
+          </div>
+        </div>
+    )
+  }
 }
 
 export default PublicHeader

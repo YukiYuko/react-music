@@ -1,9 +1,24 @@
 import './styles.less'
 import React from 'react'
+import PropTypes from 'prop-types';
 import {numberFilter} from '../../../filters/index'
 
 class Recommend extends React.Component {
-  componentDidMount() {}
+  constructor (props) {
+    super(props);
+  }
+  // 这一步是重点  我们需要这样做 才能得到 history 这个东西
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
+  componentDidMount() {
+
+  }
+  goDetail (item, e) {
+    // console.log('每条数据',item);
+    // console.log('事件对象e要放在最后',e);
+    this.context.router.history.push({pathname : `/SongList/${item.id}`})
+  }
   render() {
     const {list} = this.props;
     return (
@@ -12,7 +27,7 @@ class Recommend extends React.Component {
           list.map((item, index) => {
             const _item = item.song ? item.song.album : item;
             return (
-              <div className="recommend-item" key={index}>
+              <div className="recommend-item" key={index} onClick={this.goDetail.bind(this, _item)}>
                 <div className="recommend-item-img">
                   <img src={_item.picUrl} alt="touxiang"/>
                   {
