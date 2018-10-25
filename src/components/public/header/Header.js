@@ -16,7 +16,7 @@ class PublicHeader extends React.Component {
             {title}
           </div>
           <div className="right">
-
+            {this.props.children}
           </div>
         </div>
     )
