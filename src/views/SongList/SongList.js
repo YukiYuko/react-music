@@ -5,15 +5,20 @@ import {playlistDetail} from '../../request/api';
 import {Toast} from "antd-mobile";
 import './songList.less'
 import {numberFilter} from '../../filters/index'
+import BScroll from 'better-scroll'
 
 import ColorThief from 'color-thief'
 
 class SongList extends React.Component {
   componentDidMount() {
-    this.getDetail()
+    this.getDetail();
+
+    let wrapper = document.querySelector('.wrapper');
+    let scroll = new BScroll(wrapper);
   }
   state = {
     list: '',
+    numberList: []
   };
   getDetail() {
     let {id} = this.props.match.params;
@@ -51,13 +56,14 @@ class SongList extends React.Component {
   }
 
   render() {
-    const {list} = this.state;
+    const {list,numberList} = this.state;
     return (
       <div className="songList">
         <PublicHeader title="歌单">
         </PublicHeader>
         <div className="songList_head">
           <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>
+          {/*头部信息*/}
           <div className="songList_head_text flex">
             <div className="left">
               <img src={list.coverImgUrl} alt={list.name}/>
@@ -77,9 +83,59 @@ class SongList extends React.Component {
               </p>
             </div>
           </div>
-          <div className="songList_head_menu">
 
+          {/*几个导航 评论 分享 下载 多选*/}
+          <div className="songList_head_menu flex">
+            <div className="menu-item box1 justify-center">
+              <i className="iconfont icon-liuyan"></i>
+              <p>336</p>
+            </div>
+            <div className="menu-item box1 justify-center">
+              <i className="iconfont icon-share"></i>
+              <p>829</p>
+            </div>
+            <div className="menu-item box1 justify-center">
+              <i className="iconfont icon-download"></i>
+              <p>下载</p>
+            </div>
+            <div className="menu-item box1 justify-center">
+              <i className="iconfont icon-checkbox"></i>
+              <p>多选</p>
+            </div>
           </div>
+        </div>
+
+        {/*简介信息*/}
+        <div className="songList_intro">
+          <div className="songList_intro_tag">
+            <span>标签: </span>
+            {
+              list.tags && list.tags.map((tags_item) => (
+                  <a href="">{tags_item}</a>
+              ))
+            }
+          </div>
+          <div className="songList_intro_text" dangerouslySetInnerHTML={{__html: list.description}}>
+          </div>
+        </div>
+
+        {/*歌曲列表*/}
+        <div className="wrapper songList_list">
+          <ul>
+            {
+              list.tracks && list.tracks.map((item, index) => (
+                  <li key={index} className="flex songList_list_item">
+                    <div className="left">
+                      <h3>{item.name}</h3>
+                      <p>{item.ar && item.ar[0].name}</p>
+                    </div>
+                    <div className="right">
+
+                    </div>
+                  </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     )

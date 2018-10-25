@@ -1,6 +1,6 @@
 @import "../../assets/styles/mixins";
 .songList_head{
-  padding: 1.2rem 0.2rem 0.6rem 0.3rem;
+  padding: 1.2rem 0.2rem 0.4rem 0.3rem;
   position: relative; overflow: hidden;
   .songList_head_bg{
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@
     }
   }
   .songList_head_text{
-    position: relative;
+    position: relative; margin-bottom: 0.4rem;
     .left{
       width: 2.52rem; height: 2.52rem;
       position: relative;
@@ -75,5 +75,45 @@
         }
       }
     }
+  }
+  .songList_head_menu{
+    position: relative; color: #ffffff;
+    .menu-item{
+      text-align: center;
+      i{
+        font-size: 0.5rem;
+      }
+      p{
+        font-size: 0.24rem;
+      }
+    }
+  }
+}
+.songList_intro{
+  padding: 0.2rem 0.3rem; background-color: #ffffff;
+  .songList_intro_tag{
+    margin-bottom: 0.3rem;
+    span{
+      font-size: 0.28rem;
+    }
+    a{
+      display: inline-block;
+      margin-right: 10px;
+      padding: 3px 8px;
+      font-size: 12px;
+      position: relative;
+      &:after{
+        .border;
+        border-radius: 16px;
+      }
+    }
+  }
+}
+
+.songList_list{
+  height: 5rem; overflow: hidden;
+  li{
+    height: 0.8rem; line-height: 0.8rem;
+    list-style: decimal;
   }
 }
