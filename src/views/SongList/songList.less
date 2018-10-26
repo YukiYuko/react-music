@@ -1,7 +1,15 @@
 @import "../../assets/styles/mixins";
 @import "../../assets/styles/var";
+.songList{
+  height: 100vh;
+}
+.top{
+  position: relative; z-index: 1;
+}
 .wrapper{
-  height: 100vh; overflow: hidden;
+  position: absolute;
+  width: 100%; background-color: #ffffff;
+  z-index: 100;
 }
 .songList_head{
   padding: 1.2rem 0.2rem 0.4rem 0.3rem;
@@ -171,4 +179,11 @@
     z-index: 10;
     position: relative;
   }
+}
+
+.bg-layer{
+  position: relative;
+  height: 100%;
+  background: #ffffff;
+  z-index: 100;
 }

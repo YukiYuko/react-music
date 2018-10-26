@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/var.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/var.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/public/header/header.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/header/header.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SongList/SongList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SongList/SongList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SongList/songList.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SongList/songList.less" afterDir="false" />
     </list>
@@ -89,8 +86,8 @@
         <counts>
           <entry key="css" value="29" />
           <entry key="html" value="3" />
-          <entry key="js" value="3631" />
-          <entry key="less" value="1380" />
+          <entry key="js" value="4312" />
+          <entry key="less" value="1481" />
           <entry key="vue" value="16" />
         </counts>
       </usages-collector>
@@ -98,8 +95,8 @@
         <counts>
           <entry key="CSS" value="29" />
           <entry key="HTML" value="3" />
-          <entry key="JavaScript" value="3631" />
-          <entry key="Less" value="1380" />
+          <entry key="JavaScript" value="4312" />
+          <entry key="Less" value="1481" />
           <entry key="Vue.js" value="16" />
         </counts>
       </usages-collector>
@@ -108,9 +105,9 @@
           <entry key="css" value="8" />
           <entry key="html" value="2" />
           <entry key="jpeg" value="2" />
-          <entry key="js" value="25" />
+          <entry key="js" value="26" />
           <entry key="json" value="1" />
-          <entry key="less" value="12" />
+          <entry key="less" value="13" />
           <entry key="vue" value="2" />
         </counts>
       </usages-collector>
@@ -120,15 +117,15 @@
           <entry key="HTML" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="25" />
-          <entry key="Less" value="12" />
+          <entry key="JavaScript" value="26" />
+          <entry key="Less" value="13" />
           <entry key="Vue.js" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6084112">
+    <splitter split-orientation="horizontal" split-proportion="0.5775022">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -164,13 +161,26 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/public/header/Header.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/SongList/SongList.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-865">
-                  <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="143" selection-end-column="18" />
+                <state relative-caret-position="275">
+                  <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#1784#3428#0" />
+                    <element signature="e#3458#3715#0" />
+                    <element signature="e#3744#4167#0" />
+                    <element signature="e#4478#4764#0" />
                   </folding>
                 </state>
               </provider>
@@ -219,8 +229,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/SongList/songList.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="86">
-                  <caret line="24" column="21" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="21" />
+                <state relative-caret-position="90">
+                  <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
                   <folding>
                     <element signature="e#569#1420#0" />
                   </folding>
@@ -312,12 +322,12 @@
         <option value="$PROJECT_DIR$/src/components/common/Recommend/Recommend.js" />
         <option value="$PROJECT_DIR$/src/components/public/header/Header.js" />
         <option value="$PROJECT_DIR$/src/filters/index.js" />
-        <option value="$PROJECT_DIR$/src/components/public/header/header.less" />
         <option value="$PROJECT_DIR$/src/assets/styles/var.less" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/views/SongList/listItem.js" />
         <option value="$PROJECT_DIR$/public/reset.css" />
         <option value="$PROJECT_DIR$/src/assets/styles/mixins.less" />
+        <option value="$PROJECT_DIR$/src/components/public/header/header.less" />
         <option value="$PROJECT_DIR$/src/views/SongList/songList.less" />
         <option value="$PROJECT_DIR$/src/views/SongList/SongList.js" />
       </list>
@@ -372,6 +382,27 @@
               <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-music" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-music" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
@@ -484,12 +515,12 @@
       <workItem from="1540353136542" duration="359000" />
       <workItem from="1540353531895" duration="5431000" />
       <workItem from="1540433283439" duration="15348000" />
-      <workItem from="1540519314160" duration="8000000" />
+      <workItem from="1540519314160" duration="14828000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84886000" />
+    <option name="totallyTimeSpent" value="91714000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,19 +535,19 @@
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7090909" visible="true" weight="0.1487669" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7085954" visible="true" weight="0.12808274" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.29090908" side_tool="true" visible="true" weight="0.1487669" />
+      <window_info id="npm" order="2" sideWeight="0.2914046" side_tool="true" visible="true" weight="0.12808274" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16946308" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32718122" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2533557" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19966443" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297619" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -678,18 +709,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/images/touxiang.jpeg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/public/header/header.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/flex.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -788,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/public/header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/request/fetch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -816,10 +836,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/public/header/header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/public/header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/SongList/songList.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="90">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
           <folding>
             <element signature="e#569#1420#0" />
           </folding>
@@ -828,10 +862,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/SongList/SongList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-865">
-          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="143" selection-end-column="18" />
+        <state relative-caret-position="275">
+          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#1784#3428#0" />
+            <element signature="e#3458#3715#0" />
+            <element signature="e#3744#4167#0" />
+            <element signature="e#4478#4764#0" />
           </folding>
         </state>
       </provider>

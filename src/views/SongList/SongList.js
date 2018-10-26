@@ -14,13 +14,33 @@ class SongList extends React.Component {
   componentDidMount() {
     this.getDetail();
 
-    let wrapper = document.querySelector('.wrapper');
-    let scroll = new BScroll(wrapper);
+    this.wrapper = document.querySelector('.wrapper');
+    this.top = document.querySelector('.top').clientHeight;
+    let h = window.innerHeight;
+    this.wrapper.style.top = this.top + 'px';
+    this.wrapper.style.bottom = 0 + 'px';
+    this.scroll = new BScroll('.wrapper',{
+      probeType: 3
+    });
+    this.watch_scroll();
   }
   state = {
     list: '',
     numberList: []
   };
+  // 监听滚动
+  watch_scroll () {
+    this.scroll.on('scroll',  (pos) => {
+      let y = pos.y;
+      let layer = document.querySelector('.bg-layer');
+      console.log(this.top);
+      console.log(y + this.top - 45);
+      if (y + this.top - 45 >= 0) {
+        layer.style.transform = `translate3d(0,${y}px,0)`;
+      }
+    })
+  }
+  // 获取详情数据
   getDetail() {
     let {id} = this.props.match.params;
     let params = {
@@ -61,54 +81,58 @@ class SongList extends React.Component {
     return (
       <div className="songList">
         <PublicHeader title="歌单"/>
-        <div className="wrapper">
-          <div className="wrapper-container">
-            <div className="songList_head">
-              <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>
-              {/*头部信息*/}
-              <div className="songList_head_text flex">
-                <div className="left">
-                  <img src={list.coverImgUrl} alt={list.name}/>
-                  <span className="left-icon">
-                歌单
-              </span>
-                  <span className="left-num">
-                <i className="iconfont icon-erji"/>
-                <em>{numberFilter(list.playCount)}</em>
-              </span>
-                </div>
-                <div className="right box1">
-                  <h3>{list.name}</h3>
-                  <p>
-                    <img src={list.creator && list.creator.avatarUrl} alt={list.creator && list.creator.nickname}/>
-                    <span>{list.creator && list.creator.nickname}</span>
-                  </p>
-                </div>
+        <div className="top">
+          <div className="songList_head">
+            <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>
+            {/*头部信息*/}
+            <div className="songList_head_text flex">
+              <div className="left">
+                <img src={list.coverImgUrl} alt={list.name}/>
+                <span className="left-icon">
+            歌单
+          </span>
+                <span className="left-num">
+            <i className="iconfont icon-erji"/>
+            <em>{numberFilter(list.playCount)}</em>
+          </span>
               </div>
-
-              {/*几个导航 评论 分享 下载 多选*/}
-              <div className="songList_head_menu flex">
-                <div className="menu-item box1 justify-center">
-                  <i className="iconfont icon-liuyan"></i>
-                  <p>336</p>
-                </div>
-                <div className="menu-item box1 justify-center">
-                  <i className="iconfont icon-share"></i>
-                  <p>829</p>
-                </div>
-                <div className="menu-item box1 justify-center">
-                  <i className="iconfont icon-download"></i>
-                  <p>下载</p>
-                </div>
-                <div className="menu-item box1 justify-center">
-                  <i className="iconfont icon-checkbox"></i>
-                  <p>多选</p>
-                </div>
+              <div className="right box1">
+                <h3>{list.name}</h3>
+                <p>
+                  <img src={list.creator && list.creator.avatarUrl} alt={list.creator && list.creator.nickname}/>
+                  <span>{list.creator && list.creator.nickname}</span>
+                </p>
               </div>
             </div>
 
-            {/*播放全部*/}
+            {/*几个导航 评论 分享 下载 多选*/}
+            <div className="songList_head_menu flex">
+              <div className="menu-item box1 justify-center">
+                <i className="iconfont icon-liuyan"></i>
+                <p>336</p>
+              </div>
+              <div className="menu-item box1 justify-center">
+                <i className="iconfont icon-share"></i>
+                <p>829</p>
+              </div>
+              <div className="menu-item box1 justify-center">
+                <i className="iconfont icon-download"></i>
+                <p>下载</p>
+              </div>
+              <div className="menu-item box1 justify-center">
+                <i className="iconfont icon-checkbox"></i>
+                <p>多选</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        {/*专业背景*/}
+        <div className="bg-layer"></div>
+        {/*专业背景*/}
+        <div className="wrapper">
+          <div className="wrapper-container">
+            {/*播放全部*/}
             <div className="play_all flex">
               <a className="box1 left">
                 <i className="iconfont icon-bofang"></i>
@@ -132,6 +156,7 @@ class SongList extends React.Component {
               </div>
             </div>
 
+
             {/*歌曲列表*/}
             <div className="songList_list">
               <ul>
@@ -143,7 +168,6 @@ class SongList extends React.Component {
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     )
