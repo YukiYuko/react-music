@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/public/header/header.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/header/header.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SongList/SongList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SongList/SongList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SongList/songList.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SongList/songList.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -86,8 +84,8 @@
         <counts>
           <entry key="css" value="29" />
           <entry key="html" value="3" />
-          <entry key="js" value="4312" />
-          <entry key="less" value="1481" />
+          <entry key="js" value="4352" />
+          <entry key="less" value="1494" />
           <entry key="vue" value="16" />
         </counts>
       </usages-collector>
@@ -95,8 +93,8 @@
         <counts>
           <entry key="CSS" value="29" />
           <entry key="HTML" value="3" />
-          <entry key="JavaScript" value="4312" />
-          <entry key="Less" value="1481" />
+          <entry key="JavaScript" value="4352" />
+          <entry key="Less" value="1494" />
           <entry key="Vue.js" value="16" />
         </counts>
       </usages-collector>
@@ -107,7 +105,7 @@
           <entry key="jpeg" value="2" />
           <entry key="js" value="26" />
           <entry key="json" value="1" />
-          <entry key="less" value="13" />
+          <entry key="less" value="14" />
           <entry key="vue" value="2" />
         </counts>
       </usages-collector>
@@ -118,14 +116,14 @@
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="26" />
-          <entry key="Less" value="13" />
+          <entry key="Less" value="14" />
           <entry key="Vue.js" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5775022">
+    <splitter split-orientation="horizontal" split-proportion="0.6021898">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -149,35 +147,13 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/common/Recommend/Recommend.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-                  <folding>
-                    <element signature="e#0#22#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/public/header/Header.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/SongList/SongList.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+                <state relative-caret-position="291">
+                  <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
-                    <element signature="e#1784#3428#0" />
                     <element signature="e#3458#3715#0" />
                     <element signature="e#3744#4167#0" />
                     <element signature="e#4478#4764#0" />
@@ -229,11 +205,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/SongList/songList.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-                  <folding>
-                    <element signature="e#569#1420#0" />
-                  </folding>
+                <state relative-caret-position="45">
+                  <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -328,8 +301,8 @@
         <option value="$PROJECT_DIR$/public/reset.css" />
         <option value="$PROJECT_DIR$/src/assets/styles/mixins.less" />
         <option value="$PROJECT_DIR$/src/components/public/header/header.less" />
-        <option value="$PROJECT_DIR$/src/views/SongList/songList.less" />
         <option value="$PROJECT_DIR$/src/views/SongList/SongList.js" />
+        <option value="$PROJECT_DIR$/src/views/SongList/songList.less" />
       </list>
     </option>
   </component>
@@ -515,12 +488,12 @@
       <workItem from="1540353136542" duration="359000" />
       <workItem from="1540353531895" duration="5431000" />
       <workItem from="1540433283439" duration="15348000" />
-      <workItem from="1540519314160" duration="14828000" />
+      <workItem from="1540519314160" duration="16298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91714000" />
+    <option name="totallyTimeSpent" value="93184000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -535,9 +508,9 @@
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7085954" visible="true" weight="0.12808274" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70875764" visible="true" weight="0.12808274" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.2914046" side_tool="true" visible="true" weight="0.12808274" />
+      <window_info id="npm" order="2" sideWeight="0.29124236" side_tool="true" visible="true" weight="0.12808274" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -547,7 +520,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.19966443" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.17617449" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3297619" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -774,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Home/Home.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -850,27 +816,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/SongList/songList.less">
+    <entry file="file://$PROJECT_DIR$/src/views/Home/Home.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <element signature="e#569#1420#0" />
-          </folding>
+        <state>
+          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/SongList/SongList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+        <state relative-caret-position="291">
+          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#1784#3428#0" />
             <element signature="e#3458#3715#0" />
             <element signature="e#3744#4167#0" />
             <element signature="e#4478#4764#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/SongList/songList.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
         </state>
       </provider>
     </entry>
