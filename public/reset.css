@@ -10,10 +10,11 @@ html, body {
 }
 
 body {
-  background-color: #f5f5f5;
+  background:none !important;
   font-size: 0.24rem;
   -webkit-font-smoothing: antialiased;
   font-family: arial, sans-serif;
+  color: #444444;
 }
 
 body, img, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, iframe {
@@ -32,6 +33,7 @@ article, aside, details, figcaption, figure, footer, header, menu, nav, section,
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
+  font-weight:normal;
 }
 
 img{ object-fit: cover; }
@@ -46,7 +48,7 @@ address, caption, cite, dfn, em, th, var, i, em {
 }
 
 ol, ul {
-  list-style: none;
+  /*list-style: none;*/
 }
 
 a {

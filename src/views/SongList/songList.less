@@ -1,4 +1,8 @@
 @import "../../assets/styles/mixins";
+@import "../../assets/styles/var";
+.wrapper{
+  height: 100vh; overflow: hidden;
+}
 .songList_head{
   padding: 1.2rem 0.2rem 0.4rem 0.3rem;
   position: relative; overflow: hidden;
@@ -91,6 +95,10 @@
 }
 .songList_intro{
   padding: 0.2rem 0.3rem; background-color: #ffffff;
+  position: relative;
+  &:after{
+    .bottom-line()
+  }
   .songList_intro_tag{
     margin-bottom: 0.3rem;
     span{
@@ -111,9 +119,56 @@
 }
 
 .songList_list{
-  height: 5rem; overflow: hidden;
-  li{
-    height: 0.8rem; line-height: 0.8rem;
-    list-style: decimal;
+  .songList_list_item{
+    padding: 0 0.3rem;
+    &:before{
+      content:" "attr(index)" ";
+      font-size: 0.32rem; color: @base_gray_text;
+      margin-right: 0.3rem;
+    }
+    .left{
+      position: relative; padding: 0.2rem 0;
+      &:after{
+        .bottom-line();
+      }
+      h3{
+        font-size: 0.34rem; margin-bottom: 0.1rem;
+        max-width: 80%;
+        .ellipsis;
+      }
+      p{
+        font-size: 12px;
+        color: @base_gray_text;
+      }
+      .icon{
+        position: absolute; right: 0;
+        transform: translateY(-50%); top: 50%;
+        i{
+          font-size: 0.45rem;
+        }
+      }
+    }
+  }
+}
+
+.play_all{
+  height: 0.9rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  //overflow: hidden;
+  line-height: 0.9rem;
+  position: relative;
+  &:after{
+    .bottom-line()
+  }
+  .left{
+    padding-left: 0.3rem;
+  }
+  .right{
+    background-color: #d33a31;
+    width: 2rem; color: #ffffff;
+    text-align: center;
+    z-index: 10;
+    position: relative;
   }
 }

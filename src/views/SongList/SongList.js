@@ -6,6 +6,7 @@ import {Toast} from "antd-mobile";
 import './songList.less'
 import {numberFilter} from '../../filters/index'
 import BScroll from 'better-scroll'
+import ListItem from './listItem'
 
 import ColorThief from 'color-thief'
 
@@ -59,83 +60,90 @@ class SongList extends React.Component {
     const {list,numberList} = this.state;
     return (
       <div className="songList">
-        <PublicHeader title="歌单">
-        </PublicHeader>
-        <div className="songList_head">
-          <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>
-          {/*头部信息*/}
-          <div className="songList_head_text flex">
-            <div className="left">
-              <img src={list.coverImgUrl} alt={list.name}/>
-              <span className="left-icon">
+        <PublicHeader title="歌单"/>
+        <div className="wrapper">
+          <div className="wrapper-container">
+            <div className="songList_head">
+              <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>
+              {/*头部信息*/}
+              <div className="songList_head_text flex">
+                <div className="left">
+                  <img src={list.coverImgUrl} alt={list.name}/>
+                  <span className="left-icon">
                 歌单
               </span>
-              <span className="left-num">
+                  <span className="left-num">
                 <i className="iconfont icon-erji"/>
                 <em>{numberFilter(list.playCount)}</em>
               </span>
+                </div>
+                <div className="right box1">
+                  <h3>{list.name}</h3>
+                  <p>
+                    <img src={list.creator && list.creator.avatarUrl} alt={list.creator && list.creator.nickname}/>
+                    <span>{list.creator && list.creator.nickname}</span>
+                  </p>
+                </div>
+              </div>
+
+              {/*几个导航 评论 分享 下载 多选*/}
+              <div className="songList_head_menu flex">
+                <div className="menu-item box1 justify-center">
+                  <i className="iconfont icon-liuyan"></i>
+                  <p>336</p>
+                </div>
+                <div className="menu-item box1 justify-center">
+                  <i className="iconfont icon-share"></i>
+                  <p>829</p>
+                </div>
+                <div className="menu-item box1 justify-center">
+                  <i className="iconfont icon-download"></i>
+                  <p>下载</p>
+                </div>
+                <div className="menu-item box1 justify-center">
+                  <i className="iconfont icon-checkbox"></i>
+                  <p>多选</p>
+                </div>
+              </div>
             </div>
-            <div className="right">
-              <h3>{list.name}</h3>
-              <p>
-                <img src={list.creator && list.creator.avatarUrl} alt={list.creator && list.creator.nickname}/>
-                <span>{list.creator && list.creator.nickname}</span>
-              </p>
+
+            {/*播放全部*/}
+
+            <div className="play_all flex">
+              <a className="box1 left">
+                <i className="iconfont icon-bofang"></i>
+                <span>播放全部</span>
+                <em>(共 123 首)</em>
+              </a>
+              <a className="right">+ 收藏(8604)</a>
+            </div>
+
+            {/*简介信息*/}
+            <div className="songList_intro">
+              <div className="songList_intro_tag">
+                <span>标签: </span>
+                {
+                  list.tags && list.tags.map((tags_item) => (
+                      <a href="" key={tags_item}>{tags_item}</a>
+                  ))
+                }
+              </div>
+              <div className="songList_intro_text" dangerouslySetInnerHTML={{__html: list.description}}>
+              </div>
+            </div>
+
+            {/*歌曲列表*/}
+            <div className="songList_list">
+              <ul>
+                {
+                  list.tracks && list.tracks.map((item, index) => (
+                      <ListItem item={item} key={index} index={index}/>
+                  ))
+                }
+              </ul>
             </div>
           </div>
 
-          {/*几个导航 评论 分享 下载 多选*/}
-          <div className="songList_head_menu flex">
-            <div className="menu-item box1 justify-center">
-              <i className="iconfont icon-liuyan"></i>
-              <p>336</p>
-            </div>
-            <div className="menu-item box1 justify-center">
-              <i className="iconfont icon-share"></i>
-              <p>829</p>
-            </div>
-            <div className="menu-item box1 justify-center">
-              <i className="iconfont icon-download"></i>
-              <p>下载</p>
-            </div>
-            <div className="menu-item box1 justify-center">
-              <i className="iconfont icon-checkbox"></i>
-              <p>多选</p>
-            </div>
-          </div>
-        </div>
-
-        {/*简介信息*/}
-        <div className="songList_intro">
-          <div className="songList_intro_tag">
-            <span>标签: </span>
-            {
-              list.tags && list.tags.map((tags_item) => (
-                  <a href="">{tags_item}</a>
-              ))
-            }
-          </div>
-          <div className="songList_intro_text" dangerouslySetInnerHTML={{__html: list.description}}>
-          </div>
-        </div>
-
-        {/*歌曲列表*/}
-        <div className="wrapper songList_list">
-          <ul>
-            {
-              list.tracks && list.tracks.map((item, index) => (
-                  <li key={index} className="flex songList_list_item">
-                    <div className="left">
-                      <h3>{item.name}</h3>
-                      <p>{item.ar && item.ar[0].name}</p>
-                    </div>
-                    <div className="right">
-
-                    </div>
-                  </li>
-              ))
-            }
-          </ul>
         </div>
       </div>
     )

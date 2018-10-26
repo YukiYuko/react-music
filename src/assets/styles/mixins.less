@@ -135,7 +135,22 @@
 }
 
 // 多行超出省略.......
+.ellipsis-more{
+  overflow: hidden;
+  text-overflow:ellipsis;//文本溢出显示省略号
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 // ------------------------------------------------------------------------------
+
+// 单行超出省略
+.ellipsis{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
 
 // 绝对定位
 .abs{
