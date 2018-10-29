@@ -1,0 +1,20 @@
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
+.play{
+  padding-top: 45px;
+  .song_intro{
+    width: 66%; margin: auto; text-align: center;
+    .author{
+      color: @base_gray_text; padding: 0.3rem 0; position: relative;
+      &:after{
+        .bottom-line();
+      }
+    }
+    .edit{
+      color: @base_black_text; padding: 0.2rem 0; font-size: 0.24rem;
+      span{
+
+      }
+    }
+  }
+}

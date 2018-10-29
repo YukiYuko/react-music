@@ -15,9 +15,9 @@ class PublicHeader extends React.Component {
   }
 
   render() {
-    const {title} = this.props;
+    const {title, color = '#fff'} = this.props;
     return (
-        <div className="public-header flex items-center">
+        <div className="public-header flex items-center" style={{'color': color }}>
           <div className="left" onClick={this.context.router.history.goBack}>
             <i className="iconfont icon-fanhui"></i>
           </div>

@@ -7,6 +7,7 @@ import Video from './views/Video/Video'
 import Friend from './views/Friend/Friend'
 import Setting from './views/Setting/Setting'
 import SongList from './views/SongList/SongList'
+import Play from './views/Play/Play'
 import './App.css';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path='/Friend' component={Friend}/>
           <Route exact path='/Setting' component={Setting}/>
           <Route exact path='/SongList/:id' component={SongList}/>
+          <Route exact path='/Play' component={Play}/>
         </Switch>
       </div>
     );
