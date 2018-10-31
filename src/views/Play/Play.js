@@ -11,7 +11,9 @@ class Play extends React.Component {
     currentTotalTime: '',
     left: 0,
     startX: 0,
-    moveX: 0
+    moveX: 0,
+    // 播放类型 random: 0，single: 1, order: 2
+    playType: 2
   };
 
   componentDidMount() {
@@ -43,7 +45,25 @@ class Play extends React.Component {
       }, function () {
       });
     } else {
+      // 此情况为音频已播放至最后
 
+      if (this.state.playType === 1) {
+      // 单曲循环
+      // currentTime归零，并且手动将audio的currentTime设为0，并手动执行play()
+        this.setState({
+          currentTime: 0
+        }, () => {
+          this.x.currentTime = this.state.currentTime;
+          this.x.play();
+        })
+
+      } else if (this.state.playType === 0) {
+      // 随机播放
+
+      } else {
+      // 列表循环
+
+      }
     }
   }
   // 准备好播放的时候
@@ -132,14 +152,36 @@ class Play extends React.Component {
     }
   }
   // 结束拖动
-  pointEnd () {
+  pointEnd (e) {
     console.log('拖动结束');
+    e.preventDefault();
+    //关于300ms的setTimeout，一是为了体验的良好，大家在做的时候可以试试不要300ms的延迟，会发现收听体验不好，音频的播放十分仓促。
+    //另外还有一点是，audio的pause与play间隔过短会出现报错，导致audio无法准确的执行相应的动作。
+    if (this.state.currentTime < this.state.currentTotalTime) {
+      setTimeout(() =>{
+        this.play();
+      }, 300)
+    }
+  }
+  // 切换播放类型
+  switchType () {
+    if (this.state.playType >= 2) {
+      this.state.playType = 0;
+      this.setState({
+        playType: this.state.playType
+      })
+    } else {
+      this.state.playType++;
+      this.setState({
+        playType: this.state.playType
+      })
+    }
   }
 
 
-
   render() {
-    const {isPlay, currentTime, currentTotalTime, left} = this.state;
+    const {isPlay, currentTime, currentTotalTime, left, playType} = this.state;
+    const playTypeClass = ['icon-suijibofang01', 'icon-danquxunhuan', 'icon-liebiaoxunhuan'][playType];
     return (
         <div className="play">
           <PublicHeader title="流月人间" color="#444"/>
@@ -166,7 +208,7 @@ class Play extends React.Component {
           <div className="play_group">
             <div className="play_btn flex items-center">
               <div className="left">
-                <a><i className="iconfont icon-danquxunhuan"></i></a>
+                <a onClick={() => this.switchType()}><i className={`iconfont ${playTypeClass}`}></i></a>
               </div>
               <div className="center flex justify-between box1">
                 <a><i className="iconfont icon-shangyiqu"></i></a>
