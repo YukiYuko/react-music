@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Play/Play.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Play/Play.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -86,7 +85,7 @@
         <counts>
           <entry key="css" value="29" />
           <entry key="html" value="37" />
-          <entry key="js" value="8908" />
+          <entry key="js" value="9425" />
           <entry key="less" value="2322" />
           <entry key="vue" value="16" />
         </counts>
@@ -95,7 +94,7 @@
         <counts>
           <entry key="CSS" value="29" />
           <entry key="HTML" value="37" />
-          <entry key="JavaScript" value="8908" />
+          <entry key="JavaScript" value="9425" />
           <entry key="Less" value="2322" />
           <entry key="Vue.js" value="16" />
         </counts>
@@ -127,7 +126,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.84007525">
+    <splitter split-orientation="horizontal" split-proportion="0.83044666">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -145,8 +144,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Play/Play.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="250">
-                  <caret line="197" column="137" selection-start-line="197" selection-start-column="137" selection-end-line="197" selection-end-column="137" />
+                <state relative-caret-position="404">
+                  <caret line="232" column="52" selection-start-line="232" selection-start-column="52" selection-end-line="232" selection-end-column="52" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -179,8 +178,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Play/play.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+                <state relative-caret-position="180">
+                  <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
                   <folding>
                     <element signature="e#149#447#0" />
                   </folding>
@@ -236,6 +235,7 @@
       <find>300</find>
       <find>R</find>
       <find>cxt</find>
+      <find>myAudio</find>
     </findStrings>
     <replaceStrings>
       <replace>this.ctx</replace>
@@ -448,12 +448,12 @@
       <workItem from="1540950636510" duration="1821000" />
       <workItem from="1540955912461" duration="10000" />
       <workItem from="1540955956548" duration="7282000" />
-      <workItem from="1541036041131" duration="3270000" />
+      <workItem from="1541036041131" duration="10418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131648000" />
+    <option name="totallyTimeSpent" value="138796000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,19 +468,19 @@
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6877729" visible="true" weight="0.15433572" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6891304" visible="true" weight="0.1272872" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.31222707" side_tool="true" visible="true" weight="0.15433572" />
+      <window_info id="npm" order="2" sideWeight="0.31086957" side_tool="true" visible="true" weight="0.1272872" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23154363" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22818792" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.26174498" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.34228188" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -819,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Play/play.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="180">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding>
             <element signature="e#149#447#0" />
           </folding>
@@ -829,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Play/Play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="197" column="137" selection-start-line="197" selection-start-column="137" selection-end-line="197" selection-end-column="137" />
+        <state relative-caret-position="404">
+          <caret line="232" column="52" selection-start-line="232" selection-start-column="52" selection-end-line="232" selection-end-column="52" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

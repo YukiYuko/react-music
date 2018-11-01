@@ -185,28 +185,53 @@ class Play extends React.Component {
     this.ctx = this.myCanvas.getContext('2d');
     this.myCanvas.width = window.innerWidth;
     this.myCanvas.height = this.myCanvas.width;
-    let R = this.myCanvas.width / 2 - 50;
+    //获取API
+    let AudioContext = window.AudioContext || window.webkitAudioContext;
+    //实例化AudioContext对象
+    this.context = new AudioContext();
+    //加载媒体  this.x
 
+    //创建节点
+    this.source = this.context.createMediaElementSource(this.x);
+    this.analyser = this.context.createAnalyser();
+
+    //连接：source → analyser → destination
+    this.source.connect(this.analyser);
+    this.analyser.connect(this.context.destination);
+
+    this.output = new Uint8Array(360);
+
+    // 开始绘制
+    this.drawSpectrum();
+
+  }
+
+  // 绘制
+  drawSpectrum () {
+    //创建数据
+    let R = this.myCanvas.width / 2;
+    this.analyser.getByteFrequencyData(this.output);//获取频域数据
     this.ctx.clearRect(0, 0, this.myCanvas.width, this.myCanvas.height);
     //画线条
-    for (var i = 0; i < 360; i++) {
-      var value = 8;
+    for (let i = 0; i < this.output.length; i+=1.5) {
+      let value = this.output[i] / 8;//<===获取数据
       this.ctx.beginPath();
       this.ctx.lineWidth = 2;
       this.ctx.moveTo(R, R);
       //R * cos (PI/180*一次旋转的角度数) ,-R * sin (PI/180*一次旋转的角度数)
-      this.ctx.lineTo(Math.cos((i * 1) / 180 * Math.PI) * (R + value) + R, (- Math.sin((i * 1) / 180 * Math.PI) * (R + value) + R));
+      this.ctx.lineTo(Math.cos( i*Math.PI / 180) * (150 + value) + R, Math.sin( i*Math.PI / 180) * (150 + value) + R);
       this.ctx.stroke();
     }
     //画一个小圆，将线条覆盖
-    // this.ctx.beginPath();
-    // this.ctx.lineWidth = 1;
-    // this.ctx.arc(300, 300, 200, 0, 2 * Math.PI, false);
-    // this.ctx.fillStyle = "#fff";
-    // this.ctx.stroke();
-    // this.ctx.fill();
+    this.ctx.beginPath();
+    this.ctx.lineWidth = 1;
+    this.ctx.arc(R, R, 140, 0, 2 * Math.PI, false);
+    this.ctx.fillStyle = "#fff";
+    this.ctx.stroke();
+    this.ctx.fill();
+    //请求下一帧
+    requestAnimationFrame(() => {this.drawSpectrum()})
   }
-
 
   render() {
     const {isPlay, currentTime, currentTotalTime, left, playType} = this.state;
