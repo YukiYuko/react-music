@@ -27,6 +27,8 @@ class Play extends React.Component {
     this.offsetWindowLeft = document.querySelector('.progressBar').offsetLeft;
     // 初始化拖动
     this.initListenTouch();
+    // 初始化canvas
+    this.initCanvas();
   }
 
   // 播放与暂停
@@ -177,6 +179,33 @@ class Play extends React.Component {
       })
     }
   }
+  // 构建canvas
+  initCanvas () {
+    this.myCanvas = document.getElementById('myCanvas');
+    this.ctx = this.myCanvas.getContext('2d');
+    this.myCanvas.width = window.innerWidth;
+    this.myCanvas.height = this.myCanvas.width;
+    let R = this.myCanvas.width / 2 - 50;
+
+    this.ctx.clearRect(0, 0, this.myCanvas.width, this.myCanvas.height);
+    //画线条
+    for (var i = 0; i < 360; i++) {
+      var value = 8;
+      this.ctx.beginPath();
+      this.ctx.lineWidth = 2;
+      this.ctx.moveTo(R, R);
+      //R * cos (PI/180*一次旋转的角度数) ,-R * sin (PI/180*一次旋转的角度数)
+      this.ctx.lineTo(Math.cos((i * 1) / 180 * Math.PI) * (R + value) + R, (- Math.sin((i * 1) / 180 * Math.PI) * (R + value) + R));
+      this.ctx.stroke();
+    }
+    //画一个小圆，将线条覆盖
+    // this.ctx.beginPath();
+    // this.ctx.lineWidth = 1;
+    // this.ctx.arc(300, 300, 200, 0, 2 * Math.PI, false);
+    // this.ctx.fillStyle = "#fff";
+    // this.ctx.stroke();
+    // this.ctx.fill();
+  }
 
 
   render() {
@@ -202,6 +231,7 @@ class Play extends React.Component {
             >
               您的浏览器不支持 audio 标签。
             </audio>
+            <canvas id="myCanvas"></canvas>
           </div>
 
           {/*播放相关操作*/}
