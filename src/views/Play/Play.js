@@ -1,7 +1,9 @@
 import React from 'react';
 import './play.less';
 import PublicHeader from '../../components/public/header/Header';
-import mp3 from '../../assets/mp3/daojiangxing.mp3'
+import mp3 from '../../assets/mp3/daojiangxing.mp3';
+import {songDetail, songUrl} from '../../request/api';
+import {Toast} from "antd-mobile";
 
 class Play extends React.Component {
 
@@ -13,7 +15,9 @@ class Play extends React.Component {
     startX: 0,
     moveX: 0,
     // 播放类型 random: 0，single: 1, order: 2
-    playType: 2
+    playType: 2,
+    song: '',
+    url: ''
   };
 
   componentDidMount() {
@@ -29,6 +33,42 @@ class Play extends React.Component {
     this.initListenTouch();
     // 初始化canvas
     this.initCanvas();
+    // 获取音乐ID
+    this.id = this.props.match.params.id;
+    console.log(this.id)
+    // 获取音乐链接
+    this.getSongUrl();
+    // 获取音乐详情
+    this.getSongDetail();
+  }
+
+  // 获取音乐链接
+  getSongUrl ()  {
+    songUrl({id: this.id}).then((res) => {
+      if (res.code === 200) {
+        this.setState({
+          url: res.data[0].url
+        }, () => {
+          console.log(this.state.url)
+        });
+      }else {
+        Toast.fail('Load failed !!!', 2);
+      }
+    })
+  }
+  // 获取音乐详情
+  getSongDetail () {
+    songDetail({ids: this.id}).then((res) => {
+      if (res.code === 200) {
+        this.setState({
+          song: res.songs[0]
+        }, () => {
+          console.log(this.state.song)
+        });
+      }else {
+        Toast.fail('Load failed !!!', 2);
+      }
+    })
   }
 
   // 播放与暂停
@@ -199,7 +239,7 @@ class Play extends React.Component {
     this.source.connect(this.analyser);
     this.analyser.connect(this.context.destination);
 
-    this.output = new Uint8Array(360);
+    this.output = new Uint8Array(361);
 
     // 开始绘制
     this.drawSpectrum();
@@ -215,12 +255,21 @@ class Play extends React.Component {
     //画线条
     for (let i = 0; i < this.output.length; i+=1.5) {
       let value = this.output[i] / 8;//<===获取数据
+
       this.ctx.beginPath();
       this.ctx.lineWidth = 2;
       this.ctx.moveTo(R, R);
       //R * cos (PI/180*一次旋转的角度数) ,-R * sin (PI/180*一次旋转的角度数)
-      this.ctx.lineTo(Math.cos( i*Math.PI / 180) * (150 + value) + R, Math.sin( i*Math.PI / 180) * (150 + value) + R);
+      this.ctx.lineTo(Math.cos( (i*0.5 + 90)*Math.PI / 180) * (150 + value) + R, Math.sin( (i*0.5 + 90)*Math.PI / 180) * (150 + value) + R);
       this.ctx.stroke();
+
+      this.ctx.beginPath();
+      this.ctx.lineWidth = 2;
+      this.ctx.moveTo(R, R);
+      //R * cos (PI/180*一次旋转的角度数) ,-R * sin (PI/180*一次旋转的角度数)
+      this.ctx.lineTo(Math.sin( (i*0.5)*Math.PI / 180) * (150 + value) + R, Math.cos( (i*0.5)*Math.PI / 180) * (150 + value) + R);
+      this.ctx.stroke();
+
     }
     //画一个小圆，将线条覆盖
     this.ctx.beginPath();
@@ -234,13 +283,19 @@ class Play extends React.Component {
   }
 
   render() {
-    const {isPlay, currentTime, currentTotalTime, left, playType} = this.state;
+    const {isPlay,
+      currentTime,
+      currentTotalTime,
+      left,
+      playType,
+      song,
+      url} = this.state;
     const playTypeClass = ['icon-suijibofang01', 'icon-danquxunhuan', 'icon-liebiaoxunhuan'][playType];
     return (
         <div className="play">
-          <PublicHeader title="流月人间" color="#444"/>
+          <PublicHeader title={song.name} color="#444"/>
           <div className="song_intro">
-            <div className="author">河图</div>
+            <div className="author">{song.ar && song.ar[0].name}</div>
             <div className="edit flex justify-between">
               <div><p>作曲</p> <br/> <p>骆集益</p></div>
               <div><p>作词</p> <br/> <p>鸾凤鸣</p></div>
@@ -250,7 +305,8 @@ class Play extends React.Component {
 
           {/*歌词等*/}
           <div className="play_box">
-            <audio id="myAudio" src={mp3}
+            <audio id="myAudio" src={url}
+                   crossOrigin="anonymous"
                    onTimeUpdate={() => this.handleTimeUpdate()}
                    onCanPlay={() => this.handleAudioCanplay()}
             >
