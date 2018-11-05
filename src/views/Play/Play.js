@@ -293,61 +293,66 @@ class Play extends React.Component {
     const playTypeClass = ['icon-suijibofang01', 'icon-danquxunhuan', 'icon-liebiaoxunhuan'][playType];
     return (
         <div className="play">
-          <PublicHeader title={song.name} color="#444"/>
-          <div className="song_intro">
-            <div className="author">{song.ar && song.ar[0].name}</div>
-            <div className="edit flex justify-between">
-              <div><p>作曲</p> <br/> <p>骆集益</p></div>
-              <div><p>作词</p> <br/> <p>鸾凤鸣</p></div>
-              <div><p>编曲</p> <br/> <p>恒涳</p></div>
-            </div>
+          <div className="playBg" style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}>
           </div>
-
-          {/*歌词等*/}
-          <div className="play_box">
-            <audio id="myAudio" src={url}
-                   crossOrigin="anonymous"
-                   onTimeUpdate={() => this.handleTimeUpdate()}
-                   onCanPlay={() => this.handleAudioCanplay()}
-            >
-              您的浏览器不支持 audio 标签。
-            </audio>
-            <canvas id="myCanvas"></canvas>
-          </div>
-
-          {/*播放相关操作*/}
-          <div className="play_group">
-            <div className="play_btn flex items-center">
-              <div className="left">
-                <a onClick={() => this.switchType()}><i className={`iconfont ${playTypeClass}`}></i></a>
-              </div>
-              <div className="center flex justify-between box1">
-                <a><i className="iconfont icon-shangyiqu"></i></a>
-                <a onClick={this.play.bind(this)}><i className={`iconfont ${this.state.isPlay ? 'icon-zanting' : 'icon-bofang1'}`}></i></a>
-                <a><i className="iconfont icon-xiayiqu"></i></a>
-              </div>
-              <div className="right">
-                <a><i className="iconfont icon-liebiao"></i></a>
+          <div className="playBox">
+            <PublicHeader title={song.name} color="#444"/>
+            <div className="song_intro">
+              <div className="author">{song.ar && song.ar[0].name}</div>
+              <div className="edit flex justify-between">
+                <div><p>作曲</p> <br/> <p>骆集益</p></div>
+                <div><p>作词</p> <br/> <p>鸾凤鸣</p></div>
+                <div><p>编曲</p> <br/> <p>恒涳</p></div>
               </div>
             </div>
-            <div className="play_progress flex items-center justify-between">
-              <div className="left">
-                {this.s_to_hs(currentTime)}
-              </div>
-              <div className="center progressBar">
-                <div className="line1"></div>
-                <div className="line2" style={{'width': `${currentTime/currentTotalTime * this.xWithd}px`}}></div>
-                <div className="circle" style={{'left': `${currentTime/currentTotalTime * this.xWithd}px`}}></div>
-              </div>
-              <div className="right">
-                {this.s_to_hs(currentTotalTime)}
-              </div>
+
+            {/*歌词等*/}
+            <div className="play_box">
+              <audio id="myAudio" src={url}
+                     crossOrigin="anonymous"
+                     onTimeUpdate={() => this.handleTimeUpdate()}
+                     onCanPlay={() => this.handleAudioCanplay()}
+              >
+                您的浏览器不支持 audio 标签。
+              </audio>
+              <canvas id="myCanvas"></canvas>
+              <div className="playImg" style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}></div>
             </div>
-            <div className="play_share flex items-center justify-between">
-              <a><i className="iconfont icon-xihuan1 icon_suki"></i></a>
-              <a><i className="iconfont icon-download"></i></a>
-              <a><i className="iconfont icon-share"></i></a>
-              <a><i className="iconfont icon-liuyan"></i></a>
+
+            {/*播放相关操作*/}
+            <div className="play_group">
+              <div className="play_btn flex items-center">
+                <div className="left">
+                  <a onClick={() => this.switchType()}><i className={`iconfont ${playTypeClass}`}></i></a>
+                </div>
+                <div className="center flex justify-between box1">
+                  <a><i className="iconfont icon-shangyiqu"></i></a>
+                  <a onClick={this.play.bind(this)}><i className={`iconfont ${this.state.isPlay ? 'icon-zanting' : 'icon-bofang1'}`}></i></a>
+                  <a><i className="iconfont icon-xiayiqu"></i></a>
+                </div>
+                <div className="right">
+                  <a><i className="iconfont icon-liebiao"></i></a>
+                </div>
+              </div>
+              <div className="play_progress flex items-center justify-between">
+                <div className="left">
+                  {this.s_to_hs(currentTime)}
+                </div>
+                <div className="center progressBar">
+                  <div className="line1"></div>
+                  <div className="line2" style={{'width': `${currentTime/currentTotalTime * this.xWithd}px`}}></div>
+                  <div className="circle" style={{'left': `${currentTime/currentTotalTime * this.xWithd}px`}}></div>
+                </div>
+                <div className="right">
+                  {this.s_to_hs(currentTotalTime)}
+                </div>
+              </div>
+              <div className="play_share flex items-center justify-between">
+                <a><i className="iconfont icon-xihuan1 icon_suki"></i></a>
+                <a><i className="iconfont icon-download"></i></a>
+                <a><i className="iconfont icon-share"></i></a>
+                <a><i className="iconfont icon-liuyan"></i></a>
+              </div>
             </div>
           </div>
         </div>
