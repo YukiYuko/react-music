@@ -1,9 +1,9 @@
 import React from 'react';
 import './play.less';
 import PublicHeader from '../../components/public/header/Header';
-import mp3 from '../../assets/mp3/daojiangxing.mp3';
 import {songDetail, songUrl} from '../../request/api';
-import {Toast} from "antd-mobile";
+import {Toast, Modal} from "antd-mobile";
+
 
 class Play extends React.Component {
 
@@ -17,7 +17,8 @@ class Play extends React.Component {
     // 播放类型 random: 0，single: 1, order: 2
     playType: 2,
     song: '',
-    url: ''
+    url: '',
+    showPlayList: false
   };
 
   componentDidMount() {
@@ -282,6 +283,21 @@ class Play extends React.Component {
     requestAnimationFrame(() => {this.drawSpectrum()})
   }
 
+  // 打开弹窗
+  showModal = key => (e) => {
+    e.preventDefault(); // 修复 Android 上点击穿透
+    this.setState({
+      [key]: true,
+    });
+  };
+
+  // 关闭弹窗
+  onClose = (key) => () => {
+    this.setState({
+      [key]: false,
+    });
+  };
+
   render() {
     const {isPlay,
       currentTime,
@@ -297,6 +313,7 @@ class Play extends React.Component {
           </div>
           <div className="playBox">
             <PublicHeader title={song.name} color="#444"/>
+            {/*歌曲相关信息*/}
             <div className="song_intro">
               <div className="author">{song.ar && song.ar[0].name}</div>
               <div className="edit flex justify-between">
@@ -316,7 +333,7 @@ class Play extends React.Component {
                 您的浏览器不支持 audio 标签。
               </audio>
               <canvas id="myCanvas"></canvas>
-              <div className="playImg" style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}></div>
+              <div className={`playImg ${this.state.isPlay ? 'rotate':''}`} style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}></div>
             </div>
 
             {/*播放相关操作*/}
@@ -331,7 +348,7 @@ class Play extends React.Component {
                   <a><i className="iconfont icon-xiayiqu"></i></a>
                 </div>
                 <div className="right">
-                  <a><i className="iconfont icon-liebiao"></i></a>
+                  <a onClick={this.showModal('showPlayList')}><i className="iconfont icon-liebiao"></i></a>
                 </div>
               </div>
               <div className="play_progress flex items-center justify-between">
@@ -355,6 +372,49 @@ class Play extends React.Component {
               </div>
             </div>
           </div>
+
+          {/*弹出框*/}
+          <Modal
+              popup
+              visible={this.state.showPlayList}
+              onClose={this.onClose('showPlayList')}
+              animationType="slide-up"
+          >
+            <div className="modal-wrap">
+              <div className="playList flex dir-column">
+                <div className="playListHead flex justify-between">
+                  <div className="left flex items-center">
+                    <i className={`iconfont ${playTypeClass}`}></i>
+                    <span>单曲循环</span>
+                  </div>
+                  <div className="right flex items-center">
+                    <div>
+                      <i className="iconfont icon-shoucang"></i>
+                      <span>收藏全部</span>
+                    </div>
+                    <div>
+                      <i className="iconfont icon-shanchu"></i>
+                    </div>
+                  </div>
+                </div>
+                <div className="playListCont box1">
+                  <ul>
+                    <li className="playListItem flex items-center playing">
+                      <div className="left box1">
+                        <i className="iconfont icon-playing"></i>
+                        <span className="name">斗罗大陆 - 动画网络剧《斗罗大陆》 主题曲</span>
+                        <span className="author">萧敬腾</span>
+                      </div>
+                      <div className="right">
+                        <i className="iconfont icon-guanbi"></i>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Modal>
+
         </div>
     )
   }

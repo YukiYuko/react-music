@@ -13,13 +13,18 @@
   }
   .playBox{
     position: relative; height: 100%;
+    z-index: 1;
   }
   .play_box{
     position: relative;
     .playImg{
       position: absolute; width: 50%; height: 50%;
       border-radius: 50%; left: 50%; top: 50%;
-      transform: translate3d(-50%, -50%, 0);
+      margin-left: -25%; margin-top: -25%;
+      background-size: cover;
+      &.rotate{
+        animation: rotate 20s infinite linear;
+      }
     }
   }
   .song_intro{
@@ -93,6 +98,87 @@
         }
         &.icon-download{
           font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+
+// 弹窗相关
+
+.modal-wrap{
+
+}
+.playList{
+  height: 7rem; background-color: rgba(255,255,255, 0.8);
+  .playListHead{
+    height: 0.9rem; padding: 0 0.3rem;
+    position: relative;
+    &:before{
+      .bottom-line();
+    }
+    i, span{
+      vertical-align: middle;
+    }
+    .left{
+      height: 100%;
+      i{
+        font-size: 0.36rem;
+      }
+    }
+    .right{
+      height: 100%;
+      div:nth-child(1){
+        margin-right: 0.2rem;
+      }
+      i{
+        font-size: 0.5rem;
+      }
+    }
+  }
+  .playListCont{
+    .playListItem{
+      height: 0.8rem; position: relative;
+      padding: 0 0.3rem;
+      &.playing{
+        .left{
+          .name, .author{
+            color: #d94036;
+          }
+          i{
+            display: inline-block;
+            color: #d94036;
+          }
+        }
+      }
+      &:after{
+        .bottom-line()
+      }
+      .left{
+        margin-right: 0.3rem;
+        .ellipsis();
+        i{ display: none}
+        .name{
+          font-size: 0.28rem; color: @base_color;
+        }
+        .author{
+          font-size: 0.24rem; color: @base_black_text;
+        }
+      }
+      .right{
+        width: 1rem; text-align: right;
+        i{
+          font-size: 0.4rem;
         }
       }
     }
