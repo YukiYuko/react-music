@@ -1,8 +1,9 @@
 import React from 'react';
 import './play.less';
 import PublicHeader from '../../components/public/header/Header';
-import {songDetail, songUrl} from '../../request/api';
-import {Toast, Modal} from "antd-mobile";
+import {songDetail, songUrl, lyric} from '../../request/api';
+import {Toast, Modal, ActionSheet} from "antd-mobile";
+import Lyric from 'lyric-parser';
 
 
 class Play extends React.Component {
@@ -18,8 +19,22 @@ class Play extends React.Component {
     playType: 2,
     song: '',
     url: '',
-    showPlayList: false
+    showPlayList: false,
+    clicked2: false,
+    lyrics: '',
+    currentLineNum: 0
   };
+
+  dataList = [
+    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '发送给朋友' },
+    { url: 'wvEzCMiDZjthhAOcwTOu', title: '新浪微博' },
+    { url: 'cTTayShKtEIdQVEMuiWt', title: '生活圈' },
+    { url: 'umnHwvEgSyQtXlZjNJTt', title: '微信好友' },
+    { url: 'SxpunpETIwdxNjcJamwB', title: 'QQ' },
+  ].map(obj => ({
+    icon: <img src={`https://gw.alipayobjects.com/zos/rmsportal/${obj.url}.png`} alt={obj.title} style={{ width: 36 }} />,
+    title: obj.title,
+  }));
 
   componentDidMount() {
     // 获取音乐对象
@@ -36,11 +51,13 @@ class Play extends React.Component {
     this.initCanvas();
     // 获取音乐ID
     this.id = this.props.match.params.id;
-    console.log(this.id)
     // 获取音乐链接
     this.getSongUrl();
     // 获取音乐详情
     this.getSongDetail();
+    // 获取歌词
+    this.getLyric();
+
   }
 
   // 获取音乐链接
@@ -65,6 +82,20 @@ class Play extends React.Component {
           song: res.songs[0]
         }, () => {
           console.log(this.state.song)
+        });
+      }else {
+        Toast.fail('Load failed !!!', 2);
+      }
+    })
+  }
+  // 获取歌词
+  getLyric () {
+    lyric({id: this.id}).then((res) => {
+      if (res.code === 200) {
+        this.setState({
+          lyrics: new Lyric(res.lrc.lyric)
+        }, () => {
+          console.log(this.state.lyrics)
         });
       }else {
         Toast.fail('Load failed !!!', 2);
@@ -298,6 +329,18 @@ class Play extends React.Component {
     });
   };
 
+  // 分享相关
+  showShareActionSheetMulpitleLine = () => {
+    const data = [[...this.dataList, this.dataList[2]], [this.dataList[3], this.dataList[4]]];
+    ActionSheet.showShareActionSheetWithOptions({
+      options: data,
+      message: '分享到',
+    },
+    (buttonIndex, rowIndex) => {
+      this.setState({ clicked2: buttonIndex > -1 ? data[rowIndex][buttonIndex].title : 'cancel' });
+    });
+  };
+
   render() {
     const {isPlay,
       currentTime,
@@ -305,14 +348,17 @@ class Play extends React.Component {
       left,
       playType,
       song,
-      url} = this.state;
+      url, lyrics, currentLineNum
+    } = this.state;
     const playTypeClass = ['icon-suijibofang01', 'icon-danquxunhuan', 'icon-liebiaoxunhuan'][playType];
     return (
         <div className="play">
           <div className="playBg" style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}>
           </div>
           <div className="playBox">
-            <PublicHeader title={song.name} color="#444"/>
+            <PublicHeader title={song.name} color="#444">
+              <i onClick={this.showShareActionSheetMulpitleLine} className="iconfont icon-fenxiang"></i>
+            </PublicHeader>
             {/*歌曲相关信息*/}
             <div className="song_intro">
               <div className="author">{song.ar && song.ar[0].name}</div>
@@ -333,7 +379,18 @@ class Play extends React.Component {
                 您的浏览器不支持 audio 标签。
               </audio>
               <canvas id="myCanvas"></canvas>
-              <div className={`playImg ${this.state.isPlay ? 'rotate':''}`} style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}></div>
+              <div className={`playImg ${this.state.isPlay ? 'rotate':'rotate pause'}`} style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}></div>
+            </div>
+            {/*歌词部分*/}
+
+            <div className="lyric">
+              <div className="lyric-wrap">
+                {
+                  lyrics.lines && lyrics.lines.map((line, index) => (
+                    <p className={`text ${currentLineNum===index ? 'current':''}`} key={index}>{line.txt}</p>
+                  ))
+                }
+              </div>
             </div>
 
             {/*播放相关操作*/}
@@ -373,7 +430,7 @@ class Play extends React.Component {
             </div>
           </div>
 
-          {/*弹出框*/}
+          {/*播放列表弹出框*/}
           <Modal
               popup
               visible={this.state.showPlayList}
@@ -411,9 +468,15 @@ class Play extends React.Component {
                     </li>
                   </ul>
                 </div>
+                <div onClick={this.onClose('showPlayList')} className="playListFoot">
+                  关闭
+                </div>
               </div>
             </div>
           </Modal>
+
+          {/*分享弹出框*/}
+
 
         </div>
     )

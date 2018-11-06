@@ -16,7 +16,7 @@
     z-index: 1;
   }
   .play_box{
-    position: relative;
+    position: relative; display: none;
     .playImg{
       position: absolute; width: 50%; height: 50%;
       border-radius: 50%; left: 50%; top: 50%;
@@ -24,6 +24,9 @@
       background-size: cover;
       &.rotate{
         animation: rotate 20s infinite linear;
+      }
+      &.pause{
+        animation-play-state: paused;
       }
     }
   }
@@ -92,12 +95,26 @@
     .play_share{
       width: 60%; margin: auto;
       i{
-        font-size: 0.5rem; color: @base_gray_text;
+        font-size: 0.5rem; color: #ffffff;
         &.icon_suki{
           font-size: 0.4rem;
         }
         &.icon-download{
           font-size: 0.6rem;
+        }
+      }
+    }
+  }
+
+  // 歌词部分
+  .lyric{
+    width: 100%; height: 400px; overflow: hidden;
+    .lyric-wrap{
+      .text{
+        text-align: center; margin-bottom: 0.2rem;
+        font-size: 0.28rem;
+        &.current{
+          color: #d94036;
         }
       }
     }
@@ -181,6 +198,13 @@
           font-size: 0.4rem;
         }
       }
+    }
+  }
+  .playListFoot{
+    height: 0.9rem; text-align: center; line-height: 0.9rem;
+    position: relative;
+    &:before{
+      .top-line()
     }
   }
 }

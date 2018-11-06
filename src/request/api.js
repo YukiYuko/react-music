@@ -40,3 +40,9 @@ export const songUrl = (params) => api.get(`${BASE_URL}/song/url`, params);
 * 调用例子 : /song/detail?ids=347230,/song/detail?ids=347230,347231
 * */
 export const songDetail = (params) => api.get(`${BASE_URL}/song/detail`, params);
+/*
+* 获取歌曲歌词
+* @params 必选参数 : id: 音乐 id
+* 调用例子 : /lyric?id=33894312
+* */
+export const lyric = (params) => api.get(`${BASE_URL}/lyric`, params);
