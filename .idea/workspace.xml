@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/public/scroll/scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/scroll/scroll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Play/Play.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Play/Play.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Play/play.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Play/play.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,7 +87,7 @@
         <counts>
           <entry key="css" value="29" />
           <entry key="html" value="37" />
-          <entry key="js" value="11789" />
+          <entry key="js" value="12280" />
           <entry key="less" value="3277" />
           <entry key="vue" value="16" />
         </counts>
@@ -94,7 +96,7 @@
         <counts>
           <entry key="CSS" value="29" />
           <entry key="HTML" value="37" />
-          <entry key="JavaScript" value="11789" />
+          <entry key="JavaScript" value="12280" />
           <entry key="Less" value="3277" />
           <entry key="Vue.js" value="16" />
         </counts>
@@ -104,7 +106,7 @@
           <entry key="css" value="8" />
           <entry key="html" value="10" />
           <entry key="jpeg" value="2" />
-          <entry key="js" value="47" />
+          <entry key="js" value="49" />
           <entry key="json" value="1" />
           <entry key="less" value="21" />
           <entry key="ts" value="2" />
@@ -117,7 +119,7 @@
           <entry key="HTML" value="10" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="47" />
+          <entry key="JavaScript" value="49" />
           <entry key="Less" value="21" />
           <entry key="TypeScript" value="2" />
           <entry key="Vue.js" value="2" />
@@ -126,14 +128,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6987952">
+    <splitter split-orientation="horizontal" split-proportion="0.73308617">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/public/scroll/scroll.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+                <state relative-caret-position="300">
+                  <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -144,8 +146,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/public/scroll/scroll.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+                <state relative-caret-position="139">
+                  <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -153,8 +155,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Play/Play.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="388" column="40" selection-start-line="388" selection-start-column="40" selection-end-line="388" selection-end-column="40" />
+                <state relative-caret-position="54">
+                  <caret line="403" column="61" lean-forward="true" selection-start-line="403" selection-start-column="61" selection-end-line="403" selection-end-column="61" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                     <element signature="e#7765#8125#0" />
@@ -232,11 +234,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Play/play.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="116">
-                  <caret line="109" column="3" selection-start-line="109" selection-start-column="3" selection-end-line="109" selection-end-column="3" />
+                <state relative-caret-position="128">
+                  <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
                   <folding>
                     <element signature="e#474#624#0" />
-                    <element signature="e#642#940#0" />
                     <element signature="e#954#2342#0" />
                     <element signature="e#1210#1270#0" />
                     <element signature="e#2692#2702#0" />
@@ -274,13 +275,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tex</find>
-      <find>删掉恐慌</find>
-      <find>get_personalized</find>
-      <find>state</find>
-      <find>songList_intro</find>
-      <find>background-color: #f5f5f9;</find>
-      <find>top</find>
       <find>songList_head_text</find>
       <find>3000</find>
       <find>moveX</find>
@@ -302,8 +296,15 @@
       <find>play_group</find>
       <find>rotate</find>
       <find>lyrics</find>
-      <find>currentLineNum</find>
       <find>Scroll</find>
+      <find>Lyric</find>
+      <find>currentLineNum</find>
+      <find>scrollToElement</find>
+      <find>text</find>
+      <find>lyricLine</find>
+      <find>handleLyric</find>
+      <find>play</find>
+      <find>play()</find>
     </findStrings>
     <replaceStrings>
       <replace>this.ctx</replace>
@@ -349,9 +350,9 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/public/header/header.less" />
         <option value="$PROJECT_DIR$/src/request/api.js" />
-        <option value="$PROJECT_DIR$/src/views/Play/play.less" />
         <option value="$PROJECT_DIR$/src/components/public/scroll/scroll.less" />
         <option value="$PROJECT_DIR$/src/components/public/scroll/scroll.js" />
+        <option value="$PROJECT_DIR$/src/views/Play/play.less" />
         <option value="$PROJECT_DIR$/src/views/Play/Play.js" />
       </list>
     </option>
@@ -542,12 +543,12 @@
       <workItem from="1540955956548" duration="7282000" />
       <workItem from="1541036041131" duration="11001000" />
       <workItem from="1541403524891" duration="6611000" />
-      <workItem from="1541468609305" duration="15004000" />
+      <workItem from="1541468609305" duration="19124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160994000" />
+    <option name="totallyTimeSpent" value="165114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,9 +563,9 @@
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6826087" visible="true" weight="0.141607" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68235296" visible="true" weight="0.141607" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.3173913" side_tool="true" visible="true" weight="0.141607" />
+      <window_info id="npm" order="2" sideWeight="0.31764707" side_tool="true" visible="true" weight="0.141607" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -574,7 +575,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.22818792" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1442953" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -594,18 +595,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-617" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="203" column="78" selection-start-line="203" selection-start-column="78" selection-end-line="203" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Friend/Friend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -908,15 +897,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/public/scroll/scroll.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        <state relative-caret-position="139">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/lyric-parser/dist/lyric.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/better-scroll/dist/bscroll.esm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="1563" column="14" lean-forward="true" selection-start-line="1563" selection-start-column="14" selection-end-line="1563" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/public/scroll/scroll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="300">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -925,11 +924,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Play/play.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="109" column="3" selection-start-line="109" selection-start-column="3" selection-end-line="109" selection-end-column="3" />
+        <state relative-caret-position="128">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <element signature="e#474#624#0" />
-            <element signature="e#642#940#0" />
             <element signature="e#954#2342#0" />
             <element signature="e#1210#1270#0" />
             <element signature="e#2692#2702#0" />
@@ -940,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Play/Play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="388" column="40" selection-start-line="388" selection-start-column="40" selection-end-line="388" selection-end-column="40" />
+        <state relative-caret-position="54">
+          <caret line="403" column="61" lean-forward="true" selection-start-line="403" selection-start-column="61" selection-end-line="403" selection-end-column="61" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#7765#8125#0" />

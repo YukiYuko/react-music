@@ -24,7 +24,8 @@ class Play extends React.Component {
     clicked2: false,
     lyrics: '',
     currentLineNum: 0,
-    data: [1,1,1,2,2,2,2,3,1,1,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    data: [1,1,1,2,2,2,2,3,1,1,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    showlyrics: false
   };
 
   dataList = [
@@ -60,6 +61,7 @@ class Play extends React.Component {
     // 获取歌词
     this.getLyric();
 
+    console.log(this.refs.scroll)
   }
 
   // 获取音乐链接
@@ -95,7 +97,7 @@ class Play extends React.Component {
     lyric({id: this.id}).then((res) => {
       if (res.code === 200) {
         this.setState({
-          lyrics: new Lyric(res.lrc.lyric)
+          lyrics: new Lyric(res.lrc.lyric, this.handleLyric)
         }, () => {
           console.log(this.state.lyrics)
         });
@@ -109,8 +111,14 @@ class Play extends React.Component {
   play () {
     this.setState({
       isPlay: !this.state.isPlay
-    }, function () {
-      this.state.isPlay ? this.x.play() : this.x.pause()
+    }, () => {
+      if (this.state.isPlay) {
+        this.x.play();
+        this.state.lyrics.play();
+      } else {
+        this.x.pause();
+        this.state.lyrics.stop();
+      }
     });
   }
   // 监听当前播放时间
@@ -343,6 +351,26 @@ class Play extends React.Component {
     });
   };
 
+  // 滚动歌词相关
+
+  handleLyric = ({lineNum, txt}) => {
+    this.setState({
+      currentLineNum: lineNum
+    }, () => {
+      console.log(this.state.currentLineNum);
+      // 若当前行大于5,开始滚动,以保歌词显示于中间位置
+      if (lineNum > 5) {
+        let dom = document.querySelectorAll('.text');
+        console.log(dom);
+        let lineEl = dom[lineNum - 5];
+        // 结合better-scroll，滚动歌词
+        this.refs.scroll.scrollToElement(lineEl, 1000)
+      } else {
+        this.refs.scroll.scrollToElement(0, 0, 1000)
+      }
+    });
+  };
+
   render() {
     const {isPlay,
       currentTime,
@@ -350,9 +378,10 @@ class Play extends React.Component {
       left,
       playType,
       song,
-      url, lyrics, currentLineNum
+      url, lyrics, currentLineNum, showlyrics
     } = this.state;
     const playTypeClass = ['icon-suijibofang01', 'icon-danquxunhuan', 'icon-liebiaoxunhuan'][playType];
+
     return (
         <div className="play">
           <div className="playBg" style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}>
@@ -372,7 +401,7 @@ class Play extends React.Component {
             </div>
 
             {/*歌词等*/}
-            <div className="play_box">
+            <div className="play_box" style={{display: `${!showlyrics ? 'block':'none'}`}}>
               <audio id="myAudio" src={url}
                      crossOrigin="anonymous"
                      onTimeUpdate={() => this.handleTimeUpdate()}
@@ -380,17 +409,21 @@ class Play extends React.Component {
               >
                 您的浏览器不支持 audio 标签。
               </audio>
-              <canvas id="myCanvas"></canvas>
-              <div className={`playImg ${this.state.isPlay ? 'rotate':'rotate pause'}`} style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}></div>
+              <canvas id="myCanvas"/>
+              <div onClick={this.showModal('showlyrics')}
+                   className={`playImg ${this.state.isPlay ? 'rotate':'rotate pause'}`} style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}/>
             </div>
-            {/*歌词部分*/}
 
-            <div className="lyric">
-              <Scroll data={lyrics.lines}>
-                <div className="lyric-wrap">
+            {/*歌词部分*/}
+            <div className="lyric" style={{display: `${showlyrics ? 'block':'none'}`}}>
+              <Scroll ref="scroll" data={lyrics.lines} >
+                <div className="lyric-wrap" onClick={this.onClose('showlyrics')}>
                   {
                     lyrics.lines && lyrics.lines.map((line, index) => (
-                        <p className={`text ${currentLineNum===index ? 'current':''}`} key={index}>{line.txt}</p>
+                        <p className={`text ${currentLineNum===index ? 'current':''}`}
+                           key={index}
+                           ref="lyricLine"
+                        >{line.txt}</p>
                     ))
                   }
                 </div>
