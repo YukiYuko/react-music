@@ -4,6 +4,7 @@ import PublicHeader from '../../components/public/header/Header';
 import {songDetail, songUrl, lyric} from '../../request/api';
 import {Toast, Modal, ActionSheet} from "antd-mobile";
 import Lyric from 'lyric-parser';
+import Scroll from '../../components/public/scroll/scroll'
 
 
 class Play extends React.Component {
@@ -22,7 +23,8 @@ class Play extends React.Component {
     showPlayList: false,
     clicked2: false,
     lyrics: '',
-    currentLineNum: 0
+    currentLineNum: 0,
+    data: [1,1,1,2,2,2,2,3,1,1,11,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
   };
 
   dataList = [
@@ -384,13 +386,15 @@ class Play extends React.Component {
             {/*歌词部分*/}
 
             <div className="lyric">
-              <div className="lyric-wrap">
-                {
-                  lyrics.lines && lyrics.lines.map((line, index) => (
-                    <p className={`text ${currentLineNum===index ? 'current':''}`} key={index}>{line.txt}</p>
-                  ))
-                }
-              </div>
+              <Scroll data={lyrics.lines}>
+                <div className="lyric-wrap">
+                  {
+                    lyrics.lines && lyrics.lines.map((line, index) => (
+                        <p className={`text ${currentLineNum===index ? 'current':''}`} key={index}>{line.txt}</p>
+                    ))
+                  }
+                </div>
+              </Scroll>
             </div>
 
             {/*播放相关操作*/}
