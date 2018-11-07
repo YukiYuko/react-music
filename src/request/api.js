@@ -46,3 +46,8 @@ export const songDetail = (params) => api.get(`${BASE_URL}/song/detail`, params)
 * 调用例子 : /lyric?id=33894312
 * */
 export const lyric = (params) => api.get(`${BASE_URL}/lyric`, params);
+/*
+* 所有榜单内容摘要
+* 调用例子 : /toplist/detail
+* */
+export const toplistDetail = () => api.get(`${BASE_URL}/toplist/detail`);

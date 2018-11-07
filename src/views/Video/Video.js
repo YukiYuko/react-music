@@ -3,6 +3,7 @@ import styles from './Video.css'
 import React from 'react'
 import reactDom from 'react-dom'
 import Modal from '../../components/public/modal/modal'
+import FooterComponent from '../../components/common/Footer/footer';
 
 class Video extends React.Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class Video extends React.Component {
         >
           这是自定义content
         </Modal>
+        <FooterComponent></FooterComponent>
       </div>
     )
   }

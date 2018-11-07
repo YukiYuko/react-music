@@ -4,6 +4,8 @@ import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
 import {observable, autorun} from 'mobx';
 import Recommend from '../../components/common/Recommend/Recommend';
+import FooterComponent from '../../components/common/Footer/footer';
+import Scroll from '../../components/public/scroll/scroll';
 import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
 
@@ -49,6 +51,10 @@ class Home extends React.Component {
     })
   }
 
+  go(path) {
+    this.props.history.push({pathname : path})
+  }
+
   componentDidMount() {
     Toast.loading('Loading...');
     this.get_banner();
@@ -72,93 +78,98 @@ class Home extends React.Component {
 
     return (
       <div className="home">
-        <div className="red-bg"></div>
-        <div className="scroll-warp">
-          <div className="tab-nav flex justify-between">
-            <div className="box1">
-              <a className="active" href="">个性推荐</a>
-            </div>
-            <div className="box1">
-              <a href="">主播电台</a>
-            </div>
-          </div>
-          <div className="tab-warp">
-            {/*banner*/}
-            <div className="banner">
-              <Swiper {...params}>
-                {
-                  this.state.banners.map((item, index) => (
-                    <div className="slider-item" key={index}>
-                      <div className="slider-item-inner">
-                        <img src={item.imageUrl} alt=""/>
-                      </div>
-                    </div>
-                  ))
-                }
-              </Swiper>
-            </div>
-            {/*几个分类*/}
-            <div className="icon-menu flex justify-between">
-              <div className="icon-item box1">
-                <div className="icon-item-icon">
-                  <i className="iconfont icon-fm"></i>
-                </div>
-                <div className="icon-item-text">
-                  私人FM
-                </div>
+        <Scroll>
+          <div className="scroll-warp">
+            <div className="red-bg"></div>
+            <div className="tab-nav flex justify-between">
+              <div className="box1">
+                <a className="active" href="">个性推荐</a>
               </div>
-              <div className="icon-item box1">
-                <div className="icon-item-icon">
-                  <i className="iconfont icon-tuijian"></i>
-                </div>
-                <div className="icon-item-text">
-                  每日推荐
-                </div>
-              </div>
-              <div className="icon-item box1">
-                <div className="icon-item-icon">
-                  <i className="iconfont icon-gedan"></i>
-                </div>
-                <div className="icon-item-text">
-                  歌单
-                </div>
-              </div>
-              <div className="icon-item box1">
-                <div className="icon-item-icon">
-                  <i className="iconfont icon-top"></i>
-                </div>
-                <div className="icon-item-text">
-                  排行榜
-                </div>
+              <div className="box1">
+                <a href="">主播电台</a>
               </div>
             </div>
-            {/*主体内容*/}
-            <div className="inner-warp">
-              {/*推荐歌单*/}
-              <div className="section-recommend">
-                <div className="public-title">
-                  推荐歌单 >
-                </div>
-                <Recommend list={this.state.list_recommend}/>
+            <div className="tab-warp">
+              {/*banner*/}
+              <div className="banner">
+                <Swiper {...params}>
+                  {
+                    this.state.banners.map((item, index) => (
+                        <div className="slider-item" key={index}>
+                          <div className="slider-item-inner">
+                            <img src={item.imageUrl} alt=""/>
+                          </div>
+                        </div>
+                    ))
+                  }
+                </Swiper>
               </div>
-              {/*最新音乐*/}
-              <div className="section-new">
-                <div className="public-title">
-                  最新音乐 >
+              {/*几个分类*/}
+              <div className="icon-menu flex justify-between">
+                <div className="icon-item box1">
+                  <div className="icon-item-icon">
+                    <i className="iconfont icon-fm"></i>
+                  </div>
+                  <div className="icon-item-text">
+                    私人FM
+                  </div>
                 </div>
-                <Recommend list={this.state.newsong}></Recommend>
-              </div>
-              {/*最新电台*/}
-              <div className="section-new">
-                <div className="public-title">
-                  最新电台 >
+                <div className="icon-item box1">
+                  <div className="icon-item-icon">
+                    <i className="iconfont icon-tuijian"></i>
+                  </div>
+                  <div className="icon-item-text">
+                    每日推荐
+                  </div>
                 </div>
-                <Recommend list={this.state.djprogram}></Recommend>
+                <div className="icon-item box1">
+                  <div className="icon-item-icon">
+                    <i className="iconfont icon-gedan"></i>
+                  </div>
+                  <div className="icon-item-text">
+                    歌单
+                  </div>
+                </div>
+                <div onClick={() => this.go('Top')} className="icon-item box1">
+                  <div className="icon-item-icon">
+                    <i className="iconfont icon-top"></i>
+                  </div>
+                  <div className="icon-item-text">
+                    排行榜
+                  </div>
+                </div>
               </div>
-            </div>
+              {/*主体内容*/}
+              <div className="inner-warp">
+                {/*推荐歌单*/}
+                <div className="section-recommend">
+                  <div className="public-title">
+                    推荐歌单 >
+                  </div>
+                  <Recommend list={this.state.list_recommend}/>
+                </div>
+                {/*最新音乐*/}
+                <div className="section-new">
+                  <div className="public-title">
+                    最新音乐 >
+                  </div>
+                  <Recommend list={this.state.newsong}></Recommend>
+                </div>
+                {/*最新电台*/}
+                <div className="section-new">
+                  <div className="public-title">
+                    最新电台 >
+                  </div>
+                  <Recommend list={this.state.djprogram}></Recommend>
+                </div>
+              </div>
 
+            </div>
           </div>
-        </div> 
+        </Scroll>
+
+        {/*footer*/}
+        <FooterComponent></FooterComponent>
       </div>
     )
   }
