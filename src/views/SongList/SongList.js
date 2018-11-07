@@ -73,6 +73,14 @@ class SongList extends React.Component {
 
   // 获取详情数据
   getDetail() {
+    console.log(this.props.list);
+    if (this.props.list) {
+      this.setState({
+        list: this.props.list
+      });
+      return
+    }
+
     let {id} = this.props.match.params;
     let params = {
       id: id
@@ -111,7 +119,7 @@ class SongList extends React.Component {
     const {list, numberList} = this.state;
     return (
         <div className="songList">
-          <PublicHeader title="歌单"/>
+          <PublicHeader back={this.props.back} title="歌单"/>
           <div className="top">
             <div className="songList_head">
               <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>

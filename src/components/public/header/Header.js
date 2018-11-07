@@ -14,11 +14,19 @@ class PublicHeader extends React.Component {
     console.log(this.context)
   }
 
+  goBack () {
+    if (this.props.back) {
+      this.props.back();
+      return
+    }
+    this.context.router.history.goBack();
+  }
+
   render() {
     const {title, color = '#fff', background = 'none'} = this.props;
     return (
         <div className="public-header flex items-center" style={{'color': color, 'background': background}}>
-          <div className="left" onClick={this.context.router.history.goBack}>
+          <div className="left" onClick={() => this.goBack()}>
             <i className="iconfont icon-fanhui"></i>
           </div>
           <div className="center box1">
