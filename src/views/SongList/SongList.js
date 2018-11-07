@@ -11,6 +11,8 @@ import ListItem from './listItem'
 import ColorThief from 'color-thief'
 
 class SongList extends React.Component {
+  componentWillReceiveProps () {
+  }
   componentDidMount() {
     this.getDetail();
 
@@ -73,11 +75,14 @@ class SongList extends React.Component {
 
   // 获取详情数据
   getDetail() {
-    console.log(this.props.list);
     if (this.props.list) {
       this.setState({
         list: this.props.list
       });
+      return
+    }
+
+    if (!this.props.match){
       return
     }
 
@@ -116,7 +121,10 @@ class SongList extends React.Component {
   }
 
   render() {
-    const {list, numberList} = this.state;
+    let {list, numberList} = this.state;
+    if (this.props.list) {
+      list = this.props.list
+    }
     return (
         <div className="songList">
           <PublicHeader back={this.props.back} title="歌单"/>

@@ -6,6 +6,7 @@ import FooterComponent from '../../components/common/Footer/footer';
 import {Toast} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 import SongList from '../SongList/SongList';
+const VelocityComponent = require('velocity-react/src/velocity-component');
 
 class Top extends React.Component {
   constructor (props) {
@@ -111,6 +112,10 @@ class Top extends React.Component {
 
   render() {
     const {list, detailList, showDetail} = this.state;
+    const style = {
+      opacity: showDetail ? 1 : 0,
+      translateX: showDetail ? 0 : '100%'
+    };
     return (
         <div className="topWrap">
           <PublicHeader title="排行榜" background="#d94036"/>
@@ -137,9 +142,9 @@ class Top extends React.Component {
               </ul>
             </Scroll>
             {/*歌单详情*/}
-            {
-              showDetail && <SongList back={this.onClose('showDetail')} list={detailList}/>
-            }
+            <VelocityComponent animation={style} duration={500}>
+               <SongList back={this.onClose('showDetail')} list={detailList}/>
+            </VelocityComponent>
           </div>
           <FooterComponent/>
 
