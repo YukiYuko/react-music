@@ -129,7 +129,7 @@ class SongList extends React.Component {
     }
     return (
         <div className="songList">
-          <PublicHeader back={this.props.back} title="歌单"/>
+          <PublicHeader back={this.props.back} title="歌单" background="none"/>
           <div className="top">
             <div className="songList_head">
               <div className="songList_head_bg" style={{backgroundImage: `url(${list.coverImgUrl})`}}></div>

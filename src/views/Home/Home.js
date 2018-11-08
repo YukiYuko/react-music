@@ -8,6 +8,7 @@ import FooterComponent from '../../components/common/Footer/footer';
 import Scroll from '../../components/public/scroll/scroll';
 import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
+import HighqualityComponent from '../Highquality/Highquality';
 
 class Home extends React.Component {
 
@@ -169,7 +170,10 @@ class Home extends React.Component {
         </Scroll>
 
         {/*footer*/}
-        <FooterComponent></FooterComponent>
+        <FooterComponent/>
+
+        {/*歌单*/}
+        <HighqualityComponent/>
       </div>
     )
   }

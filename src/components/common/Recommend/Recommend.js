@@ -20,16 +20,16 @@ class Recommend extends React.Component {
     this.context.router.history.push({pathname : `/SongList/${item.id}`})
   }
   render() {
-    const {list} = this.props;
+    const {list, width='32%'} = this.props;
     return (
       <div className="recommend flex justify-between wrap-wrap">
         {
           list.map((item, index) => {
             const _item = item.song ? item.song.album : item;
             return (
-              <div className="recommend-item" key={index} onClick={this.goDetail.bind(this, _item)}>
+              <div className="recommend-item" style={{width: width}} key={index} onClick={this.goDetail.bind(this, _item)}>
                 <div className="recommend-item-img">
-                  <img src={_item.picUrl} alt="touxiang"/>
+                  <img src={_item.picUrl || _item.coverImgUrl} alt="touxiang"/>
                   {
                     !_item.name ? '' : (
                       <h3>{_item.name}</h3>
