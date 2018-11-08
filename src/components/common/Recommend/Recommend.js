@@ -2,6 +2,7 @@ import './styles.less'
 import React from 'react'
 import PropTypes from 'prop-types';
 import {numberFilter} from '../../../filters/index'
+import LazyLoad from 'react-lazyload';
 
 class Recommend extends React.Component {
   constructor (props) {
@@ -29,7 +30,9 @@ class Recommend extends React.Component {
             return (
               <div className="recommend-item" style={{width: width}} key={index} onClick={this.goDetail.bind(this, _item)}>
                 <div className="recommend-item-img">
-                  <img src={_item.picUrl || _item.coverImgUrl} alt="touxiang"/>
+                  <LazyLoad width="100%">
+                    <img src={_item.picUrl || _item.coverImgUrl} alt="touxiang"/>
+                  </LazyLoad>
                   {
                     !_item.name ? '' : (
                       <h3>{_item.name}</h3>

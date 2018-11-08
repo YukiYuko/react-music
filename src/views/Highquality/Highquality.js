@@ -4,6 +4,7 @@ import PublicHeader from '../../components/public/header/Header';
 import {topPlaylist, highquality} from "../../request/api";
 import Recommend from '../../components/common/Recommend/Recommend';
 import {Toast} from "antd-mobile";
+import Scroll from '../../components/public/scroll/scroll';
 
 class HighQuality extends React.Component {
   componentDidMount() {
@@ -55,36 +56,40 @@ class HighQuality extends React.Component {
     return (
         <div className="HighQuality">
           <PublicHeader title="歌单"/>
-          <div className="head flex items-center">
-            <div className="headBg" style={{backgroundImage:`url(${first.coverImgUrl})`}}/>
-            <div className="headBox flex items-center">
-              <div className="left">
-                <img src={first.coverImgUrl} alt={first.name}/>
-              </div>
-              <div className="right">
-                <h3>
-                  <i className="iconfont icon-huangguan"></i>
-                  <span>精品歌单</span>
-                </h3>
-                <div className="text">
-                  <p>{first.name}</p>
-                  <p>{first.copywriter}</p>
+          <div className="scroll">
+            <Scroll data={list}>
+              <div className="head flex items-center">
+                <div className="headBg" style={{backgroundImage:`url(${first.coverImgUrl})`}}/>
+                <div className="headBox flex items-center">
+                  <div className="left">
+                    <img src={first.coverImgUrl} alt={first.name}/>
+                  </div>
+                  <div className="right">
+                    <h3>
+                      <i className="iconfont icon-huangguan"></i>
+                      <span>精品歌单</span>
+                    </h3>
+                    <div className="text">
+                      <p>{first.name}</p>
+                      <p>{first.copywriter}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="select flex justify-between">
-            <div className="left">
-              <a>全部歌单 ></a>
-            </div>
-            <div className="right">
-              <a>华语</a>
-              <a>古风</a>
-              <a>民谣</a>
-            </div>
-          </div>
-          <div className="HighQualityList">
-            <Recommend list={list} width="49%"/>
+              <div className="select flex justify-between">
+                <div className="left">
+                  <a>全部歌单 ></a>
+                </div>
+                <div className="right">
+                  <a>华语</a>
+                  <a>古风</a>
+                  <a>民谣</a>
+                </div>
+              </div>
+              <div className="HighQualityList">
+                <Recommend list={list} width="49%"/>
+              </div>
+            </Scroll>
           </div>
         </div>
     )
