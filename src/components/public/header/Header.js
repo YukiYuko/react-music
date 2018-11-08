@@ -23,7 +23,7 @@ class PublicHeader extends React.Component {
   }
 
   render() {
-    const {title, color = '#fff', background = 'none'} = this.props;
+    const {title, color = '#fff', background = '#d94036'} = this.props;
     return (
         <div className="public-header flex items-center" style={{'color': color, 'background': background}}>
           <div className="left" onClick={() => this.goBack()}>

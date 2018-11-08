@@ -7,6 +7,7 @@ import './songList.less'
 import {numberFilter} from '../../filters/index'
 import BScroll from 'better-scroll'
 import ListItem from './listItem'
+import {Link} from 'react-router-dom'
 
 import ColorThief from 'color-thief'
 
@@ -88,7 +89,8 @@ class SongList extends React.Component {
 
     let {id} = this.props.match.params;
     let params = {
-      id: id
+      id: id,
+      s: 5
     };
     Toast.loading('Loading...');
     playlistDetail(params).then((res) => {
@@ -156,11 +158,11 @@ class SongList extends React.Component {
               <div className="songList_head_menu flex">
                 <div className="menu-item box1 justify-center">
                   <i className="iconfont icon-liuyan"></i>
-                  <p>336</p>
+                  <p>{numberFilter(list.commentCount)}</p>
                 </div>
                 <div className="menu-item box1 justify-center">
                   <i className="iconfont icon-share"></i>
-                  <p>829</p>
+                  <p>{numberFilter(list.shareCount)}</p>
                 </div>
                 <div className="menu-item box1 justify-center">
                   <i className="iconfont icon-download"></i>
@@ -184,9 +186,9 @@ class SongList extends React.Component {
                 <a className="box1 left">
                   <i className="iconfont icon-bofang"></i>
                   <span>播放全部</span>
-                  <em>(共 123 首)</em>
+                  <em>(共 {list.trackCount} 首)</em>
                 </a>
-                <a className="right">+ 收藏(8604)</a>
+                <a className="right">+ 收藏({numberFilter(list.subscribedCount)})</a>
               </div>
 
               {/*简介信息*/}
@@ -213,6 +215,23 @@ class SongList extends React.Component {
                     ))
                   }
                 </ul>
+              </div>
+
+              {/*最近收藏的几个*/}
+              <div className="latestCollect flex items-center justify-between">
+                <div className="left">
+                  {
+                    list.subscribers && list.subscribers.map((subscribers_item, subscribers_index) => (
+                        <a key={subscribers_index}>
+                          <img src={subscribers_item.avatarUrl} alt={subscribers_item.nickname}/>
+                        </a>
+                    ))
+                  }
+                </div>
+                <div className="right">
+                  {/*<Link to={`/Subscribers`}>{numberFilter(list.subscribedCount)}人收藏 ></Link>*/}
+                  <a onClick={() => Toast.info('暂无功能~')}>{numberFilter(list.subscribedCount)}人收藏 ></a>
+                </div>
               </div>
             </div>
           </div>

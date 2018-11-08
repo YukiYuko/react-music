@@ -51,7 +51,7 @@ class Top extends React.Component {
     }
 
     Toast.loading('Loading...');
-    topList({idx: idx}).then((res) => {
+    topList({idx: idx, s: 5}).then((res) => {
       if (res.code === 200) {
         this.setState({
           detailList: res.playlist,

@@ -9,6 +9,7 @@ import Setting from './views/Setting/Setting'
 import SongList from './views/SongList/SongList'
 import Play from './views/Play/Play'
 import Top from './views/Top/Top'
+import Subscribers from './views/Subscribers/Subscribers'
 import './App.css';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path='/SongList/:id' component={SongList}/>
           <Route exact path='/Play/:id' component={Play}/>
           <Route exact path='/Top' component={Top}/>
+          <Route exact path='/Subscribers' component={Subscribers}/>
         </Switch>
       </div>
     );
