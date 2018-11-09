@@ -9,6 +9,8 @@ import Scroll from '../../components/public/scroll/scroll';
 import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
 import HighqualityComponent from '../Highquality/Highquality';
+import SongList from "../SongList/SongList";
+const VelocityComponent = require('velocity-react/src/velocity-component');
 
 class Home extends React.Component {
 
@@ -16,7 +18,9 @@ class Home extends React.Component {
     list_recommend: [],
     newsong: [],
     djprogram: [],
-    banners: []
+    banners: [],
+    showHigh: false,
+    highList: []
   };
   // 获取banner数据
 
@@ -56,6 +60,12 @@ class Home extends React.Component {
     this.props.history.push({pathname : path})
   }
 
+  show = (key, value = true) => () => {
+    this.setState({
+      [key]: value,
+    });
+  };
+
   componentDidMount() {
     Toast.loading('Loading...');
     this.get_banner();
@@ -76,6 +86,7 @@ class Home extends React.Component {
       spaceBetween: 30,
       rebuildOnUpdate: true
     };
+    const {showHigh, highList} = this.state;
 
     return (
       <div className="home">
@@ -123,7 +134,7 @@ class Home extends React.Component {
                     每日推荐
                   </div>
                 </div>
-                <div className="icon-item box1">
+                <div onClick={this.show('showHigh')} className="icon-item box1">
                   <div className="icon-item-icon">
                     <i className="iconfont icon-gedan"></i>
                   </div>
@@ -173,7 +184,17 @@ class Home extends React.Component {
         <FooterComponent/>
 
         {/*歌单*/}
-        <HighqualityComponent/>
+        <VelocityComponent animation={{
+          opacity: showHigh ? 1 : 0,
+          translateX: showHigh ? 0 : '100%',
+          display: 'block',
+          style: {
+            display: 'none'
+          }
+        }} duration={400}>
+          <HighqualityComponent show={showHigh} back={this.show('showHigh', false)}/>
+        </VelocityComponent>
+        }
       </div>
     )
   }
