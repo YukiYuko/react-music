@@ -134,7 +134,7 @@ class Home extends React.Component {
                     每日推荐
                   </div>
                 </div>
-                <div onClick={this.show('showHigh')} className="icon-item box1">
+                <div onClick={() => this.go('High')} className="icon-item box1">
                   <div className="icon-item-icon">
                     <i className="iconfont icon-gedan"></i>
                   </div>

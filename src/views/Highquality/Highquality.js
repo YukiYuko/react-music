@@ -59,7 +59,7 @@ class HighQuality extends React.Component {
     const {first, list} = this.state;
     return (
         <div className="HighQuality">
-          <PublicHeader back={this.props.back} title="歌单"/>
+          <PublicHeader title="歌单"/>
           {
             !list.length ?
                 <CircleComponent/>:
