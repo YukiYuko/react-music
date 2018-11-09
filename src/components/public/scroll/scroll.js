@@ -36,6 +36,10 @@ class Scroll extends React.Component {
     this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
   }
 
+  refresh() {
+    this.scroll && this.scroll.refresh()
+  }
+
   render() {
 
     const {data} = this.props;

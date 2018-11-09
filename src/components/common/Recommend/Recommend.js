@@ -2,7 +2,8 @@ import './styles.less'
 import React from 'react'
 import PropTypes from 'prop-types';
 import {numberFilter} from '../../../filters/index'
-import LazyLoad from 'react-lazyload';
+import Lazy from '../../../components/public/Lazy/lazy'
+import PlaceholderComponent from '../../../components/public/placeholder/placeholder'
 
 class Recommend extends React.Component {
   constructor (props) {
@@ -22,6 +23,13 @@ class Recommend extends React.Component {
   }
   render() {
     const {list, width='32%'} = this.props;
+    const config = {
+      options: {
+        error: 'errorPic',
+        loading: 'loadingPic'
+      },
+      src: ''
+    };
     return (
       <div className="recommend flex justify-between wrap-wrap">
         {
@@ -30,28 +38,26 @@ class Recommend extends React.Component {
             return (
               <div className="recommend-item" style={{width: width}} key={index} onClick={this.goDetail.bind(this, _item)}>
                 <div className="recommend-item-img">
-                  <LazyLoad width="100%">
-                    <img src={_item.picUrl || _item.coverImgUrl} alt="touxiang"/>
-                  </LazyLoad>
-                  {
-                    !_item.name ? '' : (
-                      <h3>{_item.name}</h3>
-                    )
-                  }
+                  <Lazy src={_item.picUrl || _item.coverImgUrl} alt="touxiang"/>
                   {
                     !_item.playCount ? '' : (
                         <div className="num">
-                            <i className="iconfont icon-erji"></i>
-                            <span>{numberFilter(_item.playCount)}</span>
+                          <i className="iconfont icon-erji"></i>
+                          <span>{numberFilter(_item.playCount)}</span>
                         </div>
                     )
                   }
-                  {/*{*/}
-                    {/*item.is_free ? '' : (*/}
-                      {/*<p>付费精品</p>*/}
-                    {/*)*/}
-                  {/*}*/}
                 </div>
+                {
+                  !_item.name ? '' : (
+                      <h3>{_item.name}</h3>
+                  )
+                }
+                {/*{*/}
+                {/*item.is_free ? '' : (*/}
+                {/*<p>付费精品</p>*/}
+                {/*)*/}
+                {/*}*/}
                 <div className="recommend-item-text">
                   {_item.title}
                 </div>

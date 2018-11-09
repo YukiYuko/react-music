@@ -7,6 +7,11 @@ import {Toast} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 
 class HighQuality extends React.Component {
+
+  componentWillUpdate (nextProps, nextState) {
+
+
+  }
   componentDidMount() {
     this.getTopPlayList();
     this.getFirstPlayList();
@@ -21,7 +26,7 @@ class HighQuality extends React.Component {
   // 获取榜单
   getTopPlayList () {
     let params = {
-      limit: 20
+      limit: 50
     };
     topPlaylist(params).then((res) => {
       if (res.code === 200) {
@@ -57,7 +62,7 @@ class HighQuality extends React.Component {
         <div className="HighQuality">
           <PublicHeader title="歌单"/>
           <div className="scroll">
-            <Scroll data={list}>
+            <Scroll ref="scroll" data={list}>
               <div className="head flex items-center">
                 <div className="headBg" style={{backgroundImage:`url(${first.coverImgUrl})`}}/>
                 <div className="headBox flex items-center">
@@ -66,7 +71,7 @@ class HighQuality extends React.Component {
                   </div>
                   <div className="right">
                     <h3>
-                      <i className="iconfont icon-huangguan"></i>
+                      <i className="iconfont icon-huangguan"/>
                       <span>精品歌单</span>
                     </h3>
                     <div className="text">
@@ -87,7 +92,7 @@ class HighQuality extends React.Component {
                 </div>
               </div>
               <div className="HighQualityList">
-                <Recommend list={list} width="49%"/>
+                <Recommend scroll={this.refs.scroll} list={list} width="49%"/>
               </div>
             </Scroll>
           </div>
