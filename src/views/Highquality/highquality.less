@@ -75,15 +75,15 @@
 }
 
 
-.am-slide-Right-enter,
-.am-slide-Right-appear {
+.am-slide-right-enter,
+.am-slide-right-appear {
   -webkit-transform: translate(100%, 0);
   -ms-transform: translate(100%, 0);
   transform: translate(100%, 0);
 }
-.am-slide-Right-enter,
-.am-slide-Right-appear,
-.am-slide-Right-leave {
+.am-slide-right-enter,
+.am-slide-right-appear,
+.am-slide-right-leave {
   -webkit-animation-duration: .2s;
   animation-duration: .2s;
   -webkit-animation-fill-mode: both;
@@ -93,28 +93,18 @@
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-.am-slide-Right-enter.am-slide-Right-enter-active,
-.am-slide-Right-appear.am-slide-Right-appear-active {
+.am-slide-right-enter.am-slide-right-enter-active,
+.am-slide-right-appear.am-slide-right-appear-active {
   -webkit-animation-name: amSlideRightIn;
   animation-name: amSlideRightIn;
   -webkit-animation-play-state: running;
   animation-play-state: running;
 }
-.am-slide-Right-leave.am-slide-Right-leave-active {
+.am-slide-right-leave.am-slide-right-leave-active {
   -webkit-animation-name: amSlideRightOut;
   animation-name: amSlideRightOut;
   -webkit-animation-play-state: running;
   animation-play-state: running;
-}
-@-webkit-keyframes amSlideRightIn {
-  0% {
-    -webkit-transform: translate(100%, 0);
-    transform: translate(100%, 0);
-  }
-  100% {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
 }
 @keyframes amSlideRightIn {
   0% {
@@ -124,16 +114,6 @@
   100% {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
-  }
-}
-@-webkit-keyframes amSlideRightOut {
-  0% {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-  100% {
-    -webkit-transform: translate(100%, 0);
-    transform: translate(100%, 0);
   }
 }
 @keyframes amSlideRightOut {

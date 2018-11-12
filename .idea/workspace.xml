@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/antd-mobile/lib/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/antd-mobile/lib/style/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/public/modal/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/modal/modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Highquality/Highquality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Highquality/Highquality.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Highquality/highquality.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Highquality/highquality.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -91,7 +87,7 @@
           <entry key="html" value="37" />
           <entry key="js" value="20003" />
           <entry key="jsx" value="44" />
-          <entry key="less" value="5430" />
+          <entry key="less" value="5442" />
           <entry key="vue" value="16" />
         </counts>
       </usages-collector>
@@ -101,7 +97,7 @@
           <entry key="HTML" value="37" />
           <entry key="JSX Harmony" value="44" />
           <entry key="JavaScript" value="20003" />
-          <entry key="Less" value="5430" />
+          <entry key="Less" value="5442" />
           <entry key="Vue.js" value="16" />
         </counts>
       </usages-collector>
@@ -154,11 +150,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/views/Highquality/Highquality.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="129" column="11" lean-forward="true" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
+                <state relative-caret-position="255">
+                  <caret line="128" column="44" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="44" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -166,7 +162,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/node_modules/antd-mobile/lib/style/index.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="165">
@@ -191,8 +187,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Highquality/highquality.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="222">
-                  <caret line="97" column="40" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="40" />
+                <state relative-caret-position="-23">
+                  <caret line="98" column="32" lean-forward="true" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
                 </state>
               </provider>
             </entry>
@@ -243,9 +239,9 @@
       <find>slideDownIn</find>
       <find>up</find>
       <find>down</find>
-      <find>MyModal</find>
       <find>amSlideRightIn</find>
       <find>slideInRight</find>
+      <find>MyModal</find>
     </findStrings>
     <replaceStrings>
       <replace>this.ctx</replace>
@@ -309,9 +305,9 @@
         <option value="$PROJECT_DIR$/src/views/Highquality/filterType.js" />
         <option value="$PROJECT_DIR$/src/components/public/modal/modal.css" />
         <option value="$PROJECT_DIR$/src/components/public/modal/modal.jsx" />
-        <option value="$PROJECT_DIR$/src/views/Highquality/highquality.less" />
         <option value="$PROJECT_DIR$/node_modules/antd-mobile/lib/style/index.css" />
         <option value="$PROJECT_DIR$/src/views/Highquality/Highquality.js" />
+        <option value="$PROJECT_DIR$/src/views/Highquality/highquality.less" />
       </list>
     </option>
   </component>
@@ -513,12 +509,12 @@
       <workItem from="1541641871498" duration="19460000" />
       <workItem from="1541727127267" duration="14437000" />
       <workItem from="1541757176879" duration="247000" />
-      <workItem from="1541988581404" duration="22241000" />
+      <workItem from="1541988581404" duration="23060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240469000" />
+    <option name="totallyTimeSpent" value="241288000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -533,9 +529,9 @@
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69822484" visible="true" weight="0.16149563" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69906545" visible="true" weight="0.16149563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.30177516" side_tool="true" visible="true" weight="0.16149563" />
+      <window_info id="npm" order="2" sideWeight="0.30093458" side_tool="true" visible="true" weight="0.16149563" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -546,7 +542,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.14932886" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.10234899" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -918,6 +914,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Highquality/Highquality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="128" column="44" selection-start-line="128" selection-start-column="39" selection-end-line="128" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/antd-mobile/lib/style/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -927,18 +933,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Highquality/highquality.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="97" column="40" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Highquality/Highquality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="129" column="11" lean-forward="true" selection-start-line="129" selection-start-column="11" selection-end-line="129" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-23">
+          <caret line="98" column="32" lean-forward="true" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
         </state>
       </provider>
     </entry>
