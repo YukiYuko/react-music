@@ -1,0 +1,64 @@
+@import "../../assets/styles/var";
+.filterType{
+  background-color: @base_background_color;
+  height: 100vh; padding-top: 45px; overflow: auto;
+
+  .icon-xuanzhong{
+    position: absolute; right: 0; bottom: 0;
+    color: @base_red_color; font-size: 0.5rem;
+    line-height: 1;
+  }
+
+  .filterTypeHead{
+    background-color: #ffffff; padding: 0.1rem;
+    margin-bottom: 0.2rem;
+    a{
+      border: 1px solid @base_border_color; font-size: 0.32rem;
+      text-align: center;
+      display: block; height: 0.8rem; line-height: 0.8rem;
+      position: relative;
+      &.active{
+        border-color: @base_red_color;
+      }
+    }
+  }
+  .filterTypeCat{
+    .filterTypeCatItem{
+      display: grid; width: 100%;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-auto-flow: row;
+      grid-gap: 1px 1px;
+      margin-bottom: 0.2rem; overflow: hidden;
+      //grid-column-gap: 1px;
+      //grid-row-gap: 1px;
+      div{
+        background-color: #ffffff;
+      }
+      .type{
+        line-height: 1.6rem;
+        grid-row-end: 2 span;
+        color: @base_black_text;
+      }
+      .typeItem{
+        height: 0.8rem; position: relative;
+        font-size: 0.24rem;
+        span{
+          line-height: 0.8rem;
+        }
+        .typeItemBg{
+          position: absolute; left: 0; right: 0; bottom: 0; top: 0;
+          border: 1px solid @base_red_color; overflow: hidden;
+          background: transparent;
+        }
+        .hot{
+          position: absolute; left: 0; top: 0;
+          transform: rotate(-90deg);
+          i{
+            line-height: 1; font-size: 0.4rem;
+            color: @base_red_color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,9 +3,10 @@ import './highquality.less'
 import PublicHeader from '../../components/public/header/Header';
 import {topPlaylist, highquality} from "../../request/api";
 import Recommend from '../../components/common/Recommend/Recommend';
-import {Toast} from "antd-mobile";
+import {Toast, Modal} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
-import CircleComponent from '../../components/public/Loading/circle'
+import CircleComponent from '../../components/public/Loading/circle';
+import FilterTypeComponent from './filterType';
 
 class HighQuality extends React.Component {
 
@@ -17,7 +18,8 @@ class HighQuality extends React.Component {
   state = {
     list: [],
     updateTime: 1541599210074,
-    first: ''
+    first: '',
+    showType: false
   };
 
   // 获取榜单
@@ -54,12 +56,19 @@ class HighQuality extends React.Component {
       }
     })
   }
+  show = (key, value = true) => (e) => {
+    // e.preventDefault();
+    this.setState({
+      [key]: value,
+    });
+  };
 
   render() {
-    const {first, list} = this.state;
+    const {first, list, showType} = this.state;
     return (
         <div className="HighQuality">
           <PublicHeader title="歌单"/>
+
           {
             !list.length ?
                 <CircleComponent/>:
@@ -84,7 +93,7 @@ class HighQuality extends React.Component {
                       </div>
                     </div>
                     <div className="select flex justify-between">
-                      <div className="left">
+                      <div onClick={this.show('showType')} className="left">
                         <a>全部歌单 ></a>
                       </div>
                       <div className="right">
@@ -100,6 +109,15 @@ class HighQuality extends React.Component {
                 </div>
 
           }
+          {/*筛选歌单*/}
+          <Modal
+              popup
+              visible={showType}
+              onClose={this.show('showType', false)}
+              animationType="slide-up"
+          >
+            <FilterTypeComponent back={this.show('showType', false)}/>
+          </Modal>
         </div>
     )
   }

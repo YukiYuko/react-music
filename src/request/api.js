@@ -100,3 +100,10 @@ export const topPlaylist = (params) => api.get(`${BASE_URL}/top/playlist`, param
 * 调用例子 : http://localhost:3000/top/playlist/highquality?before=1503639064232&limit=3
 * */
 export const highquality = (params) => api.get(`${BASE_URL}/top/playlist/highquality`, params);
+
+/*
+* 歌单分类
+* 接口地址 : /playlist/catlist
+* 调用例子 : /playlist/catlist
+* */
+export const playlistCatlist = () => api.get(`${BASE_URL}/playlist/catlist`);

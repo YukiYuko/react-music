@@ -27,7 +27,9 @@ class PublicHeader extends React.Component {
     return (
         <div className="public-header flex items-center" style={{'color': color, 'background': background}}>
           <div className="left" onClick={() => this.goBack()}>
-            <i className="iconfont icon-fanhui"></i>
+            {
+              !this.props.left ? <i className="iconfont icon-fanhui"/> : this.props.left
+            }
           </div>
           <div className="center box1">
             {title}
