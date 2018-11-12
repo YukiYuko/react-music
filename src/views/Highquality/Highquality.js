@@ -7,6 +7,7 @@ import {Toast, Modal} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 import CircleComponent from '../../components/public/Loading/circle';
 import FilterTypeComponent from './filterType';
+// import MyModal from '../../components/public/modal/modal'
 
 class HighQuality extends React.Component {
 
@@ -20,7 +21,8 @@ class HighQuality extends React.Component {
     updateTime: 1541599210074,
     first: '',
     showType: false,
-    cat: '全部'
+    cat: '全部',
+    visible: true
   };
 
   // 获取榜单
@@ -72,7 +74,7 @@ class HighQuality extends React.Component {
   };
 
   render() {
-    const {first, list, showType, cat} = this.state;
+    const {first, list, showType, cat, visible} = this.state;
     return (
         <div className="HighQuality">
           <PublicHeader title="歌单"/>
@@ -124,9 +126,18 @@ class HighQuality extends React.Component {
               visible={showType}
               onClose={this.show('showType', false)}
               animationType="slide-up"
+              transitionName="am-slide-right"
           >
             <FilterTypeComponent cat={cat} getTopPlayList={this.getTopPlayList.bind(this)} back={this.show('showType', false)}/>
           </Modal>
+
+          {/*<MyModal*/}
+              {/*visible={visible}*/}
+              {/*title="这是自定义title"*/}
+              {/*anime="slide-right"*/}
+          {/*>*/}
+            {/*这是自定义content*/}
+          {/*</MyModal>*/}
         </div>
     )
   }
