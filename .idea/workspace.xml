@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/var.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/var.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/public/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/public/header/header.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/public/header/header.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/request/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/request/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Highquality/Highquality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Highquality/Highquality.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Highquality/filterType.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Highquality/filterType.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Highquality/highquality.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Highquality/highquality.less" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -91,8 +88,8 @@
         <counts>
           <entry key="css" value="29" />
           <entry key="html" value="37" />
-          <entry key="js" value="19448" />
-          <entry key="less" value="5283" />
+          <entry key="js" value="19914" />
+          <entry key="less" value="5301" />
           <entry key="vue" value="16" />
         </counts>
       </usages-collector>
@@ -100,8 +97,8 @@
         <counts>
           <entry key="CSS" value="29" />
           <entry key="HTML" value="37" />
-          <entry key="JavaScript" value="19448" />
-          <entry key="Less" value="5283" />
+          <entry key="JavaScript" value="19914" />
+          <entry key="Less" value="5301" />
           <entry key="Vue.js" value="16" />
         </counts>
       </usages-collector>
@@ -110,10 +107,10 @@
           <entry key="css" value="9" />
           <entry key="html" value="12" />
           <entry key="jpeg" value="2" />
-          <entry key="js" value="103" />
+          <entry key="js" value="104" />
           <entry key="json" value="3" />
           <entry key="less" value="48" />
-          <entry key="ts" value="3" />
+          <entry key="ts" value="4" />
           <entry key="vue" value="2" />
         </counts>
       </usages-collector>
@@ -123,9 +120,9 @@
           <entry key="HTML" value="12" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="103" />
+          <entry key="JavaScript" value="104" />
           <entry key="Less" value="48" />
-          <entry key="TypeScript" value="3" />
+          <entry key="TypeScript" value="4" />
           <entry key="Vue.js" value="2" />
         </counts>
       </usages-collector>
@@ -137,7 +134,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8588537">
+    <splitter split-orientation="horizontal" split-proportion="0.8559856">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -155,8 +152,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/views/Highquality/Highquality.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="59" />
+                <state relative-caret-position="274">
+                  <caret line="125" column="41" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -164,11 +164,20 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Highquality/filterType.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="282">
-                  <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+                <state relative-caret-position="347">
+                  <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/until/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -204,16 +213,16 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/Highquality/highquality.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+                <state relative-caret-position="341">
+                  <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/views/Highquality/filterType.less">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="189">
@@ -234,8 +243,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/request/api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="109">
-                  <caret line="95" column="7" lean-forward="true" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+                <state relative-caret-position="131">
+                  <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -275,16 +284,13 @@
         <option value="XSLT Stylesheet" />
         <option value="react" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Less File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lyricLine</find>
-      <find>handleLyric</find>
-      <find>play</find>
       <find>play()</find>
       <find>TOP</find>
       <find>numberList</find>
@@ -312,6 +318,9 @@
       <find>showType</find>
       <find>hash</find>
       <find>Modal</find>
+      <find>getResult</find>
+      <find>getTopPlayList</find>
+      <find>select</find>
     </findStrings>
     <replaceStrings>
       <replace>this.ctx</replace>
@@ -324,7 +333,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/public/modal/modal.css" />
         <option value="$PROJECT_DIR$/src/components/public/modal/newPortal.js" />
         <option value="$PROJECT_DIR$/src/components/public/modal/newPortal.jsx" />
         <option value="$PROJECT_DIR$/src/components/public/modal/modal.jsx" />
@@ -367,13 +375,14 @@
         <option value="$PROJECT_DIR$/src/App.less" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/assets/styles/var.less" />
-        <option value="$PROJECT_DIR$/src/views/Highquality/highquality.less" />
         <option value="$PROJECT_DIR$/src/components/public/header/header.less" />
         <option value="$PROJECT_DIR$/src/components/public/header/Header.js" />
-        <option value="$PROJECT_DIR$/src/views/Highquality/Highquality.js" />
         <option value="$PROJECT_DIR$/src/request/api.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/views/Highquality/filterType.less" />
+        <option value="$PROJECT_DIR$/src/until/index.js" />
+        <option value="$PROJECT_DIR$/src/views/Highquality/highquality.less" />
+        <option value="$PROJECT_DIR$/src/views/Highquality/Highquality.js" />
         <option value="$PROJECT_DIR$/src/views/Highquality/filterType.js" />
       </list>
     </option>
@@ -400,7 +409,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="707" />
@@ -423,26 +432,6 @@
               <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-music" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-music" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-music" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Highquality" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-music" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-music" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Play" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -569,12 +558,12 @@
       <workItem from="1541641871498" duration="19460000" />
       <workItem from="1541727127267" duration="14437000" />
       <workItem from="1541757176879" duration="247000" />
-      <workItem from="1541988581404" duration="15252000" />
+      <workItem from="1541988581404" duration="18542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233480000" />
+    <option name="totallyTimeSpent" value="236770000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -586,12 +575,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="707" extended-state="1" />
+    <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69818914" visible="true" weight="0.11614956" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69942194" visible="true" weight="0.11614956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.30181086" side_tool="true" visible="true" weight="0.11614956" />
+      <window_info id="npm" order="2" sideWeight="0.30057803" side_tool="true" visible="true" weight="0.11614956" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -602,7 +591,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.16610739" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.12919463" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32885906" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -622,16 +611,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assets/styles/mixins.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/lyric-parser/dist/lyric.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/better-scroll/dist/bscroll.esm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -920,13 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Highquality/highquality.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/public/header/header.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -938,13 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="30" column="88" lean-forward="true" selection-start-line="30" selection-start-column="88" selection-end-line="30" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/request/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="95" column="7" lean-forward="true" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -962,17 +927,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/until/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="8746" column="4" selection-start-line="8746" selection-start-column="4" selection-end-line="8746" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/request/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Highquality/highquality.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Highquality/Highquality.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="59" />
+        <state relative-caret-position="274">
+          <caret line="125" column="41" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Highquality/filterType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        <state relative-caret-position="347">
+          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

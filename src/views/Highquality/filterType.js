@@ -4,41 +4,19 @@ import PublicHeader from '../../components/public/header/Header';
 import {playlistCatlist} from "../../request/api";
 import {Toast} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
+import until from '../../until/index'
 class FilterType extends React.Component {
   componentDidMount() {
+    this.setState({
+      catName: this.props.cat
+    });
     this.getTopPlayList()
   }
   state = {
+    catName: '全部',
     cat: '',
     select: ''
   };
-  getResult (arr, categories) {
-    let map = {};
-    let dest = [];
-    for (let i = 0; i < arr.length; i++) {
-      let ai = arr[i];
-      if (!map[ai.category]) {
-        dest.push({
-          category: ai.category,
-          data: [ai],
-          name: categories[ai.category]
-        });
-        map[ai.category] = ai;
-      } else {
-        for(let j = 0; j < dest.length; j++){
-          let dj = dest[j];
-          if(dj.category === ai.category){
-            dj.data.push(ai);
-            break;
-          }
-        }
-      }
-    }
-    dest.sort(function (a, b) {
-      return a.category-b.category;
-    });
-    return dest;
-  }
   getTopPlayList () {
     Toast.loading('加载中...');
     playlistCatlist().then((res) => {
@@ -46,7 +24,7 @@ class FilterType extends React.Component {
         setTimeout(() => {
           Toast.hide();
           this.setState({
-            cat: this.getResult(res.sub, res.categories)
+            cat: until.getResult(res.sub, res.categories)
           }, () => {
             console.log()
           });
@@ -59,12 +37,15 @@ class FilterType extends React.Component {
 
   selectType = (item) => () => {
     this.setState({
-      select: item
-    })
+      select: item,
+      catName: item.name
+    });
+    this.props.getTopPlayList(item.name);
+    this.props.back();
   };
 
   render() {
-    const {cat, select} = this.state;
+    const {cat, select, catName} = this.state;
     return (
         <div className="filterType">
           <PublicHeader back={this.props.back} left="取消" title="筛选歌单"/>
@@ -72,7 +53,7 @@ class FilterType extends React.Component {
             <div className="filterTypeHead">
               <a className={!select ? 'active' : ''}>
                 <span>全部歌单</span>
-                <i className="iconfont icon-xuanzhong" style={{display: !select ? 'block' : 'none'}}/>
+                <i className="iconfont icon-xuanzhong" style={{display:  catName === '全部'? 'block' : 'none'}}/>
               </a>
             </div>
             <div className="filterTypeCat">
@@ -93,7 +74,7 @@ class FilterType extends React.Component {
                               <span>
                             {innerItem.name}
                           </span>
-                              <div className="typeItemBg" style={{display: select.name === innerItem.name ? 'block' : 'none'}}>
+                              <div className="typeItemBg" style={{display: catName === innerItem.name ? 'block' : 'none'}}>
                                 <i className="iconfont icon-xuanzhong"/>
                               </div>
                             </div>
