@@ -107,3 +107,9 @@ export const highquality = (params) => api.get(`${BASE_URL}/top/playlist/highqua
 * 调用例子 : /playlist/catlist
 * */
 export const playlistCatlist = () => api.get(`${BASE_URL}/playlist/catlist`);
+/*
+* 热门歌单分类
+* 接口地址 : /playlist/hot
+* 调用例子 : /playlist/hot
+* */
+export const playlistHot = () => api.get(`${BASE_URL}/playlist/hot`);

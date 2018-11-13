@@ -7,6 +7,7 @@ import {Toast, Modal} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 import CircleComponent from '../../components/public/Loading/circle';
 import FilterTypeComponent from './filterType';
+import HighComponent from './high';
 // import MyModal from '../../components/public/modal/modal'
 
 class HighQuality extends React.Component {
@@ -22,7 +23,8 @@ class HighQuality extends React.Component {
     first: '',
     showType: false,
     cat: '全部',
-    visible: true
+    visible: true,
+    showHigh: false
   };
 
   // 获取榜单
@@ -74,7 +76,7 @@ class HighQuality extends React.Component {
   };
 
   render() {
-    const {first, list, showType, cat, visible} = this.state;
+    const {first, list, showType, cat, visible, showHigh} = this.state;
     return (
         <div className="HighQuality">
           <PublicHeader title="歌单"/>
@@ -89,11 +91,11 @@ class HighQuality extends React.Component {
             <Scroll ref="scroll" data={list}>
               <div className="head flex items-center">
                 <div className="headBg" style={{backgroundImage:`url(${first.coverImgUrl})`}}/>
-                <div className="headBox flex items-center">
+                <div className="headBox flex items-center" onClick={this.show('showHigh')}>
                   <div className="left">
                     <img src={first.coverImgUrl} alt={first.name}/>
                   </div>
-                  <div className="right">
+                  <div className="right box1">
                     <h3>
                       <i className="iconfont icon-huangguan"/>
                       <span>精品歌单 ></span>
@@ -126,11 +128,19 @@ class HighQuality extends React.Component {
               visible={showType}
               onClose={this.show('showType', false)}
               animationType="slide-up"
-              transitionName="am-slide-right"
+              // transitionName="am-slide-right"
           >
             <FilterTypeComponent cat={cat} getTopPlayList={this.getTopPlayList.bind(this)} back={this.show('showType', false)}/>
           </Modal>
-
+          <Modal
+              popup
+              visible={showHigh}
+              onClose={this.show('showHigh', false)}
+              // animationType="slide-up"
+              transitionName="am-slide-right"
+          >
+            <HighComponent back={this.show('showHigh', false)}/>
+          </Modal>
           {/*<MyModal*/}
               {/*visible={visible}*/}
               {/*title="这是自定义title"*/}
