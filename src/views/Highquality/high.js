@@ -7,6 +7,7 @@ import Scroll from '../../components/public/scroll/scroll';
 import Lazy from '../../components/public/Lazy/lazy'
 import until from '../../until/index'
 import FilterTypeComponent from "./filterType";
+const VelocityComponent = require('velocity-react/src/velocity-component');
 class High extends React.Component {
   componentDidMount() {
     this.setState({
@@ -68,25 +69,36 @@ class High extends React.Component {
     return (
         <div className="high flex dir-column">
           <PublicHeader back={this.props.back} title="精品歌单"/>
+          {/*<VelocityComponent animation={{ opacity: showFilter ? 1 : 0 }} duration={0}>*/}
+          {
+            showFilter &&
+            <VelocityComponent runOnMount animation={{ opacity: showFilter ? 1 : 0 }} duration={0}>
+              <div className="pop-box">
+                <VelocityComponent runOnMount animation={{ opacity: showFilter ? 1 : 0 }} duration={300}>
+                  <div className="pop-mask" onClick={this.show('showFilter',false)}/>
+                </VelocityComponent>
+                <VelocityComponent runOnMount animation={{ translateY: showFilter ? 0 : '-100%' }} duration={300}>
+                  <div className="pop-wrap">
+                    <div className="filter-all filter-tag">
+                      <a className="active">
+                        全部
+                        <i className="iconfont icon-xuanzhong"/>
+                      </a>
+                    </div>
+                    <div className="filter-tag">
+                      {
+                        cat && cat.map((item,index) => (
+                            <a key={index}>{item.name}</a>
+                        ))
+                      }
+                    </div>
+                  </div>
+                </VelocityComponent>
+              </div>
+            </VelocityComponent>
+          }
 
-          <div className="pop-box">
-            <div className="pop-mask"/>
-            <div className="pop-wrap">
-              <div className="filter-all filter-tag">
-                <a className="active">
-                  全部
-                  <i className="iconfont icon-xuanzhong"></i>
-                </a>
-              </div>
-              <div className="filter-tag">
-                {
-                  cat && cat.map((item,index) => (
-                    <a key={index}>{item.name}</a>
-                  ))
-                }
-              </div>
-            </div>
-          </div>
+          {/*</VelocityComponent>*/}
 
           <div className="filter flex justify-between">
             <div className="left">全部</div>
