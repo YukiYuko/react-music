@@ -5,14 +5,15 @@ import {highquality, playlistHot} from "../../request/api";
 import {Toast, Modal} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 import Lazy from '../../components/public/Lazy/lazy'
-import until from '../../until/index'
-import FilterTypeComponent from "./filterType";
-const VelocityComponent = require('velocity-react/src/velocity-component');
+import { CSSTransition } from 'react-transition-group';
+import PropTypes from 'prop-types';
+
 class High extends React.Component {
+  // 这一步是重点  我们需要这样做 才能得到 history 这个东西
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
   componentDidMount() {
-    this.setState({
-      catName: this.props.cat
-    });
     this.getHighPlayList();
     this.getPlayListTop();
   }
@@ -23,20 +24,26 @@ class High extends React.Component {
     showFilter: false,
     cat: []
   };
+  goDetail (item, e) {
+    // console.log('每条数据',item);
+    // console.log('事件对象e要放在最后',e);
+    this.context.router.history.push({pathname : `/SongList/${item.id}`})
+  }
   getHighPlayList () {
     Toast.loading('加载中...');
     let params = {
       limit: 20,
-      tag: '全部'
+      cat: this.state.catName
     };
+    this.setState({
+      list: []
+    });
     highquality(params).then((res) => {
       if (res.code === 200) {
         setTimeout(() => {
           Toast.hide();
           this.setState({
             list: res.playlists
-          }, () => {
-            console.log()
           });
         }, 1000);
         console.log(res)
@@ -45,7 +52,7 @@ class High extends React.Component {
       }
     })
   }
-  //
+  // 获取热门分类
   getPlayListTop () {
     playlistHot().then((res) => {
       if (res.code === 200) {
@@ -56,6 +63,15 @@ class High extends React.Component {
         Toast.fail('Load failed !!!', 2);
       }
     })
+  }
+  // 选择分类
+  switchTag (tag) {
+    this.setState({
+      catName: tag,
+      showFilter: false
+    }, () => {
+      this.getHighPlayList();
+    });
   }
   show = (key, value = true) => (e) => {
     // e.preventDefault();
@@ -69,39 +85,46 @@ class High extends React.Component {
     return (
         <div className="high flex dir-column">
           <PublicHeader back={this.props.back} title="精品歌单"/>
-          {/*<VelocityComponent animation={{ opacity: showFilter ? 1 : 0 }} duration={0}>*/}
-          {
-            showFilter &&
-            <VelocityComponent runOnMount animation={{ opacity: showFilter ? 1 : 0 }} duration={0}>
-              <div className="pop-box">
-                <VelocityComponent runOnMount animation={{ opacity: showFilter ? 1 : 0 }} duration={300}>
-                  <div className="pop-mask" onClick={this.show('showFilter',false)}/>
-                </VelocityComponent>
-                <VelocityComponent runOnMount animation={{ translateY: showFilter ? 0 : '-100%' }} duration={300}>
-                  <div className="pop-wrap">
-                    <div className="filter-all filter-tag">
-                      <a className="active">
-                        全部
-                        <i className="iconfont icon-xuanzhong"/>
-                      </a>
-                    </div>
-                    <div className="filter-tag">
-                      {
-                        cat && cat.map((item,index) => (
-                            <a key={index}>{item.name}</a>
-                        ))
-                      }
-                    </div>
-                  </div>
-                </VelocityComponent>
+          <div className="pop-box">
+            <CSSTransition
+                in={showFilter}
+                timeout={300}
+                classNames="fade"
+                unmountOnExit
+            >
+              <div className="pop-mask" onClick={this.show('showFilter',false)}/>
+            </CSSTransition>
+            <CSSTransition
+                in={showFilter}
+                timeout={300}
+                classNames="star"
+                unmountOnExit
+            >
+              <div className="pop-wrap">
+                <div className="filter-all filter-tag">
+                  <a className={catName === '全部' ? 'active':''} onClick={this.switchTag.bind(this,'全部')}>
+                    全部
+                    <i className="iconfont icon-xuanzhong"/>
+                  </a>
+                </div>
+                <div className="filter-tag">
+                  {
+                    cat && cat.map((item,index) => (
+                        <a className={catName === item.name ? 'active':''}
+                           key={index}
+                           onClick={this.switchTag.bind(this,item.name)}>
+                          {item.name}
+                          <i className="iconfont icon-xuanzhong"/>
+                        </a>
+                    ))
+                  }
+                </div>
               </div>
-            </VelocityComponent>
-          }
-
-          {/*</VelocityComponent>*/}
+            </CSSTransition>
+          </div>
 
           <div className="filter flex justify-between">
-            <div className="left">全部</div>
+            <div className="left">{catName}</div>
             <div className="right" onClick={this.show('showFilter')}>
               <i className="iconfont icon-shaixuan"/>
               <span>筛选</span>
@@ -113,8 +136,8 @@ class High extends React.Component {
             <Scroll>
               <div>
                 {
-                  list && list.map((item, index) => (
-                    <div className="highItem flex items-center" key={index}>
+                  list.length ? list.map((item, index) => (
+                    <div onClick={this.goDetail.bind(this, item)} className="highItem flex items-center" key={index}>
                       <div className="left">
                         <Lazy src={item.coverImgUrl} alt={item.name}/>
                       </div>
@@ -127,7 +150,7 @@ class High extends React.Component {
                         </div>
                       </div>
                     </div>
-                  ))
+                  )) : <div className="nothing">没有更多数据</div>
                 }
               </div>
             </Scroll>
