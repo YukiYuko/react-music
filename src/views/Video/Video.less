@@ -5,4 +5,46 @@
   .videoHead{
     height: 2rem; background-color: @base_red_color;
   }
+  .videoWrap{
+    background-color: @base_background_color;
+  }
+  .videoList{
+    .videoItem{
+      background-color: #ffffff; padding: 0.1rem 0.1rem 0;
+      margin-bottom: 0.1rem; display: block;
+      .title{
+        padding: 0.2rem 0; font-size: 0.32rem;
+        color: @base_black_text;
+      }
+      .text{
+        padding: 0.3rem 0;
+        position: relative;
+        font-size: 0.26rem;
+        line-height: 1;
+        color: @base_gray_text;
+        .share{
+          span:not(:last-child){
+            margin-right: 0.3rem;
+          }
+        }
+        &:before{
+          .top-line();
+        }
+      }
+    }
+  }
+}
+.videoBg{
+  width: 100%; height: 4rem;
+  background-color: #000000;
+  position: relative;
+  .cover{
+    height: 100%; width: 100%;
+  }
+  .icon-bofang{
+    font-size: 1.2rem; position: absolute;
+    margin: auto; color: #ffffff;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

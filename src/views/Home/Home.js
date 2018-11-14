@@ -126,7 +126,7 @@ class Home extends React.Component {
                     私人FM
                   </div>
                 </div>
-                <div className="icon-item box1">
+                <div onClick={() => this.go('Daily')} className="icon-item box1">
                   <div className="icon-item-icon">
                     <i className="iconfont icon-tuijian"></i>
                   </div>

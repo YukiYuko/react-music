@@ -26,6 +26,22 @@ let until = {
       return a.category-b.category;
     });
     return dest;
+  },
+  // 格式化时间
+  formatTime (time) {
+    if (!time) {
+      return
+    }
+    let nowyear = new Date().getFullYear();
+    let date = new Date(time);
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    let day = date.getDay();
+    if (nowyear === year) {
+      return `${month}月${day}日`
+    } else {
+      return `${year}年${month}月${day}日`
+    }
   }
 };
 export default until

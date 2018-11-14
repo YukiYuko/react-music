@@ -4,6 +4,7 @@ import {Switch, Route, BrowserRouter as Router,} from 'react-router-dom'
 import Home from './views/Home/Home'
 import Person from './views/Person/Person'
 import Video from './views/Video/Video'
+import VideoDetail from './views/Video/VideoDetail'
 import Friend from './views/Friend/Friend'
 import Setting from './views/Setting/Setting'
 import SongList from './views/SongList/SongList'
@@ -11,6 +12,7 @@ import Play from './views/Play/Play'
 import Top from './views/Top/Top'
 import Subscribers from './views/Subscribers/Subscribers'
 import High from './views/Highquality/Highquality'
+import Daily from './views/Daily/Daily'
 import './App.less';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 const styles = {};
@@ -45,6 +47,7 @@ class App extends Component {
                         <Switch location={location}>
                           <Route exact path='/' component={Home}/>
                           <Route exact path='/Video' component={Video}/>
+                          <Route exact path='/Video/:id' component={VideoDetail}/>
                           <Route exact path='/Person' component={Person}/>
                           <Route exact path='/Friend' component={Friend}/>
                           <Route exact path='/Setting' component={Setting}/>
@@ -53,6 +56,7 @@ class App extends Component {
                           <Route exact path='/Top' component={Top}/>
                           <Route exact path='/Subscribers' component={Subscribers}/>
                           <Route exact path='/High' component={High}/>
+                          <Route exact path='/Daily' component={Daily}/>
                         </Switch>
                       </CSSTransition>
                     </TransitionGroup>

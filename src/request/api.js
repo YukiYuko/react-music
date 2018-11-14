@@ -113,3 +113,46 @@ export const playlistCatlist = () => api.get(`${BASE_URL}/playlist/catlist`);
 * 调用例子 : /playlist/hot
 * */
 export const playlistHot = () => api.get(`${BASE_URL}/playlist/hot`);
+/*
+* 每日推荐歌曲
+* 接口地址 : /recommend/songs
+* 调用例子 : /recommend/songs
+* */
+export const recommendSongs = () => api.get(`${BASE_URL}/recommend/songs`);
+/*
+* 最新mv
+* 可选参数 : limit: 取出数量 , 默认为 30
+* 接口地址 : /mv/first
+* 调用例子 : /mv/first
+* */
+export const mvFirst = (params) => api.get(`${BASE_URL}/mv/first`, params);
+/*
+* 获取 mv 数据
+* 必选参数 : mvid: mv 的 id
+* 接口地址 : /mv/detail
+* 调用例子 : /mv/detail?mvid=5436712
+* */
+export const mvDetail = (params) => api.get(`${BASE_URL}/mv/detail`, params);
+/*
+* mv 地址
+* 必选参数 : mvid: mv 的 id
+* 接口地址 : /mv/url
+* 调用例子 : /mv/url?id=5436712
+* */
+export const mvUrl = (params) => api.get(`${BASE_URL}/mv/url`, params);
+/*
+* 获取相似音乐
+* 必选参数 : mvid: mv 的 id
+* 接口地址 : /simi/mv
+* 调用例子 : /simi/mv?mvid=5436712
+* */
+export const simiMv = (params) => api.get(`${BASE_URL}/simi/mv`, params);
+/*
+* mv评论
+* 必选参数 : id: mv id
+* 可选参数 : limit: 取出评论数量 , 默认为 20
+* offset: 偏移数量 , 用于分页 , 如 :( 评论页数 -1)*20, 其中 20 为 limit 的值
+* 接口地址 : /comment/mv
+* 调用例子 : /comment/mv?id=5436712
+* */
+export const commentMv = (params) => api.get(`${BASE_URL}/comment/mv`, params);
