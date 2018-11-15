@@ -2,14 +2,16 @@ import React from 'react'
 import Swiper from 'react-id-swiper';
 import 'react-id-swiper/src/styles/less/swiper.less'
 import './Home.less'
-import {observable, autorun} from 'mobx';
 import Recommend from '../../components/common/Recommend/Recommend';
 import FooterComponent from '../../components/common/Footer/footer';
 import Scroll from '../../components/public/scroll/scroll';
 import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
 import HighqualityComponent from '../Highquality/Highquality';
-import SongList from "../SongList/SongList";
+
+
+
+
 const VelocityComponent = require('velocity-react/src/velocity-component');
 
 class Home extends React.Component {

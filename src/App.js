@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Switch, Route, BrowserRouter as Router,} from 'react-router-dom'
 
 import Home from './views/Home/Home'
+import Login from './views/Login/Login'
 import Person from './views/Person/Person'
 import Video from './views/Video/Video'
 import VideoDetail from './views/Video/VideoDetail'
@@ -26,6 +27,11 @@ styles.fill = {
 };
 
 class App extends Component {
+
+  componentDidMount() {
+
+  }
+
   render() {
     return (
         <Router>
@@ -46,6 +52,7 @@ class App extends Component {
                       >
                         <Switch location={location}>
                           <Route exact path='/' component={Home}/>
+                          <Route exact path='/Login' component={Login}/>
                           <Route exact path='/Video' component={Video}/>
                           <Route exact path='/Video/:id' component={VideoDetail}/>
                           <Route exact path='/Person' component={Person}/>
