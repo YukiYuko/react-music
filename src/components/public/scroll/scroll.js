@@ -11,6 +11,16 @@ class Scroll extends React.Component {
   componentDidMount() {
     this.initScroll();
   }
+  componentWillUpdate(nextProps, nextState) {
+    setTimeout(() => {
+      this.forceUpdate(true)
+    }, 20)
+  }
+
+  state = {
+    isPullUpLoad: false,
+    pullUpTxt: '正在加载中'
+  };
 
   clickItem = (item) => {
     console.log('item', item)
@@ -26,9 +36,14 @@ class Scroll extends React.Component {
       scrollY: this.props.freeScroll || this.props.direction === DIRECTION_V,
       scrollX: this.props.freeScroll || this.props.direction === DIRECTION_H,
       scrollbar: this.props.scrollbar || false,
-      freeScroll: this.props.freeScroll || false
+      freeScroll: this.props.freeScroll || false,
+      pullUpLoad: this.props.pullUpLoad || false
     };
     this.scroll = new BScroll(this.refs.wrapper, options);
+
+    if (this.props.pullUpLoad) {
+      this._initPullUpLoad()
+    }
   };
 
   scrollToElement () {
@@ -39,10 +54,43 @@ class Scroll extends React.Component {
   refresh() {
     this.scroll && this.scroll.refresh()
   }
+  _initPullUpLoad() {
+    this.scroll.on('pullingUp', () => {
+      this.setState({
+        isPullUpLoad: true
+      }, () => {
+        this.props.pullingUp();
+      });
+    })
+  }
+  refresh() {
+    this.scroll && this.scroll.refresh()
+  }
+
+  forceUpdate (dirty) {
+    if (this.props.pullUpLoad && this.state.isPullUpLoad) {
+      this.setState({
+        isPullUpLoad: false
+      },() => {
+        this.scroll.finishPullUp();
+        this.setState({
+          pullUpDirty: dirty
+        });
+        this.refresh()
+      });
+    } else {
+      this.refresh()
+    }
+  }
+
+  computedPullUpTxt() {
+    return this.state.pullUpDirty ? '正在加载中' : '没有更多数据了'
+  }
 
   render() {
 
-    const {data} = this.props;
+    const {data, pullUpLoad} = this.props;
+    const {isPullUpLoad, pullUpTxt} = this.state;
 
     const DefaultHtml = () => {
       return (
@@ -60,6 +108,22 @@ class Scroll extends React.Component {
           <div className="scroll-content">
             {
               this.props.children ? this.props.children : <DefaultHtml></DefaultHtml>
+            }
+            {/*上啦加载*/}
+            {
+              pullUpLoad &&
+              <div className="pullup-wrapper">
+                {
+                  !isPullUpLoad ?
+                      <div className="before-trigger">
+                        <span>{this.computedPullUpTxt()}</span>
+                      </div>:
+                      <div className="after-trigger">
+                        {/*<loading></loading>*/}
+                        Loading in...
+                      </div>
+                }
+              </div>
             }
           </div>
         </div>

@@ -65,38 +65,3 @@
     padding: 0 0.2rem; background-color: @base_background_color;
   }
 }
-
-.commentList{
-  padding: 0.2rem;
-  .commentItem{
-    margin-bottom: 0.2rem;
-    .left{
-      width: 0.4rem; height: 0.4rem;
-      margin-right: 0.2rem;
-      img{
-        width: 100%; height: 100%;  border-radius: 50%;
-      }
-    }
-    .right{
-      position: relative;
-      .title{
-        font-size: 0.26rem;
-        margin-bottom: 3px;
-      }
-      .time{
-        font-size: 10px; color: @base_gray_text;
-      }
-      .text{
-        font-size: 0.28rem;
-        padding: 0.2rem 0;
-        .reply{
-          border: 1px solid @base_border_color;
-          margin-top: 0.2rem;
-        }
-      }
-      &:after{
-        .bottom-line();
-      }
-    }
-  }
-}

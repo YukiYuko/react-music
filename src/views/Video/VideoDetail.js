@@ -4,6 +4,7 @@ import {mvDetail, mvUrl, simiMv, commentMv} from "../../request/api";
 import {Toast, Modal} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 import PublicHeader from '../../components/public/header/Header';
+import Comment from '../../components/common/comment/comment';
 import {numberFilter} from '../../filters/index'
 import until from '../../until/index'
 
@@ -16,8 +17,10 @@ class VideoDetail extends React.Component {
       id: '',
       url: '',
       simiList: [],
-      comments: [],
-      hotComments: []
+      comments: '',
+      hotComments: '',
+      limit: 20,
+      page: 0
     }
   }
   componentDidMount() {
@@ -75,18 +78,29 @@ class VideoDetail extends React.Component {
   // 获取评论
   getCommentMv () {
     let params = {
-      id: this.props.match.params.id
+      id: this.props.match.params.id,
+      limit: this.state.limit,
+      offset: this.state.page * this.state.limit
     };
-    commentMv(params).then((res) => {
-      if (res.code === 200) {
-        this.setState({
-          hotComments: res.hotComments,
-          comments: res.comments
-        });
-      }else {
-        Toast.fail('Load failed !!!', 2);
-      }
-    })
+    if (this.state.page < 3)  {
+      commentMv(params).then((res) => {
+        if (res.code === 200) {
+          this.setState({
+            hotComments: !this.state.hotComments ? res.hotComments : this.state.hotComments,
+            comments: [...this.state.comments,...res.comments],
+            page: this.state.page + 1
+          });
+        }else {
+          Toast.fail('Load failed !!!', 2);
+        }
+      })
+    } else {
+      this.refs.scroll.forceUpdate();
+    }
+  }
+  // 上拉加载
+  pullingUp () {
+    this.getCommentMv();
   }
 
   render() {
@@ -99,7 +113,7 @@ class VideoDetail extends React.Component {
                 id="my-player"
                 className="video-js vjs-big-play-centered"
                 controls
-                preload="auto"
+                preload={false}
                 poster={detail.cover}
                 data-setup='{}'>
               <source src={url.url} type="video/mp4"/>
@@ -113,7 +127,7 @@ class VideoDetail extends React.Component {
             </video>
           }
           <div className="videoWrap box1">
-            <Scroll>
+            <Scroll data={comments} ref="scroll" pullUpLoad={true} pullingUp={this.pullingUp.bind(this)}>
               <div className="mess">
                 <div className="title">{detail.briefDesc}</div>
                 <div className="intro">
@@ -126,19 +140,19 @@ class VideoDetail extends React.Component {
                 <div className="share flex items-center">
                   <div>
                     <i className="iconfont icon-dianzan"></i>
-                    <p>1212</p>
+                    <p>{numberFilter(detail.likeCount)}</p>
                   </div>
                   <div>
                     <i className="iconfont icon-shoucang"></i>
-                    <p>21</p>
+                    <p>{numberFilter(detail.subCount)}</p>
                   </div>
                   <div>
                     <i className="iconfont icon-liuyan"></i>
-                    <p>435</p>
+                    <p>{numberFilter(detail.commentCount)}</p>
                   </div>
                   <div>
                     <i className="iconfont icon-share"></i>
-                    <p>56</p>
+                    <p>{numberFilter(detail.shareCount)}</p>
                   </div>
                 </div>
               </div>
@@ -164,37 +178,20 @@ class VideoDetail extends React.Component {
                 </div>
               </div>
               {/*热门评论*/}
+              {
+                hotComments && <div className="hotComment">
+                  <div className="section-title">
+                    精彩评论
+                  </div>
+                  <Comment comments={hotComments}></Comment>
+                </div>
+              }
+              {/*最新评论*/}
               <div className="hotComment">
                 <div className="section-title">
-                  精彩评论
+                  最新评论
                 </div>
-                <div className="commentList">
-                  {
-                    hotComments && hotComments.map((item, index) => (
-                      <div className="commentItem flex" key={index}>
-                        <div className="left">
-                          <img src={item.user.avatarUrl} alt={item.user.nickname}/>
-                        </div>
-                        <div className="right box1">
-                          <div className="title flex justify-between">
-                            <span>{item.user.nickname}</span>
-                            <a><i className="iconfont icon-dianzan"></i> {item.likedCount}</a>
-                          </div>
-                          <p className="time">{until.formatTime(item.time)}</p>
-                          <div className="text">
-                            <p>{item.content}</p>
-                            {
-                              item.beReplied.length ? <div className="reply">
-                                <a>@{item.beReplied[0].user.nickname}:</a>
-                                <span>{item.beReplied[0].content}</span>
-                              </div> : ''
-                            }
-                          </div>
-                        </div>
-                      </div>
-                    ))
-                  }
-                </div>
+                <Comment comments={comments}></Comment>
               </div>
             </Scroll>
           </div>
