@@ -63,9 +63,6 @@ class Scroll extends React.Component {
       });
     })
   }
-  refresh() {
-    this.scroll && this.scroll.refresh()
-  }
 
   forceUpdate (dirty) {
     if (this.props.pullUpLoad && this.state.isPullUpLoad) {
@@ -90,7 +87,7 @@ class Scroll extends React.Component {
   render() {
 
     const {data, pullUpLoad} = this.props;
-    const {isPullUpLoad, pullUpTxt} = this.state;
+    const {isPullUpLoad} = this.state;
 
     const DefaultHtml = () => {
       return (
