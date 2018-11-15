@@ -1,0 +1,25 @@
+.divider{
+  display: table;
+  white-space: nowrap;
+  height: auto;
+  overflow: hidden;
+  line-height: 1;
+  text-align: center;
+  padding: 10px 0;
+  color: #666;
+  &:before,&:after{
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 50%;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-image: url("./divider.png");
+  }
+  &:before{
+    background-position: right 1em top 50%;
+  }
+  &:after{
+    background-position: left 1em top 50%;
+  }
+}

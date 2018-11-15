@@ -1,5 +1,9 @@
 import React from 'react';
 import {observer} from "mobx-react";
+import './child.less';
+import MyButton from '../../components/public/Button/Button';
+import Divider from '../../components/public/Divider/Divider';
+import PublicHeader from '../../components/public/header/Header';
 
 @observer
 class LoginChild extends React.Component {
@@ -9,29 +13,19 @@ class LoginChild extends React.Component {
     const {vm} = this.props;
 
     return (
-        <div>
-          <h1>This is mobx-react!</h1>
-          <p>
-            First name:{" "}
-            <textarea
-                type="text"
-                value={vm.firstName}
-                onChange={e => vm.setValue("firstName", e)}
-            />
-          </p>
-          <p>
-            Last name:{" "}
-            <textarea
-                type="text"
-                value={vm.lastName}
-                onChange={e => vm.setValue("lastName", e)}
-            />
-          </p>
-          <p>Full name: {vm.fullName}</p>
-          <p>
-            <button onClick={vm.doReset}>Reset</button>
-          </p>
+      <div className="loginBox">
+        <PublicHeader title="登录注册"/>
+        <div className="logo">
+          <img src={require('../../assets/images/logo.png')} alt="考拉音乐"/>
         </div>
+        <div className="switchLogin">
+          <MyButton name="block">手机号登录</MyButton>
+          <MyButton name="block">注册</MyButton>
+        </div>
+        <div className="wave">
+          <Divider/>
+        </div>
+      </div>
     )
   }
 }
