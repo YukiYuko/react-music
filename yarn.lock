@@ -5087,6 +5087,11 @@ jest@20.0.4:
   dependencies:
     jest-cli "^20.0.4"
 
+jparticles@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jparticles/-/jparticles-2.0.1.tgz#e5a3cf0edb1b1c204662cead7bc5043ee186b567"
+  integrity sha1-5aPPDtsbHCBGYs6te8UEPuGGtWc=
+
 js-base64@^2.1.9:
   version "2.4.8"
   resolved "http://registry.npm.taobao.org/js-base64/download/js-base64-2.4.8.tgz#57a9b130888f956834aa40c5b165ba59c758f033"
