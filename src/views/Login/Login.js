@@ -1,42 +1,22 @@
 import React from 'react';
 import Child from './child';
 // 引入 mobx
-import {observable, computed, action} from "mobx";
+import { inject, observer } from 'mobx-react';
 
-class VM {
-  @observable firstName = '';
-  @observable lastName = '';
-
-  @computed
-  get fullName () {
-    const {firstName, lastName} = this;
-    if (!firstName && !lastName) {
-      return "Please input your name!";
-    } else {
-      return firstName + " " + lastName;
-    }
-  }
-
-  @action.bound
-  setValue(key, event) {
-    this[key] = event.target.value;
-  }
-  @action.bound
-  doReset() {
-    this.firstName = "";
-    this.lastName = "";
-  }
-}
-
-const vm = new VM();
-
-
+// 给组件注入其需要的 store，指定对应的子 store 名称
+@inject('user')
+// 将组件转化为响应式组件
+@observer
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {}
   render() {
+    const { user } = this.props;
     return (
         <div className="login">
-          <Child vm={vm}/>
+          <Child user={user}/>
         </div>
     )
   }

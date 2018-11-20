@@ -156,3 +156,18 @@ export const simiMv = (params) => api.get(`${BASE_URL}/simi/mv`, params);
 * 调用例子 : /comment/mv?id=5436712
 * */
 export const commentMv = (params) => api.get(`${BASE_URL}/comment/mv`, params);
+/*
+* 手机登录
+* 必选参数 : phone: 手机号码 password: 密码
+* 接口地址 : /login/cellphone
+* 调用例子 : /login/cellphone?phone=xxx&password=yyy
+* */
+export const loginPhone = (params) => api.get(`${BASE_URL}/login/cellphone`, params);
+/*
+* 获取用户详情
+* 说明 : 登陆后调用此接口 , 传入用户 id, 可以获取用户详情
+* 必选参数 : uid : 用户 id
+* 接口地址 : /user/detail
+* 调用例子 : /user/detail?uid=32953014
+* */
+export const getUserInfo = (params) => api.get(`${BASE_URL}/user/detail`, params);

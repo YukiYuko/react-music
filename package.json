@@ -40,6 +40,7 @@
     "jparticles": "^2.0.1",
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
+    "localforage": "^1.7.3",
     "lyric-parser": "^1.0.1",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.5",

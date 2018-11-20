@@ -8,14 +8,19 @@ import Scroll from '../../components/public/scroll/scroll';
 import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
 import HighqualityComponent from '../Highquality/Highquality';
+import { inject, observer } from 'mobx-react';
 
 
 
 
 const VelocityComponent = require('velocity-react/src/velocity-component');
 
+@inject('user')
+@observer
 class Home extends React.Component {
 
+  componentWillMount() {
+  }
   state = {
     list_recommend: [],
     newsong: [],
@@ -35,7 +40,6 @@ class Home extends React.Component {
         setTimeout(() => {
           Toast.hide();
         }, 1000);
-        console.log(res);
       }else {
         Toast.fail('Load failed !!!', 2);
       }
@@ -74,6 +78,7 @@ class Home extends React.Component {
     this.get_personalized();
     this.get_personalized('newsong');
     this.get_personalized('djprogram');
+    console.log('首页', this.props)
   }
 
   render() {

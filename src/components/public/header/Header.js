@@ -11,7 +11,6 @@ class PublicHeader extends React.Component {
     router: PropTypes.object.isRequired
   };
   componentDidMount() {
-    console.log(this.context)
   }
 
   goBack () {

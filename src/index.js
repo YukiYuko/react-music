@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter} from 'react-router-dom'
+import { configure } from 'mobx';
+import { Provider } from 'mobx-react';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+import stores from './store/index';
+
+configure({ enforceActions: true });
+
 ReactDOM.render((
-  <App />
+  <Provider {...stores}>
+    <App />
+  </Provider>
 ), document.getElementById('root'));
 registerServiceWorker();

@@ -1,13 +1,17 @@
 import React from 'react';
 import {observer} from "mobx-react";
+import PropTypes from 'prop-types';
 import './child.less';
 import MyButton from '../../components/public/Button/Button';
 import Divider from '../../components/public/Divider/Divider';
 import PublicHeader from '../../components/public/header/Header';
 import HighComponent from "../Highquality/high";
-import {Modal} from "antd-mobile";
+import {Modal, Toast} from "antd-mobile";
 import {phone, stringCheck} from '../../until/validate';
 import {tips} from '../../until/action';
+import {loginPhone} from '../../request/api';
+import localforage from 'localforage'
+
 const JParticles = require('jparticles');
 const prompt = Modal.prompt;
 const alert = Modal.alert;
@@ -19,10 +23,24 @@ class LoginChild extends React.Component {
     this.state = {
       show_login: false,
       show_reg: false
-    }
+    };
+  }
+  // 这一步是重点  我们需要这样做 才能得到 history 这个东西
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  };
+  componentWillMount() {
+    localforage.getItem('userInfo').then((value)=>{
+      // 当离线仓库中的值被载入时，此处代码运行
+      if (value) {
+        this.context.router.history.push('/');
+      }
+    }).catch(function(err) {
+      // 当出错时，此处代码运行
+      console.log(err);
+    });
   }
   componentDidMount() {
-
   }
 
   initWave () {
@@ -47,7 +65,7 @@ class LoginChild extends React.Component {
     })
   };
 
-  loginFun (login, password) {
+  loginFun = (login, password) => {
     if (!phone(login)) {
       tips('请输入正确的手机号');
       return false
@@ -56,8 +74,30 @@ class LoginChild extends React.Component {
       tips('密码  4到16位（字母，数字，下划线，减号）');
       return false
     }
-    tips('验证通过，可登陆')
-  }
+    let params = {
+      phone: login,
+      password: password
+    };
+    Toast.loading('登录中...');
+    loginPhone(params).then((res) => {
+      if (res.code === 200) {
+        const _this = this;
+        localforage.setItem('userInfo', res.profile).then((value) => {
+          // 当值被存储后，可执行其他操作
+          setTimeout(() => {
+            _this.context.router.history.push('/');
+            console.log(value);
+            Toast.hide();
+          }, 1000);
+        }).catch(function(err) {
+          // 当出错时，此处代码运行
+          console.log(err);
+        });
+      }else {
+        Toast.fail(res.msg, 2);
+      }
+    })
+  };
 
   // 公共提示窗
 
