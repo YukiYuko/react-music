@@ -22,12 +22,12 @@ class PublicHeader extends React.Component {
   }
 
   render() {
-    const {title, color = '#fff', background = '#d94036'} = this.props;
+    const {title, color = '#fff', background = '#d94036', showLeft = true} = this.props;
     return (
         <div className="public-header flex items-center" style={{'color': color, 'background': background}}>
           <div className="left" onClick={() => this.goBack()}>
             {
-              !this.props.left ? <i className="iconfont icon-fanhui"/> : this.props.left
+              !this.props.left ? showLeft &&  <i className="iconfont icon-fanhui"/> : this.props.left
             }
           </div>
           <div className="center box1">

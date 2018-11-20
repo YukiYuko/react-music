@@ -1,0 +1,31 @@
+@import "../../assets/styles/var";
+@import "../../assets/styles/mixins";
+.setting{
+  .setting-head{
+    .setting-head-top{
+      padding: 0.3rem 0.2rem; position: relative;
+      &:after{
+        .bottom-line()
+      }
+      .left{
+        .avatar{
+          width: 1.2rem; height: 1.2rem; margin-right: 0.2rem;
+          img{
+            width: 100%; height: 100%; border-radius: 50%;
+          }
+        }
+        .nickname{
+          p{
+            font-size: 0.32rem; margin-bottom: 0.1rem;
+          }
+          a{
+            font-size: 0.2rem; color: @base_gray_text;
+          }
+        }
+      }
+      .right{
+        font-size: 0.24rem;
+      }
+    }
+  }
+}
