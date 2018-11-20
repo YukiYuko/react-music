@@ -11,7 +11,7 @@ class MyButton extends React.Component {
   render() {
     const name = this.props.name && `bubbly-button ${this.props.name}`;
     return (
-        <a className={name}>{this.props.children}</a>
+        <a className={name} onClick={this.props.click}>{this.props.children}</a>
     )
   }
 }
