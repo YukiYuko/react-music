@@ -1,7 +1,9 @@
 @import "../../assets/styles/var";
 @import "../../assets/styles/mixins";
 .setting{
+  background-color: @base_background_color;
   .setting-head{
+    background-color: #ffffff; margin-bottom: 0.2rem;
     .setting-head-top{
       padding: 0.3rem 0.2rem; position: relative;
       &:after{
@@ -33,8 +35,44 @@
           padding: 6px 10px;
           &.noSign{
             color: @base_red_color;
+            border-color: @base_red_color;
+
           }
         }
+      }
+    }
+    .setting-head-bottom{
+      padding:0.2rem 0;
+      .setting-menu{
+        flex: 1; text-align: center;
+        position: relative;
+        h3{
+          font-size: 0.24rem;
+          color: @base_gray_text;
+        }
+        .icon-edit{
+          font-size: 0.4rem;
+        }
+        span{
+          position: absolute;
+          width: 8px; height: 8px;
+          border-radius: 50%;
+          background-color: @base_red_color;
+          left: 50%;
+          margin-left: 0.2rem;
+        }
+      }
+    }
+  }
+
+  .setting-item-warp{
+    .am-list-body{
+      background: none;
+    }
+    .setting-item{
+      .marginBtm20();
+      .iconfont{
+        font-size: 0.42rem; color: @base_gray_text;
       }
     }
   }

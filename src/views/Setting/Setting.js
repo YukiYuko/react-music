@@ -4,8 +4,12 @@ import { inject, observer } from 'mobx-react';
 import PublicHeader from "../../components/public/header/Header";
 import {getUserInfo} from '../../request/api';
 import localforage from "localforage";
-import {Toast} from "antd-mobile";
+import {Toast, List, Switch} from "antd-mobile";
 import stores from "../../store";
+import FooterComponent from "../../components/common/Footer/footer";
+
+const Item = List.Item;
+const Brief = Item.Brief;
 
 @inject('user')
 @observer
@@ -13,7 +17,8 @@ class Setting extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      userInfo: ''
+      userInfo: '',
+      checked: false
     }
   }
   componentDidMount() {
@@ -48,6 +53,7 @@ class Setting extends React.Component {
     return (
       <div className="setting inner-warp">
         <PublicHeader showLeft={false} title="账号"/>
+        {/*头部*/}
         <div className="setting-head">
           <div className="setting-head-top flex justify-between">
             <div className="left flex items-center">
@@ -68,10 +74,70 @@ class Setting extends React.Component {
               }
             </div>
           </div>
-          <div className="setting-head-bottom flex">
-            <div className="setting-menu"></div>
+          <div className="setting-head-bottom flex items-center">
+            <div className="setting-menu">
+              <h3>动态</h3>
+              <p>0</p>
+            </div>
+            <div className="setting-menu">
+              <h3>关注</h3>
+              <p>{userInfo.profile && userInfo.profile.follows}</p>
+            </div>
+            <div className="setting-menu">
+              <h3>粉丝</h3>
+              <p>{userInfo.profile && userInfo.profile.followeds}</p>
+            </div>
+            <div className="setting-menu">
+              <span></span>
+              <p><i className="iconfont icon-edit"/></p>
+              <h3>我的资料</h3>
+            </div>
           </div>
         </div>
+        {/*设置项*/}
+        <div className="setting-item-warp">
+          <List>
+            <div className="setting-item">
+              <Item
+                  thumb={<i className="iconfont icon-xiaoxi"/>}
+                  arrow="horizontal"
+                  onClick={() => {}}
+              >我的消息</Item>
+            </div>
+            <div className="setting-item">
+              <Item
+                  thumb={<i className="iconfont icon-huanfu"/>}
+                  arrow="horizontal"
+                  onClick={() => {}}
+                  extra={'个性红'}
+              >换肤</Item>
+              <Item
+                  thumb={<i className="iconfont icon-yejian"/>}
+                  onClick={() => {}}
+                  extra={<Switch
+                      checked={this.state.checked}
+                      onChange={() => {
+                        this.setState({
+                          checked: !this.state.checked,
+                        });
+                      }}
+                  />}
+              >夜间</Item>
+              <Item
+                  thumb={<i className="iconfont icon-setting"/>}
+                  arrow="horizontal"
+                  onClick={() => {}}
+              >设置</Item>
+              <Item
+                  thumb={<i className="iconfont icon-huiyuan"/>}
+                  arrow="horizontal"
+                  onClick={() => {}}
+              >会员中心</Item>
+            </div>
+          </List>
+        </div>
+
+        <FooterComponent/>
       </div>
     )
   }
