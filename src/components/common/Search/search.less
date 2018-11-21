@@ -1,6 +1,8 @@
 @import "../../../assets/styles/var";
+@import "../../../assets/styles/mixins";
 .search{
   //padding: 0.2rem 0.3rem;
+  position: relative; z-index: 10;
   .am-search{
     background: none;
   }
@@ -27,5 +29,46 @@
   }
   .am-search-input .am-search-synthetic-ph{
     height: 32px; line-height: 32px;
+  }
+
+  .searchBox{
+    position: fixed; left: 0; top: 44px; right: 0; bottom: 0.9rem;
+    background-color: #ffffff;
+    .searchMess{
+      display: none; height: 100%; overflow: hidden;
+    }
+    .singer-cat{
+      text-align: center; height: 0.9rem;
+      line-height: 0.9rem; color: @base_gray_text;
+      position: relative;
+      i{
+        font-size: 0.36rem;
+      }
+      &:after{
+        .bottom-line();
+      }
+    }
+    .search-hot{
+      padding: 0.4rem 0.2rem;
+      .search-hot-title{
+        font-size: 0.24rem; margin-bottom: 0.2rem;
+        color: @base_gray_text;
+      }
+      .search-hot-list{
+        a{
+          line-height: 1; padding: 5px 10px;
+          border: 1px solid @base_border_color;
+          margin-right: 0.2rem; border-radius: 14px;
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+
+    .searchList{
+      height: 100%; overflow: hidden;
+      .searchListType{
+        height: 0.9rem; width: 100%; overflow: hidden;
+      }
+    }
   }
 }
