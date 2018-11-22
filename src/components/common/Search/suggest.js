@@ -1,5 +1,6 @@
 import React from 'react'
 import './suggest.less'
+import Scroll from '../../public/scroll/scroll'
 
 class Suggest extends React.Component {
   componentDidMount() {}
@@ -19,28 +20,31 @@ class Suggest extends React.Component {
     const {suggestList, keyword} = this.props;
     return (
       <div className="search-suggest">
-        <div className="search-suggest-head">
-          搜 "<span>{keyword}</span>" 相关用户 >
-        </div>
-        {
-          suggestList.order.map((item, index) => {
-            if (suggestList[item]) {
-              return (
-                <div className="search-suggest-list" key={index}>
-                  <div className="title">{this.formatWords(item)}</div>
-                  <div className="list">
-                    {
-                      suggestList[item].map((suggestList_item, suggestList_index) => (
-                        <div className="list-item"></div>
-                      ))
-                    }
-                  </div>
-                </div>
-              )
-            }
-          })
-        }
-
+        <Scroll>
+          <div className="search-suggest-head">
+            搜 "<span>{keyword}</span>" 相关用户 >
+          </div>
+          {
+            suggestList.order.map((item, index) => {
+              if (suggestList[item]) {
+                return (
+                    <div className="search-suggest-list" key={index}>
+                      <div className="title">{this.formatWords(item)}</div>
+                      <div className="list">
+                        {
+                          suggestList[item].map((suggestList_item, suggestList_index) => (
+                              <div className="list-item" key={suggestList_index}>
+                                {suggestList_item.name}
+                              </div>
+                          ))
+                        }
+                      </div>
+                    </div>
+                )
+              }
+            })
+          }
+        </Scroll>
       </div>
     )
   }

@@ -4,8 +4,7 @@
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/common/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Search/search.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/search.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/request/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/request/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/until/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/until/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Search/suggest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/suggest.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -89,10 +88,10 @@
         <counts>
           <entry key="css" value="117" />
           <entry key="html" value="42" />
-          <entry key="js" value="31968" />
+          <entry key="js" value="32324" />
           <entry key="json" value="25" />
           <entry key="jsx" value="44" />
-          <entry key="less" value="9357" />
+          <entry key="less" value="9421" />
           <entry key="vue" value="16" />
         </counts>
       </usages-collector>
@@ -102,8 +101,8 @@
           <entry key="HTML" value="42" />
           <entry key="JSON" value="25" />
           <entry key="JSX Harmony" value="44" />
-          <entry key="JavaScript" value="31968" />
-          <entry key="Less" value="9357" />
+          <entry key="JavaScript" value="32324" />
+          <entry key="Less" value="9421" />
           <entry key="Vue.js" value="16" />
         </counts>
       </usages-collector>
@@ -143,7 +142,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7495528">
+    <splitter split-orientation="horizontal" split-proportion="0.6386404">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -170,11 +169,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/Search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="247">
-                  <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+                <state relative-caret-position="167">
+                  <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -206,13 +205,14 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/suggest.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+                <state relative-caret-position="261">
+                  <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
+                    <element signature="e#643#1286#0" />
                   </folding>
                 </state>
               </provider>
@@ -269,8 +269,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/search.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+                <state relative-caret-position="193">
+                  <caret line="85" column="27" lean-forward="true" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
                   <folding>
                     <element signature="e#943#957#0" />
                     <element signature="e#1234#1248#0" />
@@ -335,8 +335,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SongList</find>
-      <find>VelocityComponent</find>
       <find>babel-plugin-transform-decorators-legacy</find>
       <find>plugin-transform-decorators-legacy</find>
       <find>babel-preset-stage-0</find>
@@ -365,6 +363,8 @@
       <find>getSearch</find>
       <find>list</find>
       <find>onShow</find>
+      <find>onCancel</find>
+      <find>value</find>
     </findStrings>
     <replaceStrings>
       <replace>this.ctx</replace>
@@ -433,9 +433,9 @@
         <option value="$PROJECT_DIR$/src/components/common/Search/list.less" />
         <option value="$PROJECT_DIR$/src/components/common/Search/message.js" />
         <option value="$PROJECT_DIR$/src/components/common/Search/list.js" />
-        <option value="$PROJECT_DIR$/src/components/common/Search/Search.js" />
         <option value="$PROJECT_DIR$/src/components/common/Search/search.less" />
         <option value="$PROJECT_DIR$/src/components/common/Search/suggest.js" />
+        <option value="$PROJECT_DIR$/src/components/common/Search/Search.js" />
       </list>
     </option>
   </component>
@@ -461,7 +461,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="24" />
     <option name="width" value="1280" />
     <option name="height" value="707" />
@@ -641,12 +641,12 @@
       <workItem from="1541988581404" duration="37957000" />
       <workItem from="1542108784766" duration="47009000" />
       <workItem from="1542593093821" duration="542000" />
-      <workItem from="1542680314208" duration="56902000" />
+      <workItem from="1542680314208" duration="59564000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360638000" />
+    <option name="totallyTimeSpent" value="363300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -658,12 +658,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1280" height="707" extended-state="1" />
+    <frame x="0" y="24" width="1280" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6413302" visible="true" weight="0.11058075" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.64268583" visible="true" weight="0.11058075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.35866985" side_tool="true" visible="true" weight="0.11058075" />
+      <window_info id="npm" order="2" sideWeight="0.35731414" side_tool="true" visible="true" weight="0.11058075" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
@@ -673,7 +673,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29362416" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30033556" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32885906" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32885906" />
@@ -1032,16 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/Search/message.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/Search/list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1052,10 +1042,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/Search/Search.js">
+    <entry file="file://$PROJECT_DIR$/src/components/common/Search/message.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="405">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -1064,22 +1054,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/Search/suggest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="261">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#643#1286#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/Search/search.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+        <state relative-caret-position="193">
+          <caret line="85" column="27" lean-forward="true" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
           <folding>
             <element signature="e#943#957#0" />
             <element signature="e#1234#1248#0" />
             <element signature="e#1689#1703#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/common/Search/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>

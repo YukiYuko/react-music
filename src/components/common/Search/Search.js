@@ -40,11 +40,32 @@ class Search extends React.Component {
     if (!this.state.show) {
       this.onShow('show');
       this.getHot();
+    } else {
+      this.setState({
+        list: ''
+      })
     }
   };
   // 点取消
-  clear = () => {
+  cancle = () => {
+    console.log('点取消')
     this.onShow('show', false);
+    this.setState({
+      list: '',
+      hot: '',
+      suggestList: ''
+    })
+  };
+  // 点叉叉
+  clear = () => {
+    console.log('点叉叉')
+    this.setState({
+      value: ''
+    })
+  };
+  // 提交
+  submit = () => {
+    this.getSearch();
   };
   // 获取热门
   getHot () {
@@ -67,10 +88,9 @@ class Search extends React.Component {
     };
     search(params).then((res) => {
       if (res.code === 200) {
-        // this.setState({
-        //   hot: res.result
-        // })
-        console.log(res)
+        this.setState({
+          list: res.result
+        });
       }else {
         Toast.fail(res.msg, 2);
       }
@@ -112,8 +132,9 @@ class Search extends React.Component {
       <div className="search">
         <SearchBar placeholder="Search" maxLength={8}
                    value={this.state.value}
-                   onSubmit={value => console.log(value, 'onSubmit')}
+                   onSubmit={this.submit}
                    onClear={this.clear}
+                   onCancel={this.cancle}
                    onFocus={this.focus}
                    onChange={this.onChange}/>
         <CSSTransition
@@ -130,7 +151,7 @@ class Search extends React.Component {
 
             {/*热搜建议*/}
             {
-              suggestList && <Suggest suggestList={suggestList} keyword={value}/>
+              (suggestList && !list) && <Suggest suggestList={suggestList} keyword={value}/>
             }
 
             {/*搜索结果*/}

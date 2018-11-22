@@ -77,9 +77,8 @@
     // 热搜建议
     .search-suggest{
       height: 100%; overflow: hidden;
-      padding: 0 0.3rem;
       .search-suggest-head{
-        padding: 0.2rem 0; font-size: 0.26rem;
+        padding: 0.2rem; font-size: 0.26rem;
         span{
           color: #59ade5;
         }
@@ -88,6 +87,14 @@
         .title{
           height: 0.7rem; line-height: 0.7rem;
           background-color: @base_background_color;
+          padding: 0 0.2rem;
+        }
+        .list{
+          padding: 0 0.4rem;
+          .list-item{
+            height: 0.7rem; line-height: 0.7rem;
+            .ellipsis();
+          }
         }
       }
     }
