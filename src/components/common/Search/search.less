@@ -34,8 +34,9 @@
   .searchBox{
     position: fixed; left: 0; top: 44px; right: 0; bottom: 0.9rem;
     background-color: #ffffff;
+    // 搜索相关
     .searchMess{
-      display: none; height: 100% !important; overflow: hidden;
+      height: 100% !important; overflow: hidden;
     }
     .singer-cat{
       text-align: center; height: 0.9rem;
@@ -64,11 +65,30 @@
       }
     }
 
+    // 搜索结果
     .searchList{
       height: 100%; overflow: hidden;
       .searchListType{
         height: 0.9rem; width: 100%; overflow: hidden;
         background-color: @base_red_color;
+      }
+    }
+
+    // 热搜建议
+    .search-suggest{
+      height: 100%; overflow: hidden;
+      padding: 0 0.3rem;
+      .search-suggest-head{
+        padding: 0.2rem 0; font-size: 0.26rem;
+        span{
+          color: #59ade5;
+        }
+      }
+      .search-suggest-list{
+        .title{
+          height: 0.7rem; line-height: 0.7rem;
+          background-color: @base_background_color;
+        }
       }
     }
   }

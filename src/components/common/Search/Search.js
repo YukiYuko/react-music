@@ -1,12 +1,13 @@
 import React from 'react'
 import './search.less'
 import {SearchBar, Toast} from 'antd-mobile';
-import {searchHot, search} from '../../../request/api';
+import {searchHot, search, searchSuggest} from '../../../request/api';
 import localforage from "localforage";
 import {CSSTransition} from "react-transition-group";
-import Navigator from '../../../components/public/Navigator/Navigator'
-import Swiper from 'react-id-swiper';
-import 'react-id-swiper/src/styles/less/swiper.less'
+import until from '../../../until/index'
+import Suggest from './suggest'
+import Message from './message'
+import SearchList from './list'
 
 class Search extends React.Component {
   componentDidMount() {
@@ -14,19 +15,36 @@ class Search extends React.Component {
     // this.getSearch();
   }
   state = {
-    value: '许嵩',
+    value: '',
     hot: '',
     show: false,
     type: 1,
     offset: 0,
-    list: [],
-    currentTabIndex: 0
+    list: '',
+    currentTabIndex: 0,
+    suggestList: ''
   };
   onChange = (value) => {
-    this.setState({ value });
+    this.setState(
+      { value },
+      () => {
+        until.throttle(this.getSearchSuggest, null, 500, value, 1000);
+      }
+    );
   };
-  onShow = (key, value = true) => () =>{
+  onShow = (key, value = true) => {
     this.setState({ [key]: value });
+  };
+  // 获取焦点
+  focus = () => {
+    if (!this.state.show) {
+      this.onShow('show');
+      this.getHot();
+    }
+  };
+  // 点取消
+  clear = () => {
+    this.onShow('show', false);
   };
   // 获取热门
   getHot () {
@@ -58,15 +76,27 @@ class Search extends React.Component {
       }
     })
   }
-
-  // 点击menu
-  selectNav = (type, index) => {
-    console.log('type', type);
-    this.refs.swiper.swiper.slideTo(index-1)
+  // 获取搜索建议
+  getSearchSuggest = () => {
+    if (!this.state.value) {
+      return
+    }
+    let params = {
+      keywords: this.state.value,
+    };
+    searchSuggest(params).then((res) => {
+      if (res.code === 200) {
+        this.setState({
+          suggestList: res.result
+        });
+      }else {
+        Toast.fail(res.msg, 2);
+      }
+    })
   };
 
   render() {
-    const {hot, show, currentTabIndex} = this.state;
+    const {hot, show, currentTabIndex, suggestList, list, value} = this.state;
     const tabs = [
       { name: '单曲', type: 0 ,id: 1},
       { name: '专辑', type: 10 ,id: 2},
@@ -78,27 +108,13 @@ class Search extends React.Component {
       { name: '电台', type: 1009 ,id: 8},
       { name: '视频', type: 1014 ,id: 9},
     ];
-    const params = {
-      pagination: {
-        clickable: true,
-        dynamicBullets: true
-      },
-      spaceBetween: 30,
-      rebuildOnUpdate: true,
-      on: {
-        slideChangeTransitionEnd: (e) => {
-          let index = this.refs.swiper.swiper.activeIndex;
-          this.refs.navigator._adjust(index+1);
-        }
-      }
-    };
     return (
       <div className="search">
         <SearchBar placeholder="Search" maxLength={8}
                    value={this.state.value}
                    onSubmit={value => console.log(value, 'onSubmit')}
-                   onClear={this.onShow('show', false)}
-                   onFocus={this.onShow('show')}
+                   onClear={this.clear}
+                   onFocus={this.focus}
                    onChange={this.onChange}/>
         <CSSTransition
             in={show}
@@ -108,42 +124,19 @@ class Search extends React.Component {
         >
           <div className="searchBox">
             {/*搜索相关*/}
-            <div className="searchMess">
-              <div className="singer-cat">
-                <i className="iconfont icon-geshou"/>
-                <span>歌手分类 ></span>
-              </div>
-              <div className="search-hot">
-                <div className="search-hot-title">热门搜索</div>
-                <div className="search-hot-list flex wrap-wrap">
-                  {
-                    hot && hot.hots.map((item, index) => (
-                        <a key={index}>{item.first}</a>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
+            {
+              !value && <Message hot={hot}/>
+            }
+
+            {/*热搜建议*/}
+            {
+              suggestList && <Suggest suggestList={suggestList} keyword={value}/>
+            }
 
             {/*搜索结果*/}
-            <div className="searchList flex dir-column">
-              <div className="searchListType">
-                <Navigator currentTabIndex={currentTabIndex} ref="navigator" selectNav={this.selectNav} navList={tabs}/>
-              </div>
-              <div className="searchContent box1">
-                <Swiper ref="swiper" {...params}>
-                  {
-                    tabs.map((item, index) => (
-                      <div className="slider-item" key={index}>
-                        <div className="slider-item-inner">
-                          {item.name}
-                        </div>
-                      </div>
-                    ))
-                  }
-                </Swiper>
-              </div>
-            </div>
+            {
+              list && <SearchList tabs={tabs} currentTabIndex={currentTabIndex}/>
+            }
           </div>
         </CSSTransition>
       </div>
