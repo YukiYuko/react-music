@@ -89,7 +89,9 @@ export default {
           cancel = c
         })
       }).then(res => {
-        resolve(res.data)
+        if (res.data) {
+          resolve(res.data)
+        }
       })
     })
   },

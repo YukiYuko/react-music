@@ -4,7 +4,7 @@ import './message.less'
 class Message extends React.Component {
   componentDidMount() {}
   render() {
-    const {hot} = this.props;
+    const {hot, localSearchList} = this.props;
     return (
       <div className="searchMess">
         <div className="singer-cat">
@@ -20,6 +20,15 @@ class Message extends React.Component {
               ))
             }
           </div>
+        </div>
+        <div className="search-history">
+          {
+            localSearchList && localSearchList.map((item, index) => (
+              <div className="search-history-item flex justify-between" key={index}>
+                {item}
+              </div>
+            ))
+          }
         </div>
       </div>
     )

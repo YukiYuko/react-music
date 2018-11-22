@@ -25,7 +25,7 @@ class Suggest extends React.Component {
             搜 "<span>{keyword}</span>" 相关用户 >
           </div>
           {
-            suggestList.order.map((item, index) => {
+            suggestList && suggestList.order && suggestList.order.map((item, index) => {
               if (suggestList[item]) {
                 return (
                     <div className="search-suggest-list" key={index}>
@@ -35,6 +35,9 @@ class Suggest extends React.Component {
                           suggestList[item].map((suggestList_item, suggestList_index) => (
                               <div className="list-item" key={suggestList_index}>
                                 {suggestList_item.name}
+                                {
+                                  item === 'songs' && `- ${suggestList_item.artists[0].name}`
+                                }
                               </div>
                           ))
                         }

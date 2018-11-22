@@ -37,30 +37,40 @@
     // 搜索相关
     .searchMess{
       height: 100% !important; overflow: hidden;
-    }
-    .singer-cat{
-      text-align: center; height: 0.9rem;
-      line-height: 0.9rem; color: @base_gray_text;
-      position: relative;
-      i{
-        font-size: 0.36rem;
+      .singer-cat{
+        text-align: center; height: 0.9rem;
+        line-height: 0.9rem; color: @base_gray_text;
+        position: relative;
+        i{
+          font-size: 0.36rem;
+        }
+        &:after{
+          .bottom-line();
+        }
       }
-      &:after{
-        .bottom-line();
+      .search-hot{
+        padding: 0.4rem 0.2rem;
+        .search-hot-title{
+          font-size: 0.24rem; margin-bottom: 0.2rem;
+          color: @base_gray_text;
+        }
+        .search-hot-list{
+          a{
+            line-height: 1; padding: 5px 10px;
+            border: 1px solid @base_border_color;
+            margin-right: 0.2rem; border-radius: 14px;
+            margin-bottom: 0.2rem;
+          }
+        }
       }
-    }
-    .search-hot{
-      padding: 0.4rem 0.2rem;
-      .search-hot-title{
-        font-size: 0.24rem; margin-bottom: 0.2rem;
-        color: @base_gray_text;
-      }
-      .search-hot-list{
-        a{
-          line-height: 1; padding: 5px 10px;
-          border: 1px solid @base_border_color;
-          margin-right: 0.2rem; border-radius: 14px;
-          margin-bottom: 0.2rem;
+      .search-history{
+        padding: 0 0.2rem;
+        .search-history-item{
+          height: 0.8rem; line-height: 0.8rem;
+          position: relative; padding: 0 0.3rem;
+          &:after{
+            .bottom-line();
+          }
         }
       }
     }

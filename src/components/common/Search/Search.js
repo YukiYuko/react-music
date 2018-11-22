@@ -22,7 +22,8 @@ class Search extends React.Component {
     offset: 0,
     list: '',
     currentTabIndex: 0,
-    suggestList: ''
+    suggestList: '',
+    localSearchList: []
   };
   onChange = (value) => {
     this.setState(
@@ -37,6 +38,16 @@ class Search extends React.Component {
   };
   // 获取焦点
   focus = () => {
+    localforage.getItem('localSearchList').then((value) => {
+      if (value) {
+        this.setState({
+          localSearchList: value
+        })
+      }
+    }).catch(function(err) {
+      // 当出错时，此处代码运行
+      console.log(err);
+    });
     if (!this.state.show) {
       this.onShow('show');
       this.getHot();
@@ -48,23 +59,34 @@ class Search extends React.Component {
   };
   // 点取消
   cancle = () => {
-    console.log('点取消')
+    console.log('点取消');
     this.onShow('show', false);
     this.setState({
       list: '',
       hot: '',
-      suggestList: ''
+      suggestList: '',
+      value: ''
     })
   };
   // 点叉叉
   clear = () => {
-    console.log('点叉叉')
+    console.log('点叉叉');
     this.setState({
       value: ''
     })
   };
   // 提交
   submit = () => {
+    if (!this.state.value) return;
+    if (!this.state.localSearchList.includes(this.state.value)){
+      this.state.localSearchList.push(this.state.value)
+      localforage.setItem('localSearchList',this.state.localSearchList).then((value) => {
+        console.log('设置值', value)
+      }).catch(function(err) {
+        // 当出错时，此处代码运行
+        console.log(err);
+      });
+    }
     this.getSearch();
   };
   // 获取热门
@@ -116,7 +138,7 @@ class Search extends React.Component {
   };
 
   render() {
-    const {hot, show, currentTabIndex, suggestList, list, value} = this.state;
+    const {hot, show, currentTabIndex, suggestList, list, value, localSearchList} = this.state;
     const tabs = [
       { name: '单曲', type: 0 ,id: 1},
       { name: '专辑', type: 10 ,id: 2},
@@ -146,7 +168,7 @@ class Search extends React.Component {
           <div className="searchBox">
             {/*搜索相关*/}
             {
-              !value && <Message hot={hot}/>
+              !value && <Message localSearchList={localSearchList} hot={hot}/>
             }
 
             {/*热搜建议*/}

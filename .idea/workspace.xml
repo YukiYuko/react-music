@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="aed1526b-0f83-4cf3-808c-4dde1a057378" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/components/common/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Search/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/message.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Search/search.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/search.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/Search/suggest.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Search/suggest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/request/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/request/fetch.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -88,10 +90,10 @@
         <counts>
           <entry key="css" value="117" />
           <entry key="html" value="42" />
-          <entry key="js" value="32324" />
+          <entry key="js" value="32809" />
           <entry key="json" value="25" />
           <entry key="jsx" value="44" />
-          <entry key="less" value="9421" />
+          <entry key="less" value="9475" />
           <entry key="vue" value="16" />
         </counts>
       </usages-collector>
@@ -101,8 +103,8 @@
           <entry key="HTML" value="42" />
           <entry key="JSON" value="25" />
           <entry key="JSX Harmony" value="44" />
-          <entry key="JavaScript" value="32324" />
-          <entry key="Less" value="9421" />
+          <entry key="JavaScript" value="32809" />
+          <entry key="Less" value="9475" />
           <entry key="Vue.js" value="16" />
         </counts>
       </usages-collector>
@@ -112,7 +114,7 @@
           <entry key="html" value="17" />
           <entry key="jpeg" value="2" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="199" />
+          <entry key="js" value="200" />
           <entry key="json" value="8" />
           <entry key="jsx" value="3" />
           <entry key="less" value="93" />
@@ -128,7 +130,7 @@
           <entry key="Image" value="4" />
           <entry key="JSON" value="8" />
           <entry key="JSX Harmony" value="3" />
-          <entry key="JavaScript" value="199" />
+          <entry key="JavaScript" value="200" />
           <entry key="Less" value="93" />
           <entry key="TypeScript" value="10" />
           <entry key="Vue.js" value="2" />
@@ -142,7 +144,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6386404">
+    <splitter split-orientation="horizontal" split-proportion="0.519678">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -169,11 +171,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/Search.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="167">
-                  <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+                <state relative-caret-position="66">
+                  <caret line="170" column="65" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="65" />
+                  <folding>
+                    <element signature="e#0#25#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/views/Setting/Setting.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="33" selection-end-column="7" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -193,11 +207,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/message.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+                <state relative-caret-position="264">
+                  <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
                   </folding>
@@ -208,11 +222,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/suggest.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
-                  <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+                <state relative-caret-position="123">
+                  <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
                   <folding>
                     <element signature="e#0#25#0" expanded="true" />
-                    <element signature="e#643#1286#0" />
                   </folding>
                 </state>
               </provider>
@@ -269,11 +282,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/components/common/Search/search.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
-                  <caret line="85" column="27" lean-forward="true" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+                <state relative-caret-position="222">
+                  <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
                   <folding>
-                    <element signature="e#943#957#0" />
-                    <element signature="e#1234#1248#0" />
+                    <element signature="e#1085#1323#0" />
+                    <element signature="e#1341#1754#0" />
                     <element signature="e#1689#1703#0" />
                   </folding>
                 </state>
@@ -335,8 +348,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>babel-plugin-transform-decorators-legacy</find>
-      <find>plugin-transform-decorators-legacy</find>
       <find>babel-preset-stage-0</find>
       <find>plugin-proposal-class-properties</find>
       <find>plugin-proposal-decorators</find>
@@ -344,7 +355,6 @@
       <find>topBubbles</find>
       <find>login</find>
       <find>lastName</find>
-      <find>setItem</find>
       <find>context</find>
       <find>loginFun</find>
       <find>scroll</find>
@@ -365,6 +375,9 @@
       <find>onShow</find>
       <find>onCancel</find>
       <find>value</find>
+      <find>localforage</find>
+      <find>setItem</find>
+      <find>localSearchList</find>
     </findStrings>
     <replaceStrings>
       <replace>this.ctx</replace>
@@ -431,11 +444,11 @@
         <option value="$PROJECT_DIR$/src/components/common/Search/suggest.less" />
         <option value="$PROJECT_DIR$/src/components/common/Search/message.less" />
         <option value="$PROJECT_DIR$/src/components/common/Search/list.less" />
-        <option value="$PROJECT_DIR$/src/components/common/Search/message.js" />
         <option value="$PROJECT_DIR$/src/components/common/Search/list.js" />
-        <option value="$PROJECT_DIR$/src/components/common/Search/search.less" />
         <option value="$PROJECT_DIR$/src/components/common/Search/suggest.js" />
         <option value="$PROJECT_DIR$/src/components/common/Search/Search.js" />
+        <option value="$PROJECT_DIR$/src/components/common/Search/message.js" />
+        <option value="$PROJECT_DIR$/src/components/common/Search/search.less" />
       </list>
     </option>
   </component>
@@ -641,12 +654,12 @@
       <workItem from="1541988581404" duration="37957000" />
       <workItem from="1542108784766" duration="47009000" />
       <workItem from="1542593093821" duration="542000" />
-      <workItem from="1542680314208" duration="59564000" />
+      <workItem from="1542680314208" duration="63829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363300000" />
+    <option name="totallyTimeSpent" value="367565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,16 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/Setting/Setting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
-          <caret line="128" column="36" lean-forward="true" selection-start-line="128" selection-start-column="36" selection-end-line="128" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/Setting/Setting.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1042,10 +1045,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/Search/message.js">
+    <entry file="file://$PROJECT_DIR$/src/views/Setting/Setting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="252">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="33" selection-end-column="7" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -1054,33 +1057,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/Search/suggest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="123">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <element signature="e#643#1286#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/Search/search.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="85" column="27" lean-forward="true" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
-          <folding>
-            <element signature="e#943#957#0" />
-            <element signature="e#1234#1248#0" />
-            <element signature="e#1689#1703#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/common/Search/Search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        <state relative-caret-position="66">
+          <caret line="170" column="65" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="65" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/common/Search/message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/common/Search/search.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+          <folding>
+            <element signature="e#1085#1323#0" />
+            <element signature="e#1341#1754#0" />
+            <element signature="e#1689#1703#0" />
           </folding>
         </state>
       </provider>
