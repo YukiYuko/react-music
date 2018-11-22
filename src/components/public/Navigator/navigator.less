@@ -1,0 +1,28 @@
+.navigator-component{
+  .list-wrapper{
+    background: none;
+    .scroll-content{
+      //用于横向滚动
+      display: inline-block;
+    }
+    .tab-list{
+      margin: 0 auto;
+      .tab-item{
+        display: inline-block;
+        line-height: 54px;
+        .tab-name{
+          display: block;
+          position: relative;
+          padding: 0 15px 0 14px;
+          font-size: 14px;
+          color: #ffffff;
+          &.link-active{
+            transition: all 0.2s;
+            transform: scale(1.04);
+            color: #fc9153;
+          }
+        }
+      }
+    }
+  }
+}

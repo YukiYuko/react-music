@@ -4,6 +4,9 @@ import {SearchBar, Toast} from 'antd-mobile';
 import {searchHot, search} from '../../../request/api';
 import localforage from "localforage";
 import {CSSTransition} from "react-transition-group";
+import Navigator from '../../../components/public/Navigator/Navigator'
+import Swiper from 'react-id-swiper';
+import 'react-id-swiper/src/styles/less/swiper.less'
 
 class Search extends React.Component {
   componentDidMount() {
@@ -16,7 +19,8 @@ class Search extends React.Component {
     show: false,
     type: 1,
     offset: 0,
-    list: []
+    list: [],
+    currentTabIndex: 0
   };
   onChange = (value) => {
     this.setState({ value });
@@ -55,8 +59,39 @@ class Search extends React.Component {
     })
   }
 
+  // 点击menu
+  selectNav = (type, index) => {
+    console.log('type', type);
+    this.refs.swiper.swiper.slideTo(index-1)
+  };
+
   render() {
-    const {hot, show} = this.state;
+    const {hot, show, currentTabIndex} = this.state;
+    const tabs = [
+      { name: '单曲', type: 0 ,id: 1},
+      { name: '专辑', type: 10 ,id: 2},
+      { name: '歌手', type: 100 ,id: 3},
+      { name: '歌单', type: 1000 ,id: 4},
+      { name: '用户', type: 1002 ,id: 5},
+      { name: 'MV', type: 1004 ,id: 6},
+      { name: '歌词', type: 1006 ,id: 7},
+      { name: '电台', type: 1009 ,id: 8},
+      { name: '视频', type: 1014 ,id: 9},
+    ];
+    const params = {
+      pagination: {
+        clickable: true,
+        dynamicBullets: true
+      },
+      spaceBetween: 30,
+      rebuildOnUpdate: true,
+      on: {
+        slideChangeTransitionEnd: (e) => {
+          let index = this.refs.swiper.swiper.activeIndex;
+          this.refs.navigator._adjust(index+1);
+        }
+      }
+    };
     return (
       <div className="search">
         <SearchBar placeholder="Search" maxLength={8}
@@ -91,9 +126,22 @@ class Search extends React.Component {
             </div>
 
             {/*搜索结果*/}
-            <div className="searchList">
+            <div className="searchList flex dir-column">
               <div className="searchListType">
-
+                <Navigator currentTabIndex={currentTabIndex} ref="navigator" selectNav={this.selectNav} navList={tabs}/>
+              </div>
+              <div className="searchContent box1">
+                <Swiper ref="swiper" {...params}>
+                  {
+                    tabs.map((item, index) => (
+                      <div className="slider-item" key={index}>
+                        <div className="slider-item-inner">
+                          {item.name}
+                        </div>
+                      </div>
+                    ))
+                  }
+                </Swiper>
               </div>
             </div>
           </div>
