@@ -105,15 +105,19 @@ class Search extends React.Component {
     })
   }
   // 搜索
-  getSearch = (keyword) => {
+  getSearch = (keyword, type = 1) => {
     if (keyword) {
       this.setState({
-        value: keyword
+        value: keyword,
+        type: type
       });
     }
+    this.setState({
+      list: ''
+    });
     let params = {
       keywords: keyword || this.state.value,
-      type: this.state.type,
+      type: type || this.state.type,
       offset: this.state.offset
     };
     search(params).then((res) => {
@@ -146,9 +150,10 @@ class Search extends React.Component {
   };
 
   render() {
-    const {hot, show, currentTabIndex, suggestList, list, value, localSearchList} = this.state;
+    const {hot, show, currentTabIndex, suggestList, list, value, localSearchList,
+    type} = this.state;
     const tabs = [
-      { name: '单曲', type: 0 ,id: 1},
+      { name: '单曲', type: 1 ,id: 1},
       { name: '专辑', type: 10 ,id: 2},
       { name: '歌手', type: 100 ,id: 3},
       { name: '歌单', type: 1000 ,id: 4},
@@ -186,7 +191,12 @@ class Search extends React.Component {
 
             {/*搜索结果*/}
             {
-              list && <SearchList tabs={tabs} currentTabIndex={currentTabIndex}/>
+              list && <SearchList type={type}
+                                  list={list}
+                                  tabs={tabs}
+                                  getSearch={this.getSearch}
+                                  keyword={value}
+                                  currentTabIndex={currentTabIndex}/>
             }
           </div>
         </CSSTransition>

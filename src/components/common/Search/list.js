@@ -1,6 +1,7 @@
 import React from 'react'
 import './list.less'
 import Navigator from "../../public/Navigator/Navigator";
+import Scroll from "../../public/scroll/scroll";
 import Swiper from "react-id-swiper";
 
 class SearchList extends React.Component {
@@ -9,11 +10,27 @@ class SearchList extends React.Component {
   // 点击menu
   selectNav = (type, index) => {
     console.log('type', type);
-    this.refs.swiper.swiper.slideTo(index-1)
+    this.refs.swiper.swiper.slideTo(index-1);
+    this.props.getSearch(this.props.value, type)
   };
 
   render() {
-    const {tabs, currentTabIndex, selectNav} = this.props;
+    const {tabs, currentTabIndex, selectNav, list, type} = this.props;
+    const _key = (type) => {
+      let data = {
+        1: 'songs',
+        10: 'albums',
+        100: 'artists',
+        1000: 'playlists',
+        1002: 'userprofiles',
+        1004: 'mvs',
+        1006: 'songs',
+        1009: 'djRadios',
+        1014: 'videos',
+      };
+      console.log('1111111',data[type]);
+      return data[type];
+    };
     const params = {
       pagination: {
         clickable: true,
@@ -37,11 +54,30 @@ class SearchList extends React.Component {
             <Swiper ref="swiper" {...params}>
               {
                 tabs.map((item, index) => (
-                    <div className="slider-item" key={index}>
-                      <div className="slider-item-inner">
-                        {item.name}
-                      </div>
-                    </div>
+                  <div className="slider-item" key={index}>
+                    {
+                      item.type === type && <Scroll data={list[_key(type)]}>
+                        <div className="search-list">
+                          {
+                            list[_key(type)].map((item, index) => (
+                                <div key={index} className="search-list-item flex
+                              justify-between items-center wrap-wrap">
+                                  <div className="left box1">
+                                    <div className="title">{item.name}</div>
+                                    <div className="text">
+                                      <span>{item.artists[0].name}</span> - <i>{item.album.name}</i>
+                                    </div>
+                                  </div>
+                                  <div className="right">
+                                    <a><i className="iconfont icon-gengduo"/></a>
+                                  </div>
+                                </div>
+                            ))
+                          }
+                        </div>
+                      </Scroll>
+                    }
+                  </div>
                 ))
               }
             </Swiper>

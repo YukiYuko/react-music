@@ -24,7 +24,7 @@ class Message extends React.Component {
         <div className="search-history">
           {
             localSearchList && localSearchList.map((item, index) => (
-              <div className="search-history-item flex justify-between" key={index}>
+              <div onClick={() => this.props.getSearch(item)} className="search-history-item flex justify-between" key={index}>
                 {item}
               </div>
             ))

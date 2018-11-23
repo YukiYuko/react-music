@@ -83,6 +83,40 @@
         height: 0.9rem; width: 100%; overflow: hidden;
         background-color: @base_red_color;
       }
+      .searchContent{
+        overflow: hidden;
+        .search-list{
+          padding-left: 0.2rem;
+          .search-list-item{
+            position: relative; padding: 0.2rem 0.2rem 0.2rem 0;
+            &:after{
+              .bottom-line()
+            }
+            .left{
+              margin-right: 0.3rem;
+              // 解决flex 冲突
+              min-width:0;
+              .title{
+                width: 100%;
+                font-size: 0.32rem; margin-bottom: 0.1rem;
+                .ellipsis();
+              }
+              .text{
+                color: @base_gray_text; font-size: 0.24rem;
+                span{
+                  color: #59ade5;
+                }
+              }
+            }
+            .right{
+              i{
+                font-size: 0.4rem;
+                color: @base_gray_text;
+              }
+            }
+          }
+        }
+      }
     }
 
     // 热搜建议
