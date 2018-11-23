@@ -54,7 +54,10 @@ class Search extends React.Component {
     } else {
       this.setState({
         list: ''
-      })
+      });
+      if (this.state.value && !this.state.suggestList) {
+        this.getSearchSuggest();
+      }
     }
   };
   // 点取消
@@ -102,9 +105,14 @@ class Search extends React.Component {
     })
   }
   // 搜索
-  getSearch () {
+  getSearch = (keyword) => {
+    if (keyword) {
+      this.setState({
+        value: keyword
+      });
+    }
     let params = {
-      keywords: this.state.value,
+      keywords: keyword || this.state.value,
       type: this.state.type,
       offset: this.state.offset
     };
@@ -117,7 +125,7 @@ class Search extends React.Component {
         Toast.fail(res.msg, 2);
       }
     })
-  }
+  };
   // 获取搜索建议
   getSearchSuggest = () => {
     if (!this.state.value) {
@@ -168,7 +176,7 @@ class Search extends React.Component {
           <div className="searchBox">
             {/*搜索相关*/}
             {
-              !value && <Message localSearchList={localSearchList} hot={hot}/>
+              !value && <Message getSearch={this.getSearch} localSearchList={localSearchList} hot={hot}/>
             }
 
             {/*热搜建议*/}

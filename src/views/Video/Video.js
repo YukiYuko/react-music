@@ -6,6 +6,7 @@ import {mvFirst} from "../../request/api";
 import {Toast, Modal} from "antd-mobile";
 import Scroll from '../../components/public/scroll/scroll';
 import {Link} from 'react-router-dom'
+import Navigator from "../../components/public/Navigator/Navigator";
 
 
 class Video extends React.Component {
@@ -30,7 +31,6 @@ class Video extends React.Component {
         this.setState({
           first: res.data
         });
-        console.log(res);
       }else {
         Toast.fail('Load failed !!!', 2);
       }
@@ -39,12 +39,25 @@ class Video extends React.Component {
 
 
   render() {
+    const tabs = [
+      { name: '单曲', type: 0 ,id: 1},
+      { name: '专辑', type: 10 ,id: 2},
+      { name: '歌手', type: 100 ,id: 3},
+      { name: '歌单', type: 1000 ,id: 4},
+      { name: '用户', type: 1002 ,id: 5},
+      { name: 'MV', type: 1004 ,id: 6},
+      { name: '歌词', type: 1006 ,id: 7},
+      { name: '电台', type: 1009 ,id: 8},
+      { name: '视频', type: 1014 ,id: 9},
+    ];
     const {visible, first} = this.state;
     return (
       <div className="videoComponent flex dir-column">
         <div className="videoHead flex dir-column">
           <SearchComponent/>
-          <div className="videoMenu box1"/>
+          {/*<div className="videoMenu box1">*/}
+            {/*<Navigator ref="navigator"  navList={tabs}/>*/}
+          {/*</div>*/}
         </div>
         <div className="wrap videoWrap box1">
           <Scroll>

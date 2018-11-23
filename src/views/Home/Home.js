@@ -9,6 +9,7 @@ import {getBanner, personalized} from '../../request/api';
 import { Toast } from 'antd-mobile';
 import HighqualityComponent from '../Highquality/Highquality';
 import { inject, observer } from 'mobx-react';
+import SearchComponent from '../../components/common/Search/Search';
 
 
 
@@ -97,95 +98,98 @@ class Home extends React.Component {
 
     return (
       <div className="home">
-        <Scroll>
-          <div className="scroll-warp">
-            <div className="red-bg"></div>
-            <div className="tab-nav flex justify-between">
-              <div className="box1">
-                <a className="active" href="">个性推荐</a>
+        <SearchComponent/>
+        <div className="home-warp">
+          <Scroll>
+            <div className="scroll-warp">
+              <div className="red-bg"></div>
+              <div className="tab-nav flex justify-between">
+                <div className="box1">
+                  <a className="active" href="">个性推荐</a>
+                </div>
+                <div className="box1">
+                  <a href="">主播电台</a>
+                </div>
               </div>
-              <div className="box1">
-                <a href="">主播电台</a>
-              </div>
-            </div>
-            <div className="tab-warp">
-              {/*banner*/}
-              <div className="banner">
-                <Swiper {...params}>
-                  {
-                    this.state.banners.map((item, index) => (
-                        <div className="slider-item" key={index}>
-                          <div className="slider-item-inner">
-                            <img src={item.imageUrl} alt=""/>
+              <div className="tab-warp">
+                {/*banner*/}
+                <div className="banner">
+                  <Swiper {...params}>
+                    {
+                      this.state.banners.map((item, index) => (
+                          <div className="slider-item" key={index}>
+                            <div className="slider-item-inner">
+                              <img src={item.imageUrl} alt=""/>
+                            </div>
                           </div>
-                        </div>
-                    ))
-                  }
-                </Swiper>
-              </div>
-              {/*几个分类*/}
-              <div className="icon-menu flex justify-between">
-                <div className="icon-item box1">
-                  <div className="icon-item-icon">
-                    <i className="iconfont icon-fm"></i>
+                      ))
+                    }
+                  </Swiper>
+                </div>
+                {/*几个分类*/}
+                <div className="icon-menu flex justify-between">
+                  <div className="icon-item box1">
+                    <div className="icon-item-icon">
+                      <i className="iconfont icon-fm"></i>
+                    </div>
+                    <div className="icon-item-text">
+                      私人FM
+                    </div>
                   </div>
-                  <div className="icon-item-text">
-                    私人FM
+                  <div onClick={() => this.go('Daily')} className="icon-item box1">
+                    <div className="icon-item-icon">
+                      <i className="iconfont icon-tuijian"></i>
+                    </div>
+                    <div className="icon-item-text">
+                      每日推荐
+                    </div>
+                  </div>
+                  <div onClick={() => this.go('High')} className="icon-item box1">
+                    <div className="icon-item-icon">
+                      <i className="iconfont icon-gedan"></i>
+                    </div>
+                    <div className="icon-item-text">
+                      歌单
+                    </div>
+                  </div>
+                  <div onClick={() => this.go('Top')} className="icon-item box1">
+                    <div className="icon-item-icon">
+                      <i className="iconfont icon-top"></i>
+                    </div>
+                    <div className="icon-item-text">
+                      排行榜
+                    </div>
                   </div>
                 </div>
-                <div onClick={() => this.go('Daily')} className="icon-item box1">
-                  <div className="icon-item-icon">
-                    <i className="iconfont icon-tuijian"></i>
+                {/*主体内容*/}
+                <div className="home-inner-warp">
+                  {/*推荐歌单*/}
+                  <div className="section-recommend">
+                    <div className="public-title">
+                      推荐歌单 >
+                    </div>
+                    <Recommend list={this.state.list_recommend}/>
                   </div>
-                  <div className="icon-item-text">
-                    每日推荐
+                  {/*最新音乐*/}
+                  <div className="section-new">
+                    <div className="public-title">
+                      最新音乐 >
+                    </div>
+                    <Recommend list={this.state.newsong}></Recommend>
+                  </div>
+                  {/*最新电台*/}
+                  <div className="section-new">
+                    <div className="public-title">
+                      最新电台 >
+                    </div>
+                    <Recommend list={this.state.djprogram}></Recommend>
                   </div>
                 </div>
-                <div onClick={() => this.go('High')} className="icon-item box1">
-                  <div className="icon-item-icon">
-                    <i className="iconfont icon-gedan"></i>
-                  </div>
-                  <div className="icon-item-text">
-                    歌单
-                  </div>
-                </div>
-                <div onClick={() => this.go('Top')} className="icon-item box1">
-                  <div className="icon-item-icon">
-                    <i className="iconfont icon-top"></i>
-                  </div>
-                  <div className="icon-item-text">
-                    排行榜
-                  </div>
-                </div>
-              </div>
-              {/*主体内容*/}
-              <div className="inner-warp">
-                {/*推荐歌单*/}
-                <div className="section-recommend">
-                  <div className="public-title">
-                    推荐歌单 >
-                  </div>
-                  <Recommend list={this.state.list_recommend}/>
-                </div>
-                {/*最新音乐*/}
-                <div className="section-new">
-                  <div className="public-title">
-                    最新音乐 >
-                  </div>
-                  <Recommend list={this.state.newsong}></Recommend>
-                </div>
-                {/*最新电台*/}
-                <div className="section-new">
-                  <div className="public-title">
-                    最新电台 >
-                  </div>
-                  <Recommend list={this.state.djprogram}></Recommend>
-                </div>
-              </div>
 
+              </div>
             </div>
-          </div>
-        </Scroll>
+          </Scroll>
+        </div>
 
         {/*footer*/}
         <FooterComponent/>
@@ -201,7 +205,6 @@ class Home extends React.Component {
         }} duration={400}>
           <HighqualityComponent show={showHigh} back={this.show('showHigh', false)}/>
         </VelocityComponent>
-        }
       </div>
     )
   }

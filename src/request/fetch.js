@@ -1,6 +1,7 @@
 //引入axios
 import axios from 'axios'
 import qs from 'qs'
+import {Toast} from 'antd-mobile'
 
 let cancel ,promiseArr = {};
 const CancelToken = axios.CancelToken;
@@ -66,10 +67,12 @@ axios.interceptors.response.use(response => {
   } else {
     error.message = "连接到服务器失败"
   }
+  console.log(error.message)
   // message.error(error)
+  Toast.fail(error.message);
   // alert(error)
-  return Promise.resolve(error.response)
-})
+  return Promise.reject(error.response)
+});
 
 // axios.defaults.baseURL = '/api';
 //设置默认请求头

@@ -1,6 +1,6 @@
 import api from './fetch'
 
-const BASE_URL = 'http://localhost:4000';
+const BASE_URL = 'http://192.168.199.175:4000';
 
 /*
 * 首页banner

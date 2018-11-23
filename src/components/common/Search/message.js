@@ -4,7 +4,7 @@ import './message.less'
 class Message extends React.Component {
   componentDidMount() {}
   render() {
-    const {hot, localSearchList} = this.props;
+    const {hot, localSearchList, getSearch} = this.props;
     return (
       <div className="searchMess">
         <div className="singer-cat">
@@ -16,7 +16,7 @@ class Message extends React.Component {
           <div className="search-hot-list flex wrap-wrap">
             {
               hot && hot.hots.map((item, index) => (
-                  <a key={index}>{item.first}</a>
+                  <a key={index} onClick={() => this.props.getSearch(item.first)}>{item.first}</a>
               ))
             }
           </div>
