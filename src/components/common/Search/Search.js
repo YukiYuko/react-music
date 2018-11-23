@@ -111,7 +111,7 @@ class Search extends React.Component {
         value: keyword,
         type: type
       }, () => {
-        console.log('type', this.state.type)
+        console.log('type1111', this.state.type)
       });
     }
     this.setState({

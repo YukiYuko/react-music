@@ -387,7 +387,7 @@ class Play extends React.Component {
           <div className="playBg" style={{backgroundImage: `url(${song.al && song.al.picUrl})`}}>
           </div>
           <div className="playBox">
-            <PublicHeader title={song.name} color="#444">
+            <PublicHeader title={song.name} background="none">
               <i onClick={this.showShareActionSheetMulpitleLine} className="iconfont icon-fenxiang"></i>
             </PublicHeader>
             {/*歌曲相关信息*/}

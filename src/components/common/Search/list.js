@@ -11,7 +11,7 @@ class SearchList extends React.Component {
   selectNav = (type, index) => {
     console.log('type', type);
     this.refs.swiper.swiper.slideTo(index-1);
-    this.props.getSearch(this.props.value, type)
+    this.props.getSearch(this.props.keyword, type)
   };
 
   render() {
@@ -64,7 +64,7 @@ class SearchList extends React.Component {
                                   <div className="left box1">
                                     <div className="title">{item.name}</div>
                                     <div className="text">
-                                      <span>{item.artists[0].name}</span> - <i>{item.album.name}</i>
+                                      <span>{item.artists[0].name}</span> - <i>{item.album && item.album.name}</i>
                                     </div>
                                   </div>
                                   <div className="right">
