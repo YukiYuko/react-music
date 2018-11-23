@@ -104,8 +104,16 @@ class Search extends React.Component {
       }
     })
   }
+  // 测试
+  test = (type) => {
+    this.setState({
+      type: type
+    }, () => {
+      console.log('type1111', this.state.type)
+    });
+  };
   // 搜索
-  getSearch = (keyword, type = 1) => {
+  getSearch = (keyword, type = 1, fun) => {
     if (keyword) {
       this.setState({
         value: keyword,
@@ -114,9 +122,9 @@ class Search extends React.Component {
         console.log('type1111', this.state.type)
       });
     }
-    this.setState({
-      list: ''
-    });
+    // this.setState({
+    //   list: ''
+    // });
     let params = {
       keywords: keyword || this.state.value,
       type: type || this.state.type,
@@ -127,6 +135,7 @@ class Search extends React.Component {
         this.setState({
           list: res.result
         });
+        fun && fun();
       }else {
         Toast.fail(res.msg, 2);
       }
@@ -198,6 +207,7 @@ class Search extends React.Component {
                                   tabs={tabs}
                                   getSearch={this.getSearch}
                                   keyword={value}
+                                  test={this.test}
                                   currentTabIndex={currentTabIndex}/>
             }
           </div>

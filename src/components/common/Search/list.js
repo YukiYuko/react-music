@@ -9,9 +9,10 @@ class SearchList extends React.Component {
 
   // 点击menu
   selectNav = (type, index) => {
-    console.log('type', type);
-    this.refs.swiper.swiper.slideTo(index-1);
-    this.props.getSearch(this.props.keyword, type)
+    // this.refs.swiper.swiper.slideTo(index-1);
+    this.props.getSearch(this.props.keyword, type, () => {
+      this.refs.swiper.swiper.slideTo(index-1);
+    });
   };
 
   render() {
