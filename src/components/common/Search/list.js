@@ -28,7 +28,6 @@ class SearchList extends React.Component {
         1009: 'djRadios',
         1014: 'videos',
       };
-      console.log('1111111',data[type]);
       return data[type];
     };
     const params = {
@@ -59,7 +58,7 @@ class SearchList extends React.Component {
                       item.type === type && <Scroll data={list[_key(type)]}>
                         <div className="search-list">
                           {
-                            list[_key(type)].map((item, index) => (
+                            list[_key(type)] && list[_key(type)].map((item, index) => (
                                 <div key={index} className="search-list-item flex
                               justify-between items-center wrap-wrap">
                                   <div className="left box1">
